@@ -2,10 +2,12 @@ import { test, expect } from '@playwright/test';
 
 test.describe('user switcher', () => {
   test.beforeEach(async ({ context }) => {
-    // Reset active user to brooks before each spec runs.
+    // Default active user to brooks on first load only; preserve any value written during a test so reload assertions remain valid.
     await context.addInitScript(() => {
       try {
-        window.localStorage.setItem('piemonte.activeUser', 'brooks');
+        if (!window.localStorage.getItem("piemonte.activeUser")) {
+          window.localStorage.setItem("piemonte.activeUser", "brooks");
+        }
       } catch {
         /* noop */
       }

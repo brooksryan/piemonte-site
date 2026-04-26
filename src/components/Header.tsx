@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useState } from 'react';
 import clsx from 'clsx';
 import { useActiveUser, userInitial, userLabel, ACTIVE_USERS, type ActiveUser } from '../lib/user';
 
@@ -9,19 +9,6 @@ interface HeaderProps {
 export default function Header({ onOpenSearch }: HeaderProps) {
   const [activeUser, setActiveUser] = useActiveUser();
   const [sheetOpen, setSheetOpen] = useState(false);
-  const avatarRef = useRef<HTMLButtonElement>(null);
-
-  // Dismiss sheet on outside click
-  useEffect(() => {
-    if (!sheetOpen) return;
-    function handleClick(e: MouseEvent) {
-      if (avatarRef.current && !avatarRef.current.contains(e.target as Node)) {
-        setSheetOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClick);
-    return () => document.removeEventListener('mousedown', handleClick);
-  }, [sheetOpen]);
 
   function handleSelectUser(u: ActiveUser) {
     setActiveUser(u);
@@ -33,7 +20,6 @@ export default function Header({ onOpenSearch }: HeaderProps) {
       {/* Avatar with user switcher */}
       <div className="relative flex-shrink-0">
         <button
-          ref={avatarRef}
           aria-label="switch active user"
           onClick={() => setSheetOpen(v => !v)}
           className="h-10 w-10 rounded-full bg-accent text-paper font-semibold text-base flex items-center justify-center"
