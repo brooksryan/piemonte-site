@@ -1,5 +1,5 @@
 import 'maplibre-gl/dist/maplibre-gl.css';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import maplibregl from 'maplibre-gl';
 import { seeds } from '@/data/catalog';
@@ -75,9 +75,9 @@ const LOCATIONS: Record<string, { lat: number; lon: number; type: string }> = {
   'castello-di-grinzane-cavour':          { lat: 44.6494, lon: 7.9908, type: 'cultural-site' },
   'wimu-castello-falletti':               { lat: 44.6094, lon: 7.9460, type: 'cultural-site' },
   'chiesetta-di-tremlett':                { lat: 44.7339, lon: 8.1697, type: 'cultural-site' },
-  'la-morra-belvedere-cappella-del-barolo': { lat: 44.6358, lon: 7.9347, type: 'cultural-site' },
+  'cappella-del-barolo':                  { lat: 44.6358, lon: 7.9347, type: 'cultural-site' },
   'grotte-di-toirano':                    { lat: 44.1283, lon: 8.2089, type: 'cultural-site' },
-  'finalborgo-medieval-village':          { lat: 44.1733, lon: 8.3450, type: 'cultural-site' },
+  'finalborgo':                           { lat: 44.1733, lon: 8.3450, type: 'cultural-site' },
   'sentiero-del-pellegrino':              { lat: 44.1900, lon: 8.4117, type: 'cultural-site' },
   'abbazia-di-san-fruttuoso':             { lat: 44.3158, lon: 9.1731, type: 'cultural-site' },
 
@@ -109,6 +109,16 @@ const LOCATIONS: Record<string, { lat: number; lon: number; type: string }> = {
 };
 
 // ---------------------------------------------------------------------------
+// Build index of seeds by type:slug for fast lookup
+// ---------------------------------------------------------------------------
+const seedBySlug = new Map<string, Seed>();
+for (const seed of seeds) {
+  seedBySlug.set(`${seed.type}:${seed.slug}`, seed);
+}
+const seedBySlugAndType = (slug: string, type: string): Seed | undefined =>
+  seedBySlug.get(`${type}:${slug}`);
+
+// ---------------------------------------------------------------------------
 // Color mapping by entity type / region
 // ---------------------------------------------------------------------------
 function markerColor(slug: string, type: string): string {
@@ -125,14 +135,44 @@ function markerColor(slug: string, type: string): string {
 }
 
 // ---------------------------------------------------------------------------
-// Build index of seeds by type:slug for fast lookup
+// Title-case helper for type labels
 // ---------------------------------------------------------------------------
-const seedBySlug = new Map<string, Seed>();
-for (const seed of seeds) {
-  seedBySlug.set(`${seed.type}:${seed.slug}`, seed);
+function titleCaseType(type: string): string {
+  return type
+    .split('-')
+    .map(s => (s.length > 0 ? s.charAt(0).toUpperCase() + s.slice(1) : s))
+    .join(' ');
 }
-const seedBySlugAndType = (slug: string, type: string): Seed | undefined =>
-  seedBySlug.get(`${type}:${slug}`);
+
+// ---------------------------------------------------------------------------
+// Filter state hydration
+// ---------------------------------------------------------------------------
+const FILTER_STORAGE_KEY = 'piemonte.mapFilters';
+
+function readVisibleFromStorage(): Set<string> | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const raw = window.localStorage.getItem(FILTER_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed: unknown = JSON.parse(raw);
+    if (Array.isArray(parsed)) {
+      const onlyStrings = parsed.filter((v): v is string => typeof v === 'string');
+      return new Set(onlyStrings);
+    }
+  } catch {
+    // ignore corrupted storage
+  }
+  return null;
+}
+
+function persistVisibleToStorage(visible: ReadonlySet<string>): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(Array.from(visible)));
+  } catch {
+    // ignore quota errors
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Props
@@ -150,6 +190,13 @@ interface Selected {
   type: string;
 }
 
+interface PinCandidate {
+  slug: string;
+  type: string;
+  lat: number;
+  lon: number;
+}
+
 // ---------------------------------------------------------------------------
 // Component
 // ---------------------------------------------------------------------------
@@ -162,12 +209,109 @@ export default function RegionMap({
 }: RegionMapProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
+  const markersRef = useRef<maplibregl.Marker[]>([]);
+  const mapReadyRef = useRef<boolean>(false);
   const [selected, setSelected] = useState<Selected | null>(null);
+  const [visibleTypesExplicit, setVisibleTypesExplicit] = useState<Set<string> | null>(
+    () => readVisibleFromStorage(),
+  );
+  const [legendCollapsed, setLegendCollapsed] = useState<boolean>(false);
 
   const selectedSeed = selected
     ? seedBySlugAndType(selected.slug, selected.type)
     : null;
 
+  // -------------------------------------------------------------------------
+  // Build the unified candidate list (region-filtered) once per regionFilter
+  // change. Each candidate carries lat/lon plus the type used for legend
+  // and marker color.
+  // -------------------------------------------------------------------------
+  const regionFilteredCandidates: PinCandidate[] = useMemo(() => {
+    const candidates: PinCandidate[] = [];
+    const seedDrivenKeys = new Set<string>();
+
+    for (const seed of seeds) {
+      if ('mapPin' in seed && seed.mapPin) {
+        candidates.push({
+          slug: seed.slug,
+          type: seed.type,
+          lat: seed.mapPin.lat,
+          lon: seed.mapPin.lon,
+        });
+        seedDrivenKeys.add(`${seed.type}:${seed.slug}`);
+      }
+    }
+
+    for (const [slug, loc] of Object.entries(LOCATIONS)) {
+      if (!seedDrivenKeys.has(`${loc.type}:${slug}`)) {
+        candidates.push({ slug, type: loc.type, lat: loc.lat, lon: loc.lon });
+      }
+    }
+
+    // Defensive filter: drop any candidate whose slug+type doesn't resolve
+    // to a catalog seed, so legend counts and marker counts agree exactly.
+    // Apply regionFilter when set.
+    return candidates.filter(c => {
+      const seed = seedBySlugAndType(c.slug, c.type);
+      if (!seed) return false;
+      if (regionFilter === undefined) return true;
+      return regionFilter.includes(seed.region as Region);
+    });
+  }, [regionFilter]);
+
+  // -------------------------------------------------------------------------
+  // Type counts for the legend, computed from the region-filtered set BEFORE
+  // visibility filtering. Counts reflect "how many pins of this type would
+  // appear if the type were visible." Hidden rows still render the count, in
+  // muted color.
+  // -------------------------------------------------------------------------
+  interface LegendRow {
+    type: string;
+    count: number;
+    color: string;
+  }
+  const legendRows: LegendRow[] = useMemo(() => {
+    const counts = new Map<string, number>();
+    const firstSlugByType = new Map<string, string>();
+    for (const c of regionFilteredCandidates) {
+      counts.set(c.type, (counts.get(c.type) ?? 0) + 1);
+      if (!firstSlugByType.has(c.type)) firstSlugByType.set(c.type, c.slug);
+    }
+    const rows: LegendRow[] = [];
+    for (const [type, count] of counts.entries()) {
+      const sampleSlug = firstSlugByType.get(type) ?? '';
+      rows.push({ type, count, color: markerColor(sampleSlug, type) });
+    }
+    rows.sort((a, b) => a.type.localeCompare(b.type));
+    return rows;
+  }, [regionFilteredCandidates]);
+
+  const allCandidateTypes = useMemo(
+    () => legendRows.map(r => r.type),
+    [legendRows],
+  );
+
+  function isTypeVisible(type: string): boolean {
+    if (visibleTypesExplicit === null) return true;
+    return visibleTypesExplicit.has(type);
+  }
+
+  function toggleType(type: string): void {
+    const next = visibleTypesExplicit === null
+      ? new Set(allCandidateTypes.filter(t => t !== type))
+      : (() => {
+          const s = new Set(visibleTypesExplicit);
+          if (s.has(type)) s.delete(type);
+          else s.add(type);
+          return s;
+        })();
+    setVisibleTypesExplicit(next);
+    persistVisibleToStorage(next);
+  }
+
+  // -------------------------------------------------------------------------
+  // One-time map setup
+  // -------------------------------------------------------------------------
   useEffect(() => {
     if (!mapContainerRef.current) return;
 
@@ -185,91 +329,8 @@ export default function RegionMap({
     mapRef.current = map;
 
     map.on('load', () => {
-      // ---------------------------------------------------------------------------
-      // Build a unified candidate list merging seed-driven mapPin coords with the
-      // legacy LOCATIONS fallback. Seeds with mapPin take precedence; LOCATIONS
-      // entries are only included when no seed-driven entry already covers that
-      // slug+type pair (de-duplication by slug+type key).
-      // ---------------------------------------------------------------------------
-      interface Candidate {
-        slug: string;
-        type: string;
-        lat: number;
-        lon: number;
-      }
-
-      const candidates: Candidate[] = [];
-      const seedDrivenKeys = new Set<string>();
-
-      // Source (a): every seed in the catalog whose mapPin is truthy
-      for (const seed of seeds) {
-        if ('mapPin' in seed && seed.mapPin) {
-          candidates.push({
-            slug: seed.slug,
-            type: seed.type,
-            lat: seed.mapPin.lat,
-            lon: seed.mapPin.lon,
-          });
-          seedDrivenKeys.add(`${seed.type}:${seed.slug}`);
-        }
-      }
-
-      // Source (b): LOCATIONS entries not already covered by a seed-driven entry
-      for (const [slug, loc] of Object.entries(LOCATIONS)) {
-        if (!seedDrivenKeys.has(`${loc.type}:${slug}`)) {
-          candidates.push({ slug, type: loc.type, lat: loc.lat, lon: loc.lon });
-        }
-      }
-
-      // Collect kept entries for potential fitBounds
-      const keptCoords: [number, number][] = [];
-
-      for (const candidate of candidates) {
-        const seed = seedBySlugAndType(candidate.slug, candidate.type);
-        if (!seed) continue;
-
-        // Apply region filter if provided
-        if (regionFilter !== undefined && !regionFilter.includes(seed.region as Region)) {
-          continue;
-        }
-
-        const color = markerColor(candidate.slug, candidate.type);
-        keptCoords.push([candidate.lon, candidate.lat]);
-
-        const el = document.createElement('div');
-        el.style.cssText = `
-          width: 14px;
-          height: 14px;
-          border-radius: 50%;
-          background-color: ${color};
-          border: 2px solid #ffffff;
-          box-shadow: 0 1px 4px rgba(0,0,0,0.35);
-          cursor: pointer;
-        `;
-
-        const marker = new maplibregl.Marker({ element: el })
-          .setLngLat([candidate.lon, candidate.lat])
-          .addTo(map);
-
-        el.addEventListener('click', (e) => {
-          e.stopPropagation();
-          setSelected({ slug: candidate.slug, type: candidate.type });
-        });
-
-        void marker;
-      }
-
-      // Fit bounds to filtered pins if requested and we have at least 2 points
-      if (fitToFiltered && keptCoords.length >= 2) {
-        const bounds = keptCoords.reduce(
-          (b, coord) => b.extend(coord as [number, number]),
-          new maplibregl.LngLatBounds(keptCoords[0], keptCoords[0])
-        );
-        map.fitBounds(bounds, { padding: 32, maxZoom: 13 });
-      } else if (fitToFiltered && keptCoords.length === 1) {
-        map.setCenter(keptCoords[0]);
-        map.setZoom(13);
-      }
+      mapReadyRef.current = true;
+      mountMarkers();
     });
 
     map.on('click', () => {
@@ -277,11 +338,91 @@ export default function RegionMap({
     });
 
     return () => {
+      markersRef.current.forEach(m => m.remove());
+      markersRef.current = [];
+      mapReadyRef.current = false;
       map.remove();
       mapRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // -------------------------------------------------------------------------
+  // Marker mount / re-mount: runs after one-time setup whenever the inputs
+  // that select which pins should be on the map change.
+  // -------------------------------------------------------------------------
+  function mountMarkers(): void {
+    const map = mapRef.current;
+    if (!map) return;
+
+    // Tear down existing markers — hidden-type pins are FULLY UNMOUNTED, not
+    // CSS-hidden. Story 7 acceptance #4 + #12 require the marker DOM nodes to
+    // disappear from the container.
+    markersRef.current.forEach(m => m.remove());
+    markersRef.current = [];
+
+    const keptCoords: [number, number][] = [];
+
+    for (const candidate of regionFilteredCandidates) {
+      if (!isTypeVisible(candidate.type)) continue;
+      const seed = seedBySlugAndType(candidate.slug, candidate.type);
+      if (!seed) continue;
+
+      const color = markerColor(candidate.slug, candidate.type);
+      keptCoords.push([candidate.lon, candidate.lat]);
+
+      const el = document.createElement('div');
+      el.style.cssText = `
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: ${color};
+        border: 2px solid #ffffff;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.35);
+        cursor: pointer;
+      `;
+
+      const marker = new maplibregl.Marker({ element: el })
+        .setLngLat([candidate.lon, candidate.lat])
+        .addTo(map);
+
+      el.addEventListener('click', e => {
+        e.stopPropagation();
+        setSelected({ slug: candidate.slug, type: candidate.type });
+      });
+
+      markersRef.current.push(marker);
+    }
+
+    if (fitToFiltered && keptCoords.length >= 2) {
+      const bounds = keptCoords.reduce(
+        (b, coord) => b.extend(coord),
+        new maplibregl.LngLatBounds(keptCoords[0], keptCoords[0]),
+      );
+      map.fitBounds(bounds, { padding: 32, maxZoom: 13 });
+    } else if (fitToFiltered && keptCoords.length === 1) {
+      map.setCenter(keptCoords[0]);
+      map.setZoom(13);
+    }
+  }
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    if (mapReadyRef.current) {
+      mountMarkers();
+      return;
+    }
+    const onLoad = () => {
+      mapReadyRef.current = true;
+      mountMarkers();
+    };
+    map.once('load', onLoad);
+    return () => {
+      map.off('load', onLoad);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [regionFilteredCandidates, visibleTypesExplicit]);
 
   return (
     <div
@@ -290,6 +431,78 @@ export default function RegionMap({
     >
       {/* Map canvas */}
       <div ref={mapContainerRef} className="w-full h-full" />
+
+      {/* Collapse toggle — upper-right corner. Only rendered while expanded;
+          the collapsed state surfaces a separate lower-left "Expand legend"
+          icon so the two controls never share an accessible name. */}
+      {!legendCollapsed && legendRows.length > 0 && (
+        <button
+          onClick={() => setLegendCollapsed(true)}
+          aria-label="Collapse legend"
+          className="absolute top-3 right-3 z-10 h-8 w-8 bg-surface border border-border rounded-full shadow-md flex items-center justify-center text-ink"
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 9l4-4 4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      )}
+
+      {/* Legend — lower-edge anchor */}
+      {legendRows.length > 0 && (
+        legendCollapsed ? (
+          <button
+            onClick={() => setLegendCollapsed(false)}
+            aria-label="Expand legend"
+            className="absolute bottom-3 left-3 z-10 h-9 w-9 bg-surface border border-border rounded-full shadow-md flex items-center justify-center text-ink"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M2 5l6-3 6 3-6 3-6-3z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+              <path d="M2 8l6 3 6-3" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+              <path d="M2 11l6 3 6-3" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+            </svg>
+          </button>
+        ) : (
+          <div className="absolute bottom-3 left-3 right-3 z-10 pointer-events-none">
+            <div
+              className="bg-surface/95 border border-border rounded-full shadow-md flex overflow-x-auto snap-x snap-mandatory pointer-events-auto"
+              style={{ backdropFilter: 'blur(4px)' }}
+              aria-label="Map legend filter"
+            >
+              {legendRows.map(row => {
+                const visible = isTypeVisible(row.type);
+                return (
+                  <button
+                    key={row.type}
+                    type="button"
+                    onClick={e => {
+                      e.stopPropagation();
+                      toggleType(row.type);
+                    }}
+                    aria-pressed={visible}
+                    className="snap-start flex items-center gap-2 px-3 py-2 text-xs font-medium whitespace-nowrap min-h-[44px]"
+                  >
+                    <span
+                      className="inline-block w-3 h-3 rounded-full"
+                      style={{
+                        backgroundColor: visible ? row.color : 'transparent',
+                        border: `2px solid ${row.color}`,
+                        opacity: visible ? 1 : 0.4,
+                      }}
+                      aria-hidden="true"
+                    />
+                    <span className={visible ? 'text-ink' : 'text-muted'}>
+                      {titleCaseType(row.type)}
+                    </span>
+                    <span className={visible ? 'text-ink' : 'text-muted'}>
+                      {row.count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )
+      )}
 
       {/* Bottom sheet — absolute to the map container, not the viewport */}
       {selected && (
@@ -300,8 +513,8 @@ export default function RegionMap({
             onClick={() => setSelected(null)}
           />
 
-          {/* Sheet panel */}
-          <div className="absolute bottom-0 left-0 right-0 z-10 p-3">
+          {/* Sheet panel — z-20 to sit above the legend */}
+          <div className="absolute bottom-0 left-0 right-0 z-20 p-3">
             <div className="bg-surface border border-border rounded-2xl shadow-xl p-4">
               <div className="flex items-start justify-between gap-2 mb-3">
                 <div className="flex-1 min-w-0">

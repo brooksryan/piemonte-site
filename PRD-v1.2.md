@@ -1,6 +1,6 @@
-# PRD v1.2 - Bug-driven user stories
+# PRD v1.2 - Bug-driven user stories (with v1.3 Story 7 appended)
 
-This document is additive to `site/PRD.md`. It captures the six user stories that fall out of the five live bugs Brooks reported after the v1.1 review, plus one additional story that splits the cross-linking work cleanly enough for piemonte-qa to write separate Playwright specs against the algorithm and against the interaction surface.
+This document is additive to `site/PRD.md`. It captures the six user stories that fall out of the five live bugs Brooks reported after the v1.1 review, plus one additional story that splits the cross-linking work cleanly enough for piemonte-qa to write separate Playwright specs against the algorithm and against the interaction surface. Story 7 was appended later as the v1.3 work item for legend-as-filter on the map; I kept it in this file rather than spinning a separate PRD-v1.3 because the story numbering, the QA process, and the out-of-scope frame all carry over without translation.
 
 Every story below carries testable acceptance criteria written as Given / When / Then assertions or numbered assertion lists. piemonte-qa is the gating reviewer: no task closes until qa runs the matching spec against both `http://localhost:5173` (or the local server port piemonte-dev settles on) and the deployed DO App Platform URL.
 
@@ -134,13 +134,61 @@ Acceptance criteria:
 7. Given the strip is at horizontal scroll position 0 and has more than three cards, when the page renders, then a portion of the fourth card is partially visible, signalling that the strip is scrollable.
 8. Given the candidate set returns exactly the cap of twelve cards, when I scroll the strip to the end, then the twelfth card is fully visible and there is no thirteenth card.
 
+## Story 7 - Legend-as-filter on every map surface
+
+As Brooks scanning a map, I see a legend that names each entity type present in the current pin set with its color swatch and a count, and I can tap a legend row to hide or show pins of that type. The same legend serves as the filter affordance, so there is no separate filter control.
+
+Background: v1.1 ships a single RegionMap component that surfaces on `/maps`, `/countryside`, and `/coastal`. Brooks asked for two things in v1.3: filters that let him narrow the map to a specific entity type, and a legend that explains the color coding. Treating the legend as the filter collapses both into one component change. Implementing the behavior inside `RegionMap` propagates the feature to every page that already mounts the component, so the three map surfaces inherit it without per-page wiring.
+
+Component scope and rendering:
+
+- The legend renders as an overlay anchored to the lower edge of the map container. Its left edge aligns with the map container's left edge plus 12pt of inset; its right edge aligns symmetrically. Vertical position is 12pt above the map container's bottom edge so it does not overlap MapLibre's attribution control.
+- The legend contains one row per unique entity type present in the current filtered pin set, derived after `regionFilter` (when set) has been applied. Each row carries: a 12pt circular color swatch matching the existing `markerColor` output for that type, the type label in title case (for example "Town", "Lodging", "Cultural Site"), and the integer count of pins of that type currently considered for display.
+- Rows lay out horizontally. When the row count exceeds the visible legend width, the legend scrolls horizontally with CSS scroll snap. There is no wrapping to a second line.
+- A collapse toggle sits in the upper-right of the map container at 32pt square with 12pt inset from the top-right corner. Tapping it collapses the legend to a small icon affordance pinned to the same lower-edge position. Tapping the collapsed icon re-expands the legend.
+
+Filter state:
+
+- The set of currently-visible types persists in `localStorage` under the key `piemonte.mapFilters`. The value is a JSON-serialized string array, for example `["town","lodging","beach","winery","restaurant","cultural-site"]`.
+- The state is global, not per-user. Switching between Brooks and Angela using the avatar toggle does not change the contents of `piemonte.mapFilters`. I am making this an explicit non-symmetry with the user-scoped state in `favorites`, `itinerary_items`, and `calendar_items` so qa does not write a contradicting assertion. The filter is a viewing preference for the device, not a per-user preference.
+- On first load with no `piemonte.mapFilters` value present, every type present in the candidate set is visible. The default is all-visible, not all-hidden.
+- When the user taps a legend row, the corresponding type toggles in `piemonte.mapFilters`. The legend row updates its visual state in the same render cycle: visible types render with full opacity on the swatch and the count, hidden types render with the swatch outlined-only at 40% opacity and the count rendered in `text-muted` color.
+- Hidden-type pins are fully unmounted from the map. The MapLibre marker DOM nodes are removed, not just hidden via CSS opacity. The number of marker DOM nodes inside the map container reflects the number of currently-visible pins exactly.
+
+Cross-page behavior:
+
+- Because the filter state is global, opening `/countryside` after toggling off "lodging" on `/maps` results in the embedded RegionMap on `/countryside` rendering with no lodging pins. Same for `/coastal`. Reload preserves the same state across all three surfaces.
+- The legend on `/countryside` and `/coastal` shows only types present in that page's filtered pin set after `regionFilter` is applied. Toggling a type that does not appear on the current page is not possible from that page's legend, but a type toggled off on `/maps` stays off when viewing `/countryside` or `/coastal`.
+
+Acceptance criteria:
+
+1. Given I open `/maps` with no prior `localStorage.piemonte.mapFilters` value, when the page renders, then the legend appears anchored to the lower edge of the map container, every entity type present in the pin set has a row, and every row's swatch renders at full opacity.
+2. Given the legend has rendered, when I count the rows, then the row count equals the number of unique entity types present in the current candidate set after `regionFilter` is applied.
+3. Given a legend row is visible, when I read the row, then it shows a colored circle swatch, the type label in title case, and an integer count.
+4. Given I tap the legend row labelled "Lodging", when the tap completes, then every MapLibre marker DOM node corresponding to a lodging pin is removed from the map container, the legend row's swatch becomes outlined-only at 40% opacity, and `localStorage.piemonte.mapFilters` no longer contains the string `"lodging"`.
+5. Given the active user is `brooks` and the user has hidden the "Lodging" type, when the active user switches to `angela` via the avatar toggle, then `localStorage.piemonte.mapFilters` is unchanged and the map still hides lodging pins.
+6. Given I have hidden the "Lodging" type on `/maps`, when I navigate to `/countryside`, then the embedded RegionMap on `/countryside` renders with zero lodging marker DOM nodes and the legend on `/countryside` shows the lodging row in its hidden visual state if lodging pins are otherwise present in that page's pin set.
+7. Given I have hidden two types on `/maps`, when I do a hard reload of the page, then `localStorage.piemonte.mapFilters` is unchanged and the same two types remain hidden.
+8. Given the legend has more rows than fit at the current map container width, when I swipe the legend horizontally, then the legend scrolls with snap behavior and does not wrap to a second row.
+9. Given the legend is expanded, when I tap the collapse toggle in the upper-right of the map container, then the legend collapses to a small icon at the same lower-edge anchor and the map canvas occupies the space the legend previously occupied.
+10. Given the legend is collapsed, when I tap the collapsed icon, then the legend re-expands with the same row state it had before collapse.
+11. Given I tap a hidden-type legend row a second time, when the tap completes, then the markers for that type are re-mounted onto the map and `localStorage.piemonte.mapFilters` contains the type string again.
+12. Given I open `/maps` and toggle off three types, when I count the marker DOM nodes inside the map container, then the count equals the sum of the visible-type counts shown in the legend.
+
+Out of scope for Story 7:
+
+- Per-user scoping of map filters. The state is global on purpose; a follow-up story can introduce per-user scoping if Brooks asks.
+- Region filtering driven by the legend. `regionFilter` remains a prop the parent passes; the legend toggles type, not region.
+- Saving named filter presets. There is one filter state and it lives in one localStorage key.
+- Animated transitions for marker mount and unmount. v1.3 mounts and unmounts immediately.
+
 ## Process change - QA gating
 
 This change applies to every task in the v1.2 board (#23 through #28) and every task that follows.
 
 - piemonte-dev and piemonte-devops do not mark a task `completed` themselves. They mark it as ready for QA by setting `metadata.qa_status = 'ready'` via TaskUpdate and notifying piemonte-qa with the task ID and the URLs to test (localhost and the deployed URL).
 - piemonte-qa runs the Playwright spec for that story against both URLs. If both pass, qa flips the task to `completed` and notifies the team lead. If either fails, qa flips the task back to `in_progress`, sets `metadata.qa_status = 'failed'`, and posts the failing assertion list back to the implementing teammate.
-- piemonte-qa writes the spec by translating the numbered acceptance criteria above into Playwright assertions. Spec filenames mirror the story numbers: `story-1-maps-load.spec.ts`, `story-2-user-switcher.spec.ts`, and so on, all under `site/tests/`.
+- piemonte-qa writes the spec by translating the numbered acceptance criteria above into Playwright assertions. Spec filenames mirror the story numbers: `story-1-maps-load.spec.ts`, `story-2-user-switcher.spec.ts`, and so on, through `story-7-map-filters.spec.ts`, all under `site/tests/`.
 - The spec runs against `http://localhost:<port>` first, then against the deployed URL. A run that passes locally but fails on deploy keeps the task in `in_progress`.
 
 ## Out of scope for v1.2
