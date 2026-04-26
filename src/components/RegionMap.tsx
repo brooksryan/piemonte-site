@@ -113,11 +113,9 @@ const LOCATIONS: Record<string, { lat: number; lon: number; type: string }> = {
 // ---------------------------------------------------------------------------
 function markerColor(slug: string, type: string): string {
   if (type === 'town' || type === 'beach') {
-    const liguriaSlugs = new Set([
-      'albenga', 'alassio', 'laigueglia', 'sestri-levante', 'camogli',
-      'varigotti-baia-dei-saraceni', 'noli', 'spotorno', 'bergeggi',
-    ]);
-    return liguriaSlugs.has(slug) ? '#2f6b8a' : '#b08a3e';
+    const seed = seedBySlugAndType(slug, type);
+    if (seed && seed.region === 'langhe') return '#b08a3e';
+    return '#2f6b8a'; // finale-arc, sestri-arc, city, other → liguria-blue (or default)
   }
   if (type === 'lodging')       return '#8c2f1f';
   if (type === 'winery')        return '#3a5a40';
