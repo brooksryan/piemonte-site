@@ -9,6 +9,7 @@ import {
   addCalendarItem,
 } from '../lib/api';
 import { useActiveUser } from '../lib/user';
+import RelatedStrip from '../components/RelatedStrip';
 
 const PLAN_DATES = [
   '2026-05-25', '2026-05-26', '2026-05-27', '2026-05-28', '2026-05-29',
@@ -335,6 +336,8 @@ export default function DetailPage() {
       <div className="mb-6">
         <SeedBody seed={seed} />
       </div>
+
+      <RelatedStrip seed={seed} />
 
       {/* Google Maps link */}
       {placeId && (
