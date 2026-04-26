@@ -1,0 +1,29 @@
+name: piemonte-site
+region: nyc
+services:
+  - name: web
+    github:
+      repo: brooksryan/piemonte-site
+      branch: main
+      deploy_on_push: true
+    dockerfile_path: Dockerfile
+    source_dir: /
+    http_port: 8080
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    routes:
+      - path: /
+    health_check:
+      http_path: /api/health
+      initial_delay_seconds: 10
+      period_seconds: 30
+    envs:
+      - key: NODE_ENV
+        scope: RUN_TIME
+        value: production
+      - key: PORT
+        scope: RUN_TIME
+        value: "8080"
+      - key: DATABASE_URL
+        scope: RUN_TIME
+        type: SECRET
