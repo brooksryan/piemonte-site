@@ -5,8 +5,10 @@ dist
 .DS_Store
 *.log
 
-# UX walk artifacts (playwright snapshots)
+# Playwright generated artifacts (track playwright.config.ts and tests/ instead)
 .playwright-cli/
+playwright-report/
+test-results/
 *.png
 *.yaml
 !.do/app.yaml

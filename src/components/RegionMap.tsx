@@ -289,7 +289,7 @@ export default function RegionMap({
       style={{ height }}
     >
       {/* Map canvas */}
-      <div ref={mapContainerRef} className="absolute inset-0" />
+      <div ref={mapContainerRef} className="w-full h-full" />
 
       {/* Bottom sheet — absolute to the map container, not the viewport */}
       {selected && (
