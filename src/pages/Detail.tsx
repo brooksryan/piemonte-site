@@ -49,7 +49,7 @@ function LabeledRow({ label, value }: { label: string; value: string }) {
 interface FavoriteState {
   loaded: boolean;
   isFav: boolean;
-  favId: number | null;
+  favId: string | null;
 }
 
 function useFavoriteForSeed(seed: Seed, user: string) {

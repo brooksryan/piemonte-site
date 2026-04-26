@@ -32,7 +32,7 @@ router.get('/', async (req: Request, res: Response): Promise<void> => {
     const rows = await dbExec<ItineraryRow>`
       select * from itinerary_items
       where user_name = ${userName}
-      order by position asc
+      order by position asc, created_at asc
     `;
     res.json(rows);
   } catch (err) {

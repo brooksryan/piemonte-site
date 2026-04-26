@@ -1,7 +1,7 @@
 import { getActiveUser } from './user';
 
 export type Favorite = {
-  id: number;
+  id: string;
   user_name: 'brooks' | 'angela';
   entity_type: string;
   entity_slug: string;
@@ -9,7 +9,7 @@ export type Favorite = {
 };
 
 export type ItineraryItem = {
-  id: number;
+  id: string;
   user_name: 'brooks' | 'angela';
   entity_type: string | null;
   entity_slug: string | null;
@@ -22,7 +22,7 @@ export type ItineraryItem = {
 };
 
 export type CalendarItem = {
-  id: number;
+  id: string;
   user_name: 'brooks' | 'angela';
   entity_type: string | null;
   entity_slug: string | null;
@@ -71,7 +71,7 @@ export function addFavorite(body: { entity_type: string; entity_slug: string }):
   });
 }
 
-export function removeFavorite(id: number): Promise<void> {
+export function removeFavorite(id: string): Promise<void> {
   return request<void>(`/api/favorites/${id}`, { method: 'DELETE' });
 }
 
@@ -91,7 +91,7 @@ export function addItineraryItem(
 }
 
 export function updateItineraryItem(
-  id: number,
+  id: string,
   body: Partial<Pick<ItineraryItem, 'position' | 'note' | 'custom_title' | 'custom_body' | 'time_anchor'>>,
 ): Promise<ItineraryItem> {
   return request<ItineraryItem>(`/api/itinerary/${id}`, {
@@ -100,7 +100,7 @@ export function updateItineraryItem(
   });
 }
 
-export function removeItineraryItem(id: number): Promise<void> {
+export function removeItineraryItem(id: string): Promise<void> {
   return request<void>(`/api/itinerary/${id}`, { method: 'DELETE' });
 }
 
@@ -130,7 +130,7 @@ export function addCalendarItem(body: {
 }
 
 export function updateCalendarItem(
-  id: number,
+  id: string,
   body: Partial<Pick<CalendarItem, 'on_date' | 'time_anchor' | 'note' | 'custom_title' | 'custom_body'>>,
 ): Promise<CalendarItem> {
   return request<CalendarItem>(`/api/calendar/${id}`, {
@@ -139,6 +139,6 @@ export function updateCalendarItem(
   });
 }
 
-export function removeCalendarItem(id: number): Promise<void> {
+export function removeCalendarItem(id: string): Promise<void> {
   return request<void>(`/api/calendar/${id}`, { method: 'DELETE' });
 }

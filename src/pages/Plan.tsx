@@ -325,8 +325,8 @@ function CustomRow({
   onRemove,
 }: {
   item: CalendarItem;
-  onEdit: (id: number, timeAnchor: string, customTitle: string, customBody: string) => void;
-  onRemove: (id: number) => void;
+  onEdit: (id: string, timeAnchor: string, customTitle: string, customBody: string) => void;
+  onRemove: (id: string) => void;
 }) {
   const [expanded, setExpanded] = useState(false);
   const [editing, setEditing] = useState(false);
@@ -394,8 +394,8 @@ function EntityRow({
   onRemove,
 }: {
   item: CalendarItem;
-  onEditAnchor: (id: number, anchor: string) => void;
-  onRemove: (id: number) => void;
+  onEditAnchor: (id: string, anchor: string) => void;
+  onRemove: (id: string) => void;
 }) {
   const [editing, setEditing] = useState(false);
 

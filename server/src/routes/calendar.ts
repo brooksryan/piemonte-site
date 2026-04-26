@@ -51,7 +51,10 @@ router.get('/', async (req: Request, res: Response): Promise<void> => {
 
   try {
     const rows = await dbExec<CalendarRow>`
-      select * from calendar_items
+      select id, user_name, entity_type, entity_slug,
+             to_char(on_date, 'YYYY-MM-DD') as on_date,
+             time_anchor, note, custom_title, custom_body, created_at
+      from calendar_items
       where user_name = ${userName}
         and on_date >= ${from}::date
         and on_date <= ${to}::date
@@ -100,7 +103,9 @@ router.post('/', async (req: Request, res: Response): Promise<void> => {
         (user_name, entity_type, entity_slug, on_date, time_anchor, note, custom_title, custom_body)
       values
         (${userName}, ${et}, ${es}, ${on_date}::date, ${ta}, ${n}, ${ct}, ${cb})
-      returning *
+      returning id, user_name, entity_type, entity_slug,
+               to_char(on_date, 'YYYY-MM-DD') as on_date,
+               time_anchor, note, custom_title, custom_body, created_at
     `;
     res.status(201).json(rows[0]);
   } catch (err) {
@@ -121,7 +126,10 @@ router.patch('/:id', async (req: Request, res: Response): Promise<void> => {
 
   // Fetch existing row
   const existing = await dbExec<CalendarRow>`
-    select * from calendar_items
+    select id, user_name, entity_type, entity_slug,
+           to_char(on_date, 'YYYY-MM-DD') as on_date,
+           time_anchor, note, custom_title, custom_body, created_at
+    from calendar_items
     where id = ${id} and user_name = ${userName}
   `;
   if (existing.length === 0) {
@@ -154,7 +162,9 @@ router.patch('/:id', async (req: Request, res: Response): Promise<void> => {
         custom_title = ${custom_title},
         custom_body  = ${custom_body}
       where id = ${id} and user_name = ${userName}
-      returning *
+      returning id, user_name, entity_type, entity_slug,
+               to_char(on_date, 'YYYY-MM-DD') as on_date,
+               time_anchor, note, custom_title, custom_body, created_at
     `;
     res.json(updated[0]);
   } catch (err) {

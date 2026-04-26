@@ -7,7 +7,7 @@ import { useActiveUser } from '../lib/user';
 
 function useFavorites(user: string) {
   const [favSet, setFavSet] = useState<Set<string>>(new Set());
-  const [favMap, setFavMap] = useState<Map<string, number>>(new Map());
+  const [favMap, setFavMap] = useState<Map<string, string>>(new Map());
 
   useEffect(() => {
     let cancelled = false;
@@ -15,7 +15,7 @@ function useFavorites(user: string) {
       .then(favorites => {
         if (cancelled) return;
         const newSet = new Set<string>();
-        const newMap = new Map<string, number>();
+        const newMap = new Map<string, string>();
         for (const f of favorites) {
           const key = `${f.entity_type}:${f.entity_slug}`;
           newSet.add(key);
