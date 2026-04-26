@@ -44,6 +44,19 @@ function normalize(value: string): string {
   return value.toLocaleLowerCase();
 }
 
+function escapeRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function boundedTownMatch(anchorName: string, candidateTown: string): boolean {
+  if (!anchorName || !candidateTown) return false;
+  const a = escapeRegex(anchorName);
+  const t = escapeRegex(candidateTown);
+  const reA = new RegExp('\\b' + a + '\\b', 'i');
+  const reT = new RegExp('\\b' + t + '\\b', 'i');
+  return reA.test(candidateTown) || reT.test(anchorName);
+}
+
 function hasTownField(seed: Seed): seed is TownBackedSeed {
   return 'town' in seed;
 }
@@ -88,7 +101,7 @@ function matchesTownSlug(current: Seed, candidate: Seed): boolean {
 }
 
 function matchesAnchorCriteria(current: Seed, candidate: Seed, anchorNames: readonly string[]): boolean {
-  if (hasTownField(candidate) && containsNormalized(anchorNames, candidate.town)) {
+  if (hasTownField(candidate) && anchorNames.some(name => boundedTownMatch(name, candidate.town))) {
     return true;
   }
 
