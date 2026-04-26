@@ -2,8 +2,6 @@
 -- Per-user state tables for piemonte-site v1. Spec: site/PRD.md section 5.2.
 -- Catalog stays in static JSON; no foreign keys back to it.
 
-begin;
-
 create table favorites (
   id           bigserial primary key,
   user_name    text not null check (user_name in ('brooks','angela')),
@@ -46,5 +44,3 @@ create table calendar_items (
     or (custom_title is not null)
   )
 );
-
-commit;

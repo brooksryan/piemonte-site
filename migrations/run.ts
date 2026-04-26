@@ -15,6 +15,23 @@ const sql = neon(databaseUrl);
 const migrationsDir: string = fileURLToPath(new URL('.', import.meta.url));
 const migrationPattern = /^\d+_.*\.sql$/;
 
+function splitSqlStatements(sqlText: string): string[] {
+  // Strip line comments (-- ...) before splitting. Naive splitter: assumes
+  // migration files do not contain string literals with embedded semicolons.
+  const withoutLineComments: string = sqlText
+    .split('\n')
+    .map((line: string): string => {
+      const idx: number = line.indexOf('--');
+      return idx === -1 ? line : line.slice(0, idx);
+    })
+    .join('\n');
+
+  return withoutLineComments
+    .split(';')
+    .map((chunk: string): string => chunk.trim())
+    .filter((chunk: string): boolean => chunk.length > 0);
+}
+
 const entries: string[] = await readdir(migrationsDir);
 const migrations: string[] = entries
   .filter((name: string): boolean => migrationPattern.test(name))
@@ -28,8 +45,24 @@ for (const filename of migrations) {
 
   try {
     const sqlText: string = await readFile(fullPath, 'utf8');
-    await sql(sqlText);
-    process.stdout.write('OK\n');
+    const statements: string[] = splitSqlStatements(sqlText);
+
+    const sqlAny = sql as unknown as {
+      transaction?: (queries: unknown[]) => Promise<unknown>;
+    };
+
+    if (typeof sqlAny.transaction === 'function') {
+      await sqlAny.transaction(statements.map((s: string): unknown => sql(s)));
+    } else {
+      console.warn(
+        '[migration] running statements non-atomically (transaction helper unavailable)',
+      );
+      for (const stmt of statements) {
+        await sql(stmt);
+      }
+    }
+
+    console.log(`OK (${statements.length} statements)`);
     applied += 1;
   } catch (err: unknown) {
     const message: string = err instanceof Error ? err.message : String(err);
