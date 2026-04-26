@@ -148,6 +148,23 @@ function SeedBody({ seed }: SeedBodyProps) {
     case 'beach':
       return (
         <div className="space-y-2">
+          {seed.imageUrl ? (
+            <>
+              <img
+                src={seed.imageUrl}
+                alt={seed.name}
+                loading="lazy"
+                className="w-full h-64 object-cover rounded-xl mb-2"
+              />
+              {seed.imageCredit && (
+                <p className="text-xs text-muted mb-4">Photo: {seed.imageCredit}</p>
+              )}
+            </>
+          ) : (
+            <div className="w-full h-48 rounded-xl bg-liguria/10 flex items-center justify-center text-liguria text-xl font-semibold mb-4">
+              {seed.name}
+            </div>
+          )}
           <LabeledRow label="Town" value={seed.town} />
           <LabeledRow label="Character" value={seed.character} />
           {seed.blurb && <p className="text-sm text-ink leading-relaxed mt-2">{seed.blurb}</p>}

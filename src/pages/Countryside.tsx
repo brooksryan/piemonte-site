@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import RegionMap from '@/components/RegionMap';
 import EntityCard from '../components/EntityCard';
 import { seedsByType } from '../data/catalog';
 import type { Seed } from '../data/catalog';
@@ -75,6 +76,7 @@ export default function CountrysidePage() {
 
   return (
     <div className="px-4 py-4 max-w-screen-md mx-auto space-y-8">
+      <RegionMap regionFilter={['langhe']} height="280px" />
       {sections.map(({ heading, seeds }) =>
         seeds.length === 0 ? null : (
           <section key={heading}>

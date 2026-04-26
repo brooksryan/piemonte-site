@@ -4,3 +4,11 @@ dist
 .env.local
 .DS_Store
 *.log
+
+# UX walk artifacts (playwright snapshots)
+.playwright-cli/
+*.png
+*.yaml
+!.do/app.yaml
+!pnpm-workspace.yaml
+!tailwind.config.ts

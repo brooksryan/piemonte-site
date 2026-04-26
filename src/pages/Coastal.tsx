@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import RegionMap from '@/components/RegionMap';
 import EntityCard from '../components/EntityCard';
 import { seedsByType } from '../data/catalog';
 import type { Seed } from '../data/catalog';
@@ -92,6 +93,7 @@ export default function CoastalPage() {
 
   return (
     <div className="px-4 py-4 max-w-screen-md mx-auto space-y-8">
+      <RegionMap regionFilter={['finale-arc', 'sestri-arc']} height="280px" />
       {townsAndBeaches.length > 0 && (
         <section>
           <h2 className="text-lg font-bold text-ink mb-3">Towns and beaches</h2>

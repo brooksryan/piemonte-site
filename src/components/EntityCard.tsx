@@ -52,13 +52,39 @@ export default function EntityCard({ seed, favorited = false, onToggleFavorite }
   const blurb = getBlurb(seed);
   const subline = getSubline(seed);
 
+  const isBeach = seed.type === 'beach';
+
   return (
     <div className="relative">
       <Link
         to={`/entity/${seed.type}/${seed.slug}`}
-        className="bg-surface border border-border rounded-xl p-4 flex gap-3 items-start hover:bg-paper transition-colors block"
+        className={clsx(
+          'bg-surface border border-border rounded-xl hover:bg-paper transition-colors block overflow-hidden',
+          isBeach ? 'flex flex-col' : 'flex gap-3 items-start p-4',
+        )}
       >
-        <div className="flex-1 min-w-0">
+        {isBeach && (
+          <>
+            {seed.imageUrl ? (
+              <>
+                <img
+                  src={seed.imageUrl}
+                  alt={seed.name}
+                  loading="lazy"
+                  className="w-full h-32 object-cover rounded-t-xl"
+                />
+                {seed.imageCredit && (
+                  <p className="text-xs text-muted px-4 py-1">{seed.imageCredit}</p>
+                )}
+              </>
+            ) : (
+              <div className="w-full h-32 rounded-t-xl bg-liguria/10 flex items-center justify-center text-liguria font-semibold text-lg">
+                {seed.name}
+              </div>
+            )}
+          </>
+        )}
+        <div className={clsx('flex-1 min-w-0', isBeach ? 'p-4' : '')}>
           <p className="text-sm font-semibold text-ink leading-snug">{seed.name}</p>
           {subline && (
             <p className="text-xs text-muted mt-0.5">{subline}</p>
@@ -68,7 +94,7 @@ export default function EntityCard({ seed, favorited = false, onToggleFavorite }
           )}
         </div>
         {/* Spacer so text doesn't overlap heart button */}
-        <div className="w-8 flex-shrink-0" />
+        {!isBeach && <div className="w-8 flex-shrink-0" />}
       </Link>
 
       {/* Heart button — outside the Link to prevent nav */}
