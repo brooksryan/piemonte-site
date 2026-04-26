@@ -1,0 +1,10 @@
+{
+  "slug": "castiglione-falletto",
+  "name": "Castiglione Falletto",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-langhe.blurbs[3]",
+  "type": "town",
+  "blurb": "Stone hilltop fortress at the geographic center of the eleven Barolo communes; the vineyard view from the castle ramparts is the cleanest geography lesson in the Langhe.",
+  "driveTimeMin": 19,
+  "url": "https://www.castellocastiglionefalletto.it/"
+}

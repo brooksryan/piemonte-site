@@ -1,0 +1,30 @@
+{
+  "slug": "region-turin",
+  "name": "Turin",
+  "region": "city",
+  "sourceLocator": "folios/options/v4/folio.data.json :: regions-pre[1]",
+  "type": "region-narrative",
+  "body": "Wednesday May 27 clears the day-of-week constraints — Mole is closed Tuesdays, Egizio runs short hours Mondays — and lands the Turin day-trip on a clean weekday. Drive Alba → Turin in 58 minutes, park at Parcheggio Roma San Carlo to stay outside the ZTL, and walk the rest. The morning belongs to the Mole's panoramic lift and the Cinema Museum spiraling underneath; the afternoon belongs to the Museo Egizio, the second-most-important Egyptology collection in the world after Cairo's, with the Tomb of Kha and the Deir el-Medina rooms anchoring Brooks's odd-history brief.\n\nLunch at Le Vitel Etonné — vitello tonnato the old way, capers, thicker tuna sauce, agnolotti del plin in jus, glass of Barbera. The 17:15 stop at Caffè Al Bicerin (operating since 1763) is one bicerin standing, no food. The 18:00 aperitivo at Vermuttino in the Quadrilatero Romano is the vermouth-of-Turin claim — house vermouth flight, then a spritz Torinese, before the 58-minute drive back to Alba.",
+  "anchors": [
+    {
+      "name": "Mole Antonelliana",
+      "blurb": "85m terrace, panoramic lift, Wed hours 9:00–19:00; pre-purchase the lift online",
+      "url": "https://www.museocinema.it/en"
+    },
+    {
+      "name": "Museo Nazionale del Cinema",
+      "blurb": "Inside the Mole — collection spirals up the dome interior",
+      "url": "https://www.museocinema.it/en"
+    },
+    {
+      "name": "Museo Egizio",
+      "blurb": "Second-most-important Egyptology collection in the world; 14:00/14:30 timed entry",
+      "url": "https://www.museoegizio.it/en/"
+    },
+    {
+      "name": "Caffè Al Bicerin",
+      "blurb": "Operating since 1763; one bicerin standing, no food, 30 min",
+      "url": "https://bicerin.it/en/"
+    }
+  ]
+}

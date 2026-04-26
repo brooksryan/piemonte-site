@@ -1,0 +1,11 @@
+{
+  "slug": "cantina-mascarello-bartolo",
+  "name": "Cantina Mascarello Bartolo",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[13]",
+  "type": "winery",
+  "town": "Barolo",
+  "visitPolicy": "SF merchant intro",
+  "placeId": "ChIJC6RTJ8uv0hIRM8ntoRLLQqw",
+  "blurb": "Visit only — depends on importer intro"
+}

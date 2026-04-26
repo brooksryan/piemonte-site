@@ -3,6 +3,10 @@ import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
+import { isDbConfigured } from './db.js';
+import favoritesRouter from './routes/favorites.js';
+import itineraryRouter from './routes/itinerary.js';
+import calendarRouter from './routes/calendar.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -57,10 +61,9 @@ apiRouter.get('/whoami', (req: Request, res: Response) => {
   res.json({ user: (req as any).userName });
 });
 
-// TODO (task #9): mount route files for:
-//   - /api/favorites  — GET/POST/DELETE favorites per user
-//   - /api/itinerary  — GET/POST/DELETE itinerary items per user
-//   - /api/calendar   — GET calendar entries
+apiRouter.use('/favorites', favoritesRouter);
+apiRouter.use('/itinerary', itineraryRouter);
+apiRouter.use('/calendar', calendarRouter);
 
 app.use('/api', apiRouter);
 
@@ -91,6 +94,10 @@ if (process.env.NODE_ENV === 'production') {
 // ---------------------------------------------------------------------------
 // Start
 // ---------------------------------------------------------------------------
+
+if (!isDbConfigured()) {
+  console.warn('[server] DATABASE_URL not set; /api routes will return 503 until devops provisions Neon');
+}
 
 app.listen(PORT, () => {
   console.log(`server listening on http://localhost:${PORT}`);

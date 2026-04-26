@@ -1,0 +1,14 @@
+{
+  "slug": "antica-locanda-solferino",
+  "name": "Antica Locanda Solferino",
+  "region": "city",
+  "sourceLocator": "itineraries/data/lodging-shortlist-v3-milan.md:26-38",
+  "type": "lodging",
+  "base": "milan",
+  "platform": "direct",
+  "url": "https://www.anticalocandasolferino.it",
+  "address": "Via Castelfidardo 2, 20121 Milano MI",
+  "placeId": "ChIJl6bNKjrGhkcRMGLPb0mElFs",
+  "rateBand": "€260-340/night",
+  "why": "Eleven rooms, family-run since 1926, set inside Brera's pedestrian inner streets — the kind of small pension that takes a continuous 2-night booking without comment, the kind of address Milanese actors and writers used between the wars. No restaurant, no spa, no resort apparatus. The neighborhood does dinner; the locanda does sleep."
+}

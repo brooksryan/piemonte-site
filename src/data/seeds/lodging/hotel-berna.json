@@ -1,0 +1,14 @@
+{
+  "slug": "hotel-berna",
+  "name": "Hotel Berna",
+  "region": "city",
+  "sourceLocator": "itineraries/data/lodging-shortlist.md:21-31",
+  "type": "lodging",
+  "base": "milan",
+  "platform": "direct",
+  "url": "https://www.hotelberna.com",
+  "address": "Via Napo Torriani 18, 20124 Milano MI",
+  "placeId": "ChIJ5WPqpcXGhkcRrOGVM1wS6nQ",
+  "rateBand": "€240-280/night",
+  "why": "Family-run, four-star independent two blocks east of Centrale. About a 4-minute walk to the platforms. Has a real on-site restaurant (Mediterranea) which solves the 11:00 PM jet-lag arrival problem on May 25. Rooms are unfussy and quiet. It avoids the chain-hotel register that Brooks and Angela have explicitly opted against."
+}

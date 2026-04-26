@@ -1,0 +1,14 @@
+{
+  "slug": "hotel-calissano",
+  "name": "Hotel Calissano",
+  "region": "langhe",
+  "sourceLocator": "itineraries/data/lodging-shortlist.md:88-98",
+  "type": "lodging",
+  "base": "alba-langhe",
+  "platform": "direct",
+  "url": "https://www.hotelcalissano.com",
+  "address": "Via Pola 8, 12051 Alba CN",
+  "placeId": "ChIJmY1yD2az0hIR4eu_OVyRhAw",
+  "rateBand": "€170-200/night",
+  "why": "Larger four-star a 6-minute walk from the historic center, near the train station. More predictable than Palazzo Finati if Brooks wants amenities (parking on site, gym, lounge) over historic-palazzo character. Fits the \"really nice but not resort\" register."
+}

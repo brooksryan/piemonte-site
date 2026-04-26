@@ -1,0 +1,10 @@
+{
+  "slug": "albenga",
+  "name": "Albenga",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-finale.blurbs[5]",
+  "type": "town",
+  "blurb": "Pre-Roman city with three medieval towers still standing in the centro storico, the 5th-century baptistery, and Liguria's only intact Roman amphitheatre. The artichoke-and-purple-asparagus plain begins here.",
+  "driveTimeMin": 33,
+  "url": "https://www.comune.albenga.sv.it/"
+}

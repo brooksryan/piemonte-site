@@ -1,0 +1,11 @@
+{
+  "slug": "noli",
+  "name": "Noli",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-finale.blurbs[1]",
+  "type": "beach",
+  "town": "Noli",
+  "character": "medieval seafaring republic",
+  "driveTimeMin": 14,
+  "blurb": "The smallest of Italy's four maritime republics, with the Romanesque San Paragorio still standing. Gambero rosso di Noli at Ponte Antico — Slow Food Presidium prawn from Noli's own small fleet, found nowhere else."
+}

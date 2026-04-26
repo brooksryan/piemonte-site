@@ -1,0 +1,12 @@
+{
+  "slug": "osteria-dellarco",
+  "name": "Osteria dell'Arco",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[9]",
+  "type": "restaurant",
+  "town": "Alba",
+  "register": "trattoria",
+  "placeId": "ChIJDU5JWWiz0hIRp4RFCSu3Nks",
+  "url": "https://www.osteriadellarco.it/",
+  "blurb": "Carne cruda, agnolotti del plin"
+}

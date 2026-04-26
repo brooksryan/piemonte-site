@@ -1,0 +1,10 @@
+{
+  "slug": "monforte-dalba",
+  "name": "Monforte d'Alba",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-langhe.blurbs[2]",
+  "type": "town",
+  "blurb": "Hilltop village south of Barolo, the post-cellar dinner pick — bollito misto cart, seven cuts and seven sauces at Della Posta in the Sant'Anna hamlet. Two hours, slow.",
+  "driveTimeMin": 26,
+  "url": "https://www.comune.monforte.cn.it/"
+}

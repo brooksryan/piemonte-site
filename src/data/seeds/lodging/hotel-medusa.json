@@ -1,0 +1,14 @@
+{
+  "slug": "hotel-medusa",
+  "name": "Hotel Medusa",
+  "region": "finale-arc",
+  "sourceLocator": "itineraries/data/lodging-shortlist.md:204-211",
+  "type": "lodging",
+  "base": "finale",
+  "platform": "direct",
+  "url": "https://www.medusahotel.it",
+  "address": "Vico Bricchieri 7, 17024 Finale Ligure SV",
+  "placeId": "ChIJr8ludYf50hIRbII2QmHSFR0",
+  "rateBand": "€140-200/night",
+  "why": "Three-star family-run inside Finalmarina's small old streets, two blocks from the beach. Reads more apartment-block than resort. 4.6 Google rating across 740+ reviews is real — that's not a freshly-launched-and-padded review profile. Walkable to Finalborgo via the lungomare (20 min flat)."
+}

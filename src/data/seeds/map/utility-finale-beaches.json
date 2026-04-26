@@ -1,0 +1,51 @@
+{
+  "slug": "utility-finale-beaches",
+  "name": "Finale Beaches Map",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: v4.utility-finale.svg-path",
+  "type": "map",
+  "svgPath": "/folios/shared/assets/maps/utility-finale-beaches.svg",
+  "kind": "utility-finale",
+  "blurbs": [
+    {
+      "index": 0,
+      "title": "Varigotti — Baia dei Saraceni",
+      "body": "Pastel houses on the cliff, dark sand, the Gallipoli analog Angela's profile points to. Smaller bay, often calm in the morning. Polpo Ubriaco trattoria 200 m back from the sand."
+    },
+    {
+      "index": 1,
+      "title": "Noli",
+      "body": "The smallest of Italy's four maritime republics, with the Romanesque San Paragorio still standing. Gambero rosso di Noli at Ponte Antico — Slow Food Presidium prawn from Noli's own small fleet, found nowhere else."
+    },
+    {
+      "index": 2,
+      "title": "Spotorno",
+      "body": "Long sand strip between Noli and Bergeggi, tamer surf than Varigotti. The lungomare runs flat for a 2-km walk; D.H. Lawrence wintered here in 1925-26."
+    },
+    {
+      "index": 3,
+      "title": "Bergeggi",
+      "body": "Protected marine area facing the small Isola di Bergeggi. Snorkeling and free-diving register; dive shops in Spotorno run the boat over for €25-35. Skip the lungomare, drive to the headland viewpoint above SS1."
+    },
+    {
+      "index": 4,
+      "title": "Punta Crena (Varigotti west)",
+      "body": "The Ruffino family's Vigneti Punta Crena clings to the cliff above the cove between Varigotti and Noli — terraced Pigato and Lumassina, a tasting room booked direct. Book ahead; the cellar door is a working farm, not a visitor centre."
+    },
+    {
+      "index": 5,
+      "title": "Albenga",
+      "body": "Pre-Roman city with three medieval towers still standing in the centro storico, the 5th-century baptistery, and Liguria's only intact Roman amphitheatre. The artichoke-and-purple-asparagus plain begins here."
+    },
+    {
+      "index": 6,
+      "title": "Alassio",
+      "body": "The British Riviera in miniature — Hemingway and Edward Lear both wintered here. Muretto signed by celebrities on Via Dante; the Budello, a 1.5-km medieval pedestrian spine running the length of the old town. Crowded in July; manageable in early June."
+    },
+    {
+      "index": 7,
+      "title": "Laigueglia",
+      "body": "Five minutes south of Alassio and almost no day-tripper traffic. Pastel old town, calmer beach, 1500s parish church. The walk-up trattoria register at Baia del Sole for a focaccia-and-fritto-misto lunch under €30 per cover."
+    }
+  ]
+}

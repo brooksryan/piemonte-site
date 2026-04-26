@@ -1,0 +1,10 @@
+{
+  "slug": "neive",
+  "name": "Neive",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-langhe.blurbs[7]",
+  "type": "town",
+  "blurb": "Medieval upper village ringed by Barbaresco vineyards; Bottega dei Quattro Vini and the small Piedmontese cellars in the lower town. Quieter than Barolo on a weekday.",
+  "driveTimeMin": 16,
+  "url": "https://www.comune.neive.cn.it/"
+}

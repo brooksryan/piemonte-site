@@ -1,0 +1,11 @@
+{
+  "slug": "chiesetta-di-tremlett",
+  "name": "Chiesetta di Tremlett",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: regions-pre[2].anchors[1]",
+  "type": "cultural-site",
+  "town": "Coazzolo",
+  "category": "chapel",
+  "url": "https://en.wikipedia.org/wiki/David_Tremlett",
+  "blurb": "David Tremlett's 2017 Siena-yellow-olive repaint of a 17th-century chapel"
+}

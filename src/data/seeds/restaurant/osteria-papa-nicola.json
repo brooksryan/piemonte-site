@@ -1,0 +1,12 @@
+{
+  "slug": "osteria-papa-nicola",
+  "name": "Osteria Papà Nicola",
+  "region": "city",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[1]",
+  "type": "restaurant",
+  "town": "Milan",
+  "register": "trattoria",
+  "placeId": "ChIJrf4dZLjHhkcRFTbPJETI7kM",
+  "url": "https://www.osteriapapanicola.it/",
+  "blurb": "Cotoletta milanese, rognone trifolato"
+}

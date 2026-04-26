@@ -1,0 +1,14 @@
+{
+  "slug": "palazzo-finati",
+  "name": "Palazzo Finati",
+  "region": "langhe",
+  "sourceLocator": "itineraries/data/lodging-shortlist.md:77-87",
+  "type": "lodging",
+  "base": "alba-langhe",
+  "platform": "direct",
+  "url": "https://www.palazzofinati.it",
+  "address": "Via Vernazza 8, 12051 Alba CN",
+  "placeId": "ChIJB_Ps5AWz0hIRIdMarYW3ga8",
+  "rateBand": "€180-220/night",
+  "why": "Nine-room boutique in a 19th-century palazzo, two blocks from Piazza Risorgimento and Via Vittorio Emanuele. Walkable to every Alba pick the Food expert is likely to surface (Osteria dell'Arco, La Piola, Locanda del Pilone, etc.), and walkable to the Saturday market at Piazza Marconi. Frescoed ceilings, real breakfast, parking arranged. No on-site kitchen, so technically violates the rural-kitchen rule — but Alba qualifies as \"city\" under the traveler profile (walkable to restaurants), not \"rural,\" so the kitchen rule does not bind."
+}

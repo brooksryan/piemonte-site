@@ -1,0 +1,11 @@
+{
+  "slug": "ponte-antico",
+  "name": "Ponte Antico",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[18]",
+  "type": "restaurant",
+  "town": "Noli",
+  "register": "gambero rosso",
+  "placeId": "ChIJTRwY9Ir80hIRabHAj2NORcA",
+  "blurb": "Gamberi rossi di Noli (Slow Food Presidium)"
+}

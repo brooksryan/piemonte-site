@@ -1,0 +1,11 @@
+{
+  "slug": "wimu-castello-falletti",
+  "name": "WiMu / Castello Falletti",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-langhe.blurbs[0]",
+  "type": "cultural-site",
+  "town": "Barolo",
+  "category": "museum",
+  "url": "https://www.wimubarolo.it/",
+  "blurb": "Castello Falletti and the WiMu wine museum, walkable cobble streets between four enotecas. Lunch at La Cantinetta. Buy the Cannubi at the cellar, not the gift shop."
+}

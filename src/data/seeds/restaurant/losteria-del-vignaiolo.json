@@ -1,0 +1,12 @@
+{
+  "slug": "losteria-del-vignaiolo",
+  "name": "L'Osteria del Vignaiolo",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[10]",
+  "type": "restaurant",
+  "town": "La Morra",
+  "register": "agriturismo",
+  "placeId": "ChIJIUBmqeOt0hIRkK32YACovUI",
+  "url": "https://www.osteriavignaiolo.it/",
+  "blurb": "Whatever's on the chalkboard — tajarin, brasato"
+}

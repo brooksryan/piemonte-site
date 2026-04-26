@@ -1,0 +1,11 @@
+{
+  "slug": "polpo-mario",
+  "name": "Polpo Mario",
+  "region": "sestri-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: regions-coast[0].food[0]",
+  "type": "restaurant",
+  "town": "Sestri Levante",
+  "register": "Day-4 dinner — book ahead",
+  "url": "https://www.polpomario.it/",
+  "blurb": "Grilled octopus, trofie al pesto, acciughe al verde antipasto"
+}

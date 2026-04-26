@@ -1,0 +1,12 @@
+{
+  "slug": "trattoria-trippa",
+  "name": "Trattoria Trippa",
+  "region": "city",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[2]",
+  "type": "restaurant",
+  "town": "Milan",
+  "register": "anchor — book May 20",
+  "placeId": "ChIJaa0ThCHEhkcRI1IK3ek_ePw",
+  "url": "https://www.trippamilano.it/",
+  "blurb": "Trippa alla parmigiana, vitello tonnato"
+}

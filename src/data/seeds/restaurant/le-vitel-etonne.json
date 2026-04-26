@@ -1,0 +1,12 @@
+{
+  "slug": "le-vitel-etonne",
+  "name": "Le Vitel Etonné",
+  "region": "city",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[3]",
+  "type": "restaurant",
+  "town": "Turin",
+  "register": "lunch",
+  "placeId": "ChIJw90uLmVtiEcREMufNE-6RPk",
+  "url": "https://www.leviteletonne.com/",
+  "blurb": "Vitello tonnato old way, agnolotti del plin"
+}

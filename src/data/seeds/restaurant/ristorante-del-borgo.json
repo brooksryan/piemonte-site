@@ -1,0 +1,12 @@
+{
+  "slug": "ristorante-del-borgo",
+  "name": "Ristorante del Borgo",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[17]",
+  "type": "restaurant",
+  "town": "Finalborgo",
+  "register": "Sunday pranzo",
+  "placeId": "ChIJqaRa_iX70hIR4FphsCuBBn4",
+  "url": "https://www.ristorantedelborgo.com/",
+  "blurb": "Cima alla genovese, cappon magro"
+}

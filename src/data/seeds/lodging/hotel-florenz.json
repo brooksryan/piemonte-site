@@ -1,0 +1,14 @@
+{
+  "slug": "hotel-florenz",
+  "name": "Hotel Florenz",
+  "region": "finale-arc",
+  "sourceLocator": "itineraries/data/lodging-shortlist.md:223-233",
+  "type": "lodging",
+  "base": "finale",
+  "platform": "direct",
+  "url": "https://www.florenzhotel.com",
+  "address": "Via Domenico Brunenghi 124, 17024 Finale Ligure SV",
+  "placeId": "ChIJWf3nwSH60hIRCNHyljR5YOY",
+  "rateBand": "€150-220/night",
+  "why": "Central Finalmarina, 5-min walk to the beach. Modern rather than historic. Useful as a backup if Medusa and Punta Est are full on the dates."
+}

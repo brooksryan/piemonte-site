@@ -1,0 +1,10 @@
+{
+  "slug": "la-morra",
+  "name": "La Morra",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-langhe.blurbs[1]",
+  "type": "town",
+  "blurb": "Belvedere terrace at Piazza Castello frames the wide read across the Barolo MGAs. LeWitt's multicolor chapel exterior 5 min downhill; Vignaiolo for the long lunch.",
+  "driveTimeMin": 22,
+  "url": "https://www.comune.lamorra.cn.it/"
+}

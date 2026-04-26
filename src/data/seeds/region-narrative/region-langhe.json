@@ -1,0 +1,30 @@
+{
+  "slug": "region-langhe",
+  "name": "Langhe",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: regions-pre[2]",
+  "type": "region-narrative",
+  "body": "Three nights at Palazzo Finati on Via Vernazza — a nine-room palazzo a five-minute walk from Piazza Risorgimento. The Langhe block opens with Tuesday's morning market in Piazza Marconi (a substitute for the Saturday Alba market, which falls inside the Liguria block this trip), grissini stirati from Panetteria Giacosa, carne cruda di Fassona from Macelleria Guido. Wednesday is the Turin day-trip; Thursday is the slow Langhe day.\n\nThursday May 28 is the load-bearing Langhe day. The Coazzolo chapel — David Tremlett's 2017 Siena-yellow-olive repaint of the 17th-century Beata Maria Vergine del Carmine — opens the morning, the long agriturismo lunch at L'Osteria del Vignaiolo in La Morra carries the middle, and the Vajra cellar visit (Dolcetto → Langhe Nebbiolo → Barbera → Barolo Albe → Barolo Bricco delle Viole) lands in the early afternoon. The day closes with Castello di Grinzane Cavour — Cavour's apartments, the Risorgimento collection, the panoramic terrace — moved here from the Tuesday slot the v3 draft assumed, because Grinzane is closed Tuesdays year-round per the official tickets page.\n\nDinner Thursday is bollito misto from the cart at Trattoria della Posta in Monforte d'Alba — seven cuts, seven sauces, the bagnèt verd and the bagnèt ross the headline. Two and a half hours.",
+  "anchors": [
+    {
+      "name": "Tuesday Alba market",
+      "blurb": "Piazza Marconi, 12:00 walk-in; grissini stirati at Panetteria Giacosa",
+      "url": "https://www.langheroero.it/en/"
+    },
+    {
+      "name": "Chiesetta di Tremlett (Coazzolo)",
+      "blurb": "David Tremlett's 2017 Siena-yellow-olive repaint of a 17th-century chapel",
+      "url": "https://en.wikipedia.org/wiki/David_Tremlett"
+    },
+    {
+      "name": "Castello di Grinzane Cavour",
+      "blurb": "Cavour's apartments, Enoteca Regionale Piemontese, Langhe Museum; closed Tuesdays",
+      "url": "https://www.castellogrinzane.com/en/"
+    },
+    {
+      "name": "La Morra Belvedere + Cappella del Barolo exterior",
+      "blurb": "Day-2 afternoon drive-by; Cappella interior closed for renovation through autumn 2026",
+      "url": "https://ceretto.com/en/the-chapel-of-barolo"
+    }
+  ]
+}

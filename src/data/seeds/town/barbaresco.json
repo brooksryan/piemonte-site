@@ -1,0 +1,10 @@
+{
+  "slug": "barbaresco",
+  "name": "Barbaresco",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-langhe.blurbs[5]",
+  "type": "town",
+  "blurb": "Smaller, lighter sister to Barolo across the Tanaro. Enoteca Regionale del Barbaresco in the deconsecrated 1100s church; Antinè for the Michelin one-star midweek tasting.",
+  "driveTimeMin": 16,
+  "url": "https://www.comune.barbaresco.cn.it/"
+}

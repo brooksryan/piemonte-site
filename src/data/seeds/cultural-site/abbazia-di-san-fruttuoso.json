@@ -1,0 +1,11 @@
+{
+  "slug": "abbazia-di-san-fruttuoso",
+  "name": "Abbazia di San Fruttuoso",
+  "region": "sestri-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: regions-coast[0].anchors[2]",
+  "type": "cultural-site",
+  "town": "Camogli",
+  "category": "abbey",
+  "url": "https://fondoambiente.it/luoghi/abbazia-di-san-fruttuoso",
+  "blurb": "13th-century abbey reachable only by sea or footpath; FAI-run, 30-min ferry from Camogli"
+}

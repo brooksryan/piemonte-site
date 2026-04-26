@@ -1,0 +1,30 @@
+{
+  "slug": "region-sestri-levante",
+  "name": "Sestri Levante",
+  "region": "sestri-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: regions-coast[0]",
+  "type": "region-narrative",
+  "body": "Sestri Levante's geography does the structural work — a narrow isthmus with two bays, the Baia del Silenzio facing east into the Andersen-fable register and the Baia delle Favole facing west toward the wider sand strip. Five nights at Hotel Helvetia put both bays inside a five-minute walk; the old town's pesto trattorie and pasticcerie sit on the same isthmus, which means the daily-life loop runs entirely on foot. The transit in from Alba routes through Recco for the IGP-protected focaccia at Manuelina, a 15-min detour off the A12 that costs nothing in beach time.\n\nThe active half-day is Punta Manara — three miles round trip, ~700 ft elevation, the Saracen watchtower at the top. The trip's strongest single Liguria-cultural pick lands on Monday Jun 1: the Camogli ferry to the Abbazia di San Fruttuoso, a 30-minute boat into a cove only reachable by sea or footpath. Lunch at the abbey, the Cristo degli Abissi viewing if the freedive map is at the dock, frittura marina from a paper cone on the Camogli quay on the way back. The lazy Sunday lunch runs inland to Lavagna at Agriturismo Olivenere — coniglio alla ligure, torta pasqualina, the estate's olive oil.",
+  "anchors": [
+    {
+      "name": "Baia del Silenzio",
+      "blurb": "The smaller, quieter bay on the isthmus's east face — the Andersen register",
+      "url": "https://www.comune.sestri-levante.ge.it/"
+    },
+    {
+      "name": "Sentiero per Punta Manara",
+      "blurb": "3 miles round-trip, Saracen watchtower; trailhead at Vico del Bottone",
+      "url": "https://www.alltrails.com/trail/italy/liguria--3/sestri-levante-punta-manara"
+    },
+    {
+      "name": "Abbazia di San Fruttuoso",
+      "blurb": "13th-century abbey reachable only by sea or footpath; FAI-run, 30-min ferry from Camogli",
+      "url": "https://fondoambiente.it/luoghi/abbazia-di-san-fruttuoso"
+    },
+    {
+      "name": "Basilica di Santa Maria Assunta, Camogli",
+      "blurb": "Pastel-fishing-village register; the anti-Portofino harbor walk",
+      "url": "https://www.santamariaassuntacamogli.org/"
+    }
+  ]
+}

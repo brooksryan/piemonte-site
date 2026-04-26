@@ -1,0 +1,12 @@
+{
+  "slug": "trattoria-della-posta",
+  "name": "Trattoria della Posta",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[12]",
+  "type": "restaurant",
+  "town": "Monforte d'Alba",
+  "register": "bollito misto",
+  "placeId": "ChIJRRQMHHew0hIR64ZsTygD9LI",
+  "url": "https://www.trattoriadellaposta.it/",
+  "blurb": "Bollito misto from the cart, seven sauces"
+}

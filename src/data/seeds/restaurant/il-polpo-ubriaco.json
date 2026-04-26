@@ -1,0 +1,11 @@
+{
+  "slug": "il-polpo-ubriaco",
+  "name": "Il Polpo Ubriaco",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[16]",
+  "type": "restaurant",
+  "town": "Varigotti",
+  "register": "seafood",
+  "placeId": "ChIJ-SkCyQf70hIRZsvm1CGmH5w",
+  "blurb": "Polpo ubriaco, linguine alle vongole"
+}

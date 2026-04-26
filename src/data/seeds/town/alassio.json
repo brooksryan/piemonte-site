@@ -1,0 +1,10 @@
+{
+  "slug": "alassio",
+  "name": "Alassio",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-finale.blurbs[6]",
+  "type": "town",
+  "blurb": "The British Riviera in miniature — Hemingway and Edward Lear both wintered here. Muretto signed by celebrities on Via Dante; the Budello, a 1.5-km medieval pedestrian spine running the length of the old town. Crowded in July; manageable in early June.",
+  "driveTimeMin": 35,
+  "url": "https://www.comune.alassio.sv.it/"
+}

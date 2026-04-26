@@ -1,0 +1,11 @@
+{
+  "slug": "sentiero-del-pellegrino",
+  "name": "Sentiero del Pellegrino",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: regions-coast[1].anchors[2]",
+  "type": "cultural-site",
+  "town": "Varigotti",
+  "category": "trail",
+  "url": "https://www.alltrails.com/trail/italy/liguria--3/varigotti-noli-via-sentiero-del-pellegrino",
+  "blurb": "3.6 mi linear cliff walk Varigotti → Noli; smugglers' caves + Church of San Lorenzo"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "utility-langhe-towns",
+  "name": "Langhe Towns Map",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: v4.utility-langhe.svg-path",
+  "type": "map",
+  "svgPath": "/folios/shared/assets/maps/utility-langhe-towns.svg",
+  "kind": "utility-langhe",
+  "blurbs": [
+    {
+      "index": 0,
+      "title": "Barolo",
+      "body": "Castello Falletti and the WiMu wine museum, walkable cobble streets between four enotecas. Lunch at La Cantinetta. Buy the Cannubi at the cellar, not the gift shop."
+    },
+    {
+      "index": 1,
+      "title": "La Morra",
+      "body": "Belvedere terrace at Piazza Castello frames the wide read across the Barolo MGAs. LeWitt's multicolor chapel exterior 5 min downhill; Vignaiolo for the long lunch."
+    },
+    {
+      "index": 2,
+      "title": "Monforte d'Alba",
+      "body": "Hilltop village south of Barolo, the post-cellar dinner pick — bollito misto cart, seven cuts and seven sauces at Della Posta in the Sant'Anna hamlet. Two hours, slow."
+    },
+    {
+      "index": 3,
+      "title": "Castiglione Falletto",
+      "body": "Stone hilltop fortress at the geographic center of the eleven Barolo communes; the vineyard view from the castle ramparts is the cleanest geography lesson in the Langhe."
+    },
+    {
+      "index": 4,
+      "title": "Serralunga d'Alba",
+      "body": "The most architecturally intact Langhe castle — narrow towers, original keep, FAI-run with timed tours. Furthest from Alba on this list; pair with a Cigliuti or Vigna Rionda cellar visit to make the drive earn its keep."
+    },
+    {
+      "index": 5,
+      "title": "Barbaresco",
+      "body": "Smaller, lighter sister to Barolo across the Tanaro. Enoteca Regionale del Barbaresco in the deconsecrated 1100s church; Antinè for the Michelin one-star midweek tasting."
+    },
+    {
+      "index": 6,
+      "title": "Treiso",
+      "body": "Nearest of the three Barbaresco communes to Alba. Pajè-cru vineyard ridge, Rivetto and Pelissero cellars, lunch at La Ciau del Tornavento for the Michelin-and-view register without the Castiglione drive."
+    },
+    {
+      "index": 7,
+      "title": "Neive",
+      "body": "Medieval upper village ringed by Barbaresco vineyards; Bottega dei Quattro Vini and the small Piedmontese cellars in the lower town. Quieter than Barolo on a weekday."
+    },
+    {
+      "index": 8,
+      "title": "Diano d'Alba",
+      "body": "The Dolcetto-first hilltop on the south rim of Alba. Sörì-system vineyard signage, panoramic terrace with the Maritime Alps on a clear day, weekday osteria lunches at La Briccola for under €40 per cover."
+    },
+    {
+      "index": 9,
+      "title": "Grinzane Cavour",
+      "body": "11th-century castle holding Cavour's apartments and the Enoteca Regionale Piemontese. Closed Tuesdays year-round per the official tickets page; v3 anchors it on Day 4 Thursday morning before the Liguria transit."
+    }
+  ]
+}

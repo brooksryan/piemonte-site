@@ -1,0 +1,14 @@
+{
+  "slug": "casa-scaparone",
+  "name": "Casa Scaparone",
+  "region": "langhe",
+  "sourceLocator": "itineraries/data/lodging-shortlist.md:123-133",
+  "type": "lodging",
+  "base": "alba-langhe",
+  "platform": "direct",
+  "url": "https://www.casascaparone.it",
+  "address": "Strada Scaparoni 45, 12051 Alba CN",
+  "placeId": "ChIJm93Ftc-y0hIReDaFsqUEhg0",
+  "rateBand": "€140-180/night",
+  "why": "Working agriturismo with restaurant, organic garden, vineyard view. Three apartments with kitchens. Six minutes' drive from Alba center. Honors the kitchen requirement and the Angela-loves-agriturismo preference, while staying close enough to Alba to walk into market on Saturday after a 7-min drive + park."
+}

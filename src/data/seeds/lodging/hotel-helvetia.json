@@ -1,0 +1,14 @@
+{
+  "slug": "hotel-helvetia",
+  "name": "Hotel Helvetia",
+  "region": "sestri-arc",
+  "sourceLocator": "itineraries/data/lodging-shortlist.md:146-155",
+  "type": "lodging",
+  "base": "sestri",
+  "platform": "direct",
+  "url": "https://www.hotelhelvetia.it",
+  "address": "Via Cappuccini 43, 16039 Sestri Levante GE",
+  "placeId": "ChIJ_3NmgA6X1BIRENl-zBP6mjA",
+  "rateBand": "€260-340/night",
+  "why": "Twenty-one rooms, two-minute walk down the steps to the Bay of Silence, family-run since 1928. Garden, sea views, no resort apparatus. The kind of place a Ligurian family takes its grandparents. Walkable to the entire Sestri restaurant strip on the isthmus."
+}

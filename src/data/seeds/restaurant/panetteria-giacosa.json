@@ -1,0 +1,11 @@
+{
+  "slug": "panetteria-giacosa",
+  "name": "Panetteria Giacosa",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[7]",
+  "type": "restaurant",
+  "town": "Alba",
+  "register": "bakery",
+  "placeId": "ChIJ-1COP3Cz0hIRMzxqndTCccY",
+  "blurb": "Grissini stirati for the Day-4 drive"
+}

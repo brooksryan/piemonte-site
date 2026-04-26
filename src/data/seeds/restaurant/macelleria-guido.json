@@ -1,0 +1,12 @@
+{
+  "slug": "macelleria-guido",
+  "name": "Macelleria Guido",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[6]",
+  "type": "restaurant",
+  "town": "Alba",
+  "register": "carne cruda",
+  "placeId": "ChIJ1RwnH0Oz0hIRX_AkWaZRfrI",
+  "url": "https://www.macelleriaguido.it/",
+  "blurb": "Knife-chopped Fassona to order"
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "hotel-punta-est",
+  "name": "Hotel Punta Est",
+  "region": "finale-arc",
+  "sourceLocator": "itineraries/data/lodging-shortlist.md:213-222",
+  "type": "lodging",
+  "base": "finale",
+  "platform": "direct",
+  "url": "https://www.puntaest.com",
+  "address": "Via Aurelia 1, 17024 Finale Ligure SV",
+  "placeId": "ChIJV581stz70hIRrYTZf2xlCFM",
+  "rateBand": "€230-320/night",
+  "why": "18th-century villa with sea-view garden, on the headland between Finalmarina and Varigotti. The \"really nice with character\" pick. Pool in a stone garden, not a resort pool. Walking down to a swimmable beach is 8-10 min and uphill back; if Angela has any knee opinion this is a tradeoff. Take this over Medusa if Brooks wants a property with quiet-villa register."
+}

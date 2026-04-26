@@ -1,0 +1,12 @@
+{
+  "slug": "bottega-manera",
+  "name": "Bottega Manera",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[8]",
+  "type": "restaurant",
+  "town": "Alba",
+  "register": "cheese + salume",
+  "placeId": "ChIJawfwn2-z0hIRkWQRrGzkGdo",
+  "url": "https://www.bottegamanera.it/",
+  "blurb": "Castelmagno DOP, Robiola di Roccaverano"
+}

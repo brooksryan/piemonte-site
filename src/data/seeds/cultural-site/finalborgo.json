@@ -1,0 +1,11 @@
+{
+  "slug": "finalborgo",
+  "name": "Finalborgo medieval village",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: regions-coast[1].anchors[3]",
+  "type": "cultural-site",
+  "town": "Finalborgo",
+  "category": "medieval-village",
+  "url": "https://www.visitfinaleligure.it/finalborgo/",
+  "blurb": "Church of San Biagio, Chiostri di Santa Caterina, Forte San Giovanni climb"
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "grinzane-cavour",
+  "name": "Grinzane Cavour",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-langhe.blurbs[9]",
+  "type": "town",
+  "blurb": "11th-century castle holding Cavour's apartments and the Enoteca Regionale Piemontese. Closed Tuesdays year-round per the official tickets page; v3 anchors it on Day 4 Thursday morning before the Liguria transit.",
+  "driveTimeMin": 16,
+  "url": "https://www.castellogrinzane.com/en/"
+}

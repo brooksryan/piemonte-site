@@ -1,0 +1,14 @@
+{
+  "slug": "senato-hotel-milano",
+  "name": "Senato Hotel Milano",
+  "region": "city",
+  "sourceLocator": "itineraries/data/lodging-shortlist-v3-milan.md:53-66",
+  "type": "lodging",
+  "base": "milan",
+  "platform": "direct",
+  "url": "https://www.senatohotelmilano.it/en",
+  "address": "Via Senato 22, 20121 Milano MI",
+  "placeId": "ChIJ_QIctFjGhkcRRb3Ub2oXPDc",
+  "rateBand": "€380-520/night",
+  "why": "Forty-three-room boutique 4-star inside an early-1900s building with an internal stone courtyard. Rooftop terrace, lounge bar, no resort overlay. Closest of these picks to the Quadrilatero's western edge — Via Sant'Andrea is ~5 min on foot. Reads as the \"splurge with a quiet courtyard\" pick if Brooks wants a hotel register more substantial than Antica Locanda."
+}

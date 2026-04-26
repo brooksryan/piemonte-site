@@ -1,0 +1,11 @@
+{
+  "slug": "punta-crena",
+  "name": "Punta Crena",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-finale.blurbs[4]",
+  "type": "winery",
+  "town": "Varigotti",
+  "visitPolicy": "by appt",
+  "url": "https://www.puntacrena.it/",
+  "blurb": "The Ruffino family's Vigneti Punta Crena clings to the cliff above the cove between Varigotti and Noli — terraced Pigato and Lumassina, a tasting room booked direct. Book ahead; the cellar door is a working farm, not a visitor centre."
+}

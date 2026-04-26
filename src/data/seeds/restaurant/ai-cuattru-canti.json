@@ -1,0 +1,12 @@
+{
+  "slug": "ai-cuattru-canti",
+  "name": "Ai Cuattru Canti",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: atlas.entries[15]",
+  "type": "restaurant",
+  "town": "Finalborgo",
+  "register": "trattoria",
+  "placeId": "ChIJlS8PMRn60hIRNLMpTTH6uhg",
+  "url": "https://www.aicuattrucanti.com/",
+  "blurb": "Trofie al pesto, coniglio alla ligure"
+}

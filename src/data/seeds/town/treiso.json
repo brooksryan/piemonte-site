@@ -1,0 +1,10 @@
+{
+  "slug": "treiso",
+  "name": "Treiso",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-langhe.blurbs[6]",
+  "type": "town",
+  "blurb": "Nearest of the three Barbaresco communes to Alba. Pajè-cru vineyard ridge, Rivetto and Pelissero cellars, lunch at La Ciau del Tornavento for the Michelin-and-view register without the Castiglione drive.",
+  "driveTimeMin": 13,
+  "url": "https://www.comune.treiso.cn.it/"
+}

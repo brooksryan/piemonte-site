@@ -1,0 +1,14 @@
+{
+  "slug": "hotel-miramare-and-spa",
+  "name": "Hotel Miramare and Spa",
+  "region": "sestri-arc",
+  "sourceLocator": "itineraries/data/lodging-shortlist.md:168-177",
+  "type": "lodging",
+  "base": "sestri",
+  "platform": "direct",
+  "url": "https://www.miramaresestrilevante.com",
+  "address": "Via V. Cappellini 9, 16039 Sestri Levante GE",
+  "placeId": "ChIJqfjiSAyX1BIRxnBC5ve9qew",
+  "rateBand": "€300-420/night",
+  "why": "Directly on the Bay of Silence — front rooms open to the bay. A bit more \"spa-and-restaurant\" than Helvetia, fewer family-pension cues. Take this over Helvetia only if direct sand access from the elevator is the deciding factor."
+}

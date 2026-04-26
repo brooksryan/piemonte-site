@@ -1,0 +1,11 @@
+{
+  "slug": "agriturismo-olivenere-lavagna",
+  "name": "Agriturismo Olivenere, Lavagna",
+  "region": "sestri-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: regions-coast[0].food[4]",
+  "type": "restaurant",
+  "town": "Lavagna",
+  "register": "Day-7 long Sunday lunch",
+  "url": "https://www.agriturismolivenere.it/",
+  "blurb": "Coniglio alla ligure, torta pasqualina, the estate's own olive oil"
+}

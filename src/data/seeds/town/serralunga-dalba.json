@@ -1,0 +1,10 @@
+{
+  "slug": "serralunga-dalba",
+  "name": "Serralunga d'Alba",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-langhe.blurbs[4]",
+  "type": "town",
+  "blurb": "The most architecturally intact Langhe castle — narrow towers, original keep, FAI-run with timed tours. Furthest from Alba on this list; pair with a Cigliuti or Vigna Rionda cellar visit to make the drive earn its keep.",
+  "driveTimeMin": 42,
+  "url": "https://fondoambiente.it/luoghi/castello-di-serralunga-d-alba"
+}

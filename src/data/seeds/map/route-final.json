@@ -1,0 +1,10 @@
+{
+  "slug": "route-final",
+  "name": "Route Map Final",
+  "region": "other",
+  "sourceLocator": "folios/shared/assets/maps/route-final.svg :: final.map",
+  "type": "map",
+  "svgPath": "/folios/shared/assets/maps/route-final.svg",
+  "kind": "route",
+  "blurbs": []
+}

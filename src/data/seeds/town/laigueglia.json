@@ -1,0 +1,10 @@
+{
+  "slug": "laigueglia",
+  "name": "Laigueglia",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-finale.blurbs[7]",
+  "type": "town",
+  "blurb": "Five minutes south of Alassio and almost no day-tripper traffic. Pastel old town, calmer beach, 1500s parish church. The walk-up trattoria register at Baia del Sole for a focaccia-and-fritto-misto lunch under €30 per cover.",
+  "driveTimeMin": 40,
+  "url": "https://www.comune.laigueglia.sv.it/"
+}

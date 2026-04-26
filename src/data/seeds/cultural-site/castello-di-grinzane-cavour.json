@@ -1,0 +1,11 @@
+{
+  "slug": "castello-di-grinzane-cavour",
+  "name": "Castello di Grinzane Cavour",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: regions-pre[2].anchors[2]",
+  "type": "cultural-site",
+  "town": "Grinzane Cavour",
+  "category": "castle",
+  "url": "https://www.castellogrinzane.com/en/",
+  "blurb": "Cavour's apartments, Enoteca Regionale Piemontese, Langhe Museum; closed Tuesdays"
+}

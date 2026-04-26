@@ -1,0 +1,14 @@
+{
+  "slug": "le-case-della-saracca",
+  "name": "Le Case della Saracca",
+  "region": "langhe",
+  "sourceLocator": "itineraries/data/lodging-shortlist.md:112-122",
+  "type": "lodging",
+  "base": "alba-langhe",
+  "platform": "direct",
+  "url": "https://www.saracca.com",
+  "address": "Via Cavour 3/5, 12065 Monforte d'Alba CN",
+  "placeId": "ChIJb-0kaBqw0hIRbTcKpHFd3ac",
+  "rateBand": "€180-260/night",
+  "why": "Cave-cut rooms inside the medieval village, walkable to the village's two-restaurant strip. Kitchen is not in-room, but the property has a real downstairs enoteca and the Food expert's Monforte picks are walkable. Drive to Alba is 26 min for the Saturday market."
+}

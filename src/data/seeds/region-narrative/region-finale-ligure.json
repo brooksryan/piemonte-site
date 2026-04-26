@@ -1,0 +1,30 @@
+{
+  "slug": "region-finale-ligure",
+  "name": "Finale Ligure",
+  "region": "finale-arc",
+  "sourceLocator": "folios/options/v4/folio.data.json :: regions-coast[1]",
+  "type": "region-narrative",
+  "body": "Five nights at Hotel Medusa in Finalmarina, two blocks from the lungomare. The Ponente coast is the Liguria the brief asks for — quieter than Sestri-side, the focaccia heavier-oil and denser-crumb than the Genovese version, the beach at Varigotti's Baia dei Saraceni doing the Gallipoli-water work. Day 5 (Fri May 29) drops in with focaccia at Da Ü Cicci and a first swim at Finalmarina; dinner is trofie al pesto and coniglio alla ligure at Ai Cuattru Canti in Finalborgo.\n\nSaturday May 30 is the strongest single odd-history pick of the trip. Grotte di Toirano, 25 minutes south, runs the 70-minute guided tour past the Print Corridor (12,000-year-old human hand and knee prints in the Grotta della Basura) and the Bear Cemetery (30,000-year-old Ursus Spelaeus skeletons). The cave holds at a constant 16°C; pack a layer. English tour booked by phone from Alba on Tuesday May 26 morning. The afternoon swings to Varigotti for the long swim window and polpo ubriaco at Il Polpo Ubriaco for dinner.\n\nSunday is the lazy day Brooks's brief insists on — Italian *pranzo della domenica* register at Ristorante del Borgo in Finalborgo, cima alla genovese (cold stuffed veal pocket, nearly extinct outside Liguria) for the regional-oddity slot. Monday Jun 1 is the cliff walk: Sentiero del Pellegrino from Varigotti to Noli, 3.6 miles linear, ~925ft, smugglers' caves and the Church of San Lorenzo on the way, gambero rosso di Noli at Ponte Antico for lunch. Tuesday Jun 2 closes with Finalborgo's medieval village and — if Brooks opts in — the Vescovado Noli tasting menu on the headland.",
+  "anchors": [
+    {
+      "name": "Grotte di Toirano",
+      "blurb": "70-min tour; Print Corridor + Bear Cemetery; English slot 10:00 — confirm by phone Tue May 26",
+      "url": "https://grotteturistiche.it/en/toiranos-cave/"
+    },
+    {
+      "name": "Baia dei Saraceni / Varigotti",
+      "blurb": "Pastel cliff houses, dark sand; the Gallipoli analog from Angela's profile",
+      "url": "https://www.varigotti.com/"
+    },
+    {
+      "name": "Sentiero del Pellegrino",
+      "blurb": "3.6 mi linear cliff walk Varigotti → Noli; smugglers' caves + Church of San Lorenzo",
+      "url": "https://www.alltrails.com/trail/italy/liguria--3/varigotti-noli-via-sentiero-del-pellegrino"
+    },
+    {
+      "name": "Finalborgo medieval village",
+      "blurb": "Church of San Biagio, Chiostri di Santa Caterina, Forte San Giovanni climb",
+      "url": "https://www.visitfinaleligure.it/finalborgo/"
+    }
+  ]
+}

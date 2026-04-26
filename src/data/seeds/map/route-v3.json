@@ -1,0 +1,10 @@
+{
+  "slug": "route-v3",
+  "name": "Route Map v3",
+  "region": "other",
+  "sourceLocator": "folios/options/v4/folio.data.json :: v4.map",
+  "type": "map",
+  "svgPath": "/folios/shared/assets/maps/route-v3.svg",
+  "kind": "route",
+  "blurbs": []
+}

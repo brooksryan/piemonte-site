@@ -1,0 +1,30 @@
+{
+  "slug": "region-milan",
+  "name": "Milan",
+  "region": "city",
+  "sourceLocator": "folios/options/v4/folio.data.json :: regions-pre[0]",
+  "type": "region-narrative",
+  "body": "Milan in v3 is no longer the arrival decompression — Day 1 drives MXP straight to Alba. Instead Milan does the trip's farewell work as a continuous two-night Brera stay. The Tue Jun 2 afternoon arrival from Liguria drops bags at Antica Locanda Solferino on Via Castelfidardo, an eleven-room family-run pension operating since 1926, four minutes' walk from the Pinacoteca di Brera. The early evening unfolds at full energy: Camparino in Galleria for a Campari Soda from the 1932 column tap, a Quadrilatero pass-through, then the 15-minute taxi to Diego Rossi's Trattoria Trippa in Porta Romana — trippa alla parmigiana, vitello tonnato, the offal-forward kitchen the brief asks for.\n\nWednesday Jun 3 is the full Milan day. Quadrilatero d'Oro window-and-shop loop in the morning, lunch at Ratanà or a quieter Brera trattoria, the Pinacoteca Ambrosiana for the Caravaggio-and-Codex-Atlanticus afternoon, then a slow walking loop through Brera's antique streets before dinner. Brooks picks the dinner register based on Tuesday's Trippa intensity — quiet Brera trattoria, Navigli osteria, or Cracco at the Galleria for the anniversary anchor if that is the night Brooks reserves for it.",
+  "anchors": [
+    {
+      "name": "Camparino in Galleria",
+      "blurb": "1915 bar in the Galleria, original Campari column tap from 1932",
+      "url": "https://www.camparino.com/"
+    },
+    {
+      "name": "Galleria Vittorio Emanuele II",
+      "blurb": "Mengoni's 1877 iron-and-glass arcade, the crossroads between Duomo and La Scala",
+      "url": "https://www.ingalleria.com/"
+    },
+    {
+      "name": "Quadrilatero d'Oro",
+      "blurb": "Via Monte Napoleone / Via della Spiga / Via Sant'Andrea — the window-walk register, not the shopping list",
+      "url": "https://www.yesmilano.it/en/see-do/shopping/quadrilatero-della-moda"
+    },
+    {
+      "name": "Brera district",
+      "blurb": "Sant'Ambrogio-era streets converted into the post-war artists' quarter; the right walking texture for a 20:00 dinner approach",
+      "url": "https://www.yesmilano.it/en/see-do/districts/brera"
+    }
+  ]
+}

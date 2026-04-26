@@ -1,0 +1,14 @@
+{
+  "slug": "hotel-vis-a-vis",
+  "name": "Hotel Vis a Vis",
+  "region": "sestri-arc",
+  "sourceLocator": "itineraries/data/lodging-shortlist.md:157-167",
+  "type": "lodging",
+  "base": "sestri",
+  "platform": "direct",
+  "url": "https://www.hotelvisavis.com",
+  "address": "Via della Chiusa 28, 16039 Sestri Levante GE",
+  "placeId": "ChIJ5wGJwg6X1BIRzgY0aL5Hak0",
+  "rateBand": "€280-380/night",
+  "why": "Set above the town with a panoramic terrace, connected to the historic center by a private elevator that drops you in town. Pool. The \"really nice with a view\" pick for Angela's slow-roof-with-a-view register. Larger than Helvetia and edges into resort territory; I would still call it inside the boundary because it lacks a casino-bar-conference apparatus."
+}

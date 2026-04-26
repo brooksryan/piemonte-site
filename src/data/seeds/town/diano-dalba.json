@@ -1,0 +1,10 @@
+{
+  "slug": "diano-dalba",
+  "name": "Diano d'Alba",
+  "region": "langhe",
+  "sourceLocator": "folios/options/v4/folio.data.json :: utility-langhe.blurbs[8]",
+  "type": "town",
+  "blurb": "The Dolcetto-first hilltop on the south rim of Alba. Sörì-system vineyard signage, panoramic terrace with the Maritime Alps on a clear day, weekday osteria lunches at La Briccola for under €40 per cover.",
+  "driveTimeMin": 17,
+  "url": "https://www.comune.dianodalba.cn.it/"
+}
