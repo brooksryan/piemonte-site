@@ -1,0 +1,14 @@
+{
+  "slug": "san-fruttuoso",
+  "name": "San Fruttuoso",
+  "region": "sestri-arc",
+  "sourceLocator": "site-beach-research.md",
+  "type": "beach",
+  "town": "Camogli",
+  "character": "boat-only abbey cove",
+  "driveTimeMin": 0,
+  "mapPin": { "lat": 44.3163, "lon": 9.1753 },
+  "imageUrl": "https://commons.wikimedia.org/wiki/File:La_spiaggia_di_San_Fruttuoso.jpg",
+  "imageCredit": "Lucianoro1, CC BY-SA 4.0, Wikimedia Commons",
+  "blurb": "Ferry-only from Camogli pier (Line 1, ~25 min): there is no road to San Fruttuoso, so driveTimeMin is 0 by convention. The Doria-dynasty Benedictine abbey above the cove costs 7-9 EUR to enter, and the Christ of the Abysses bronze is 15 m below for snorkelers. Morning ferry, abbey, swim, cove bar-restaurant lunch, and afternoon ferry back is the complete day."
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "laigueglia",
+  "name": "Laigueglia",
+  "region": "finale-arc",
+  "sourceLocator": "site-beach-research.md",
+  "type": "beach",
+  "town": "Laigueglia",
+  "character": "golden sand, Saracen tower above",
+  "driveTimeMin": 38,
+  "mapPin": { "lat": 43.9746, "lon": 8.1582 },
+  "imageUrl": "https://commons.wikimedia.org/wiki/File:Laigueglia_-_vista_dal_pontile.JPG",
+  "imageCredit": "Monica Rondoni, CC BY-SA 4.0, Wikimedia Commons",
+  "blurb": "Alassio with the resort overlay stripped back by roughly thirty years: a 1 km golden sand arc, public areas alongside lidos, and quieter streets. The Saracen tower above the village is worth a morning walk before the beach. Parking is manageable in late May near Via Andrea Doria."
+}

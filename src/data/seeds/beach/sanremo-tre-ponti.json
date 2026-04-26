@@ -1,0 +1,12 @@
+{
+  "slug": "sanremo-tre-ponti",
+  "name": "Sanremo — Spiaggia Tre Ponti",
+  "region": "finale-arc",
+  "sourceLocator": "site-beach-research.md",
+  "type": "beach",
+  "town": "Sanremo",
+  "character": "mixed sand and pebble, largest free Sanremo beach",
+  "driveTimeMin": 55,
+  "mapPin": { "lat": 43.802, "lon": 7.749 },
+  "blurb": "Largest free beach in Sanremo with showers and boat rental, but the city-day register beats a pure beach day here: casino, Art Nouveau architecture, and the Russian Orthodox church are the actual draw. Car parking is hostile; Corso Trento Trieste trattorias are 15 minutes on foot from the beach."
+}

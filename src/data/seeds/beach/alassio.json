@@ -1,0 +1,14 @@
+{
+  "slug": "alassio",
+  "name": "Alassio",
+  "region": "finale-arc",
+  "sourceLocator": "site-beach-research.md",
+  "type": "beach",
+  "town": "Alassio",
+  "character": "Belle Epoque resort beach",
+  "driveTimeMin": 31,
+  "mapPin": { "lat": 44.000, "lon": 8.168 },
+  "imageUrl": "https://commons.wikimedia.org/wiki/File:Spiaggia_di_Alassio.JPG",
+  "imageCredit": "Franco (97928958@N00), CC BY-SA 2.0, Wikimedia Commons",
+  "blurb": "The longest and most unambiguously sandy beach in western Liguria, with fine quartz sand running alongside lidos and a narrow spiagge libere strip. The Belle Epoque resort overlay is still readable in the architecture, and the Budello pedestrian lane gives a second register for a long slow lunch. Ristorante Sail Inn is the anchor inside the Budello."
+}

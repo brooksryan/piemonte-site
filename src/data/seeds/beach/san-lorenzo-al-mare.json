@@ -1,0 +1,12 @@
+{
+  "slug": "san-lorenzo-al-mare",
+  "name": "San Lorenzo al Mare",
+  "region": "finale-arc",
+  "sourceLocator": "site-beach-research.md",
+  "type": "beach",
+  "town": "San Lorenzo al Mare",
+  "character": "sand with pista ciclabile to Sanremo",
+  "driveTimeMin": 60,
+  "mapPin": { "lat": 43.8536, "lon": 7.9639 },
+  "blurb": "A 300 m sand beach with free and lido sections alternating, but the bike path connecting to Ospedaletti and Sanremo is the actual draw. If the goal is cycling the riviera coast rather than a pure beach day, San Lorenzo is the right base. Diano Marina is a more efficient pure beach day from Finale at a similar drive time."
+}

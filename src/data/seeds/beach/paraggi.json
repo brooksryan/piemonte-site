@@ -1,0 +1,12 @@
+{
+  "slug": "paraggi",
+  "name": "Paraggi — Baia di Paraggi",
+  "region": "sestri-arc",
+  "sourceLocator": "site-beach-research.md",
+  "type": "beach",
+  "town": "Santa Margherita Ligure",
+  "character": "only sandy beach near Portofino",
+  "driveTimeMin": 85,
+  "mapPin": { "lat": 44.3111, "lon": 9.2089 },
+  "blurb": "The only sandy beach inside the Portofino Natural Park, with exceptional water clarity and a narrow free section alongside predominantly private clubs. Private lot parking runs 40 EUR for five hours; the bus from Rapallo is the recommended approach. Because access requires planning, this is not an impulse stop."
+}

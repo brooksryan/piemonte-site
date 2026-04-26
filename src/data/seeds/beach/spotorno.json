@@ -2,10 +2,13 @@
   "slug": "spotorno",
   "name": "Spotorno",
   "region": "finale-arc",
-  "sourceLocator": "folios/options/v4/folio.data.json :: utility-finale.blurbs[2]",
+  "sourceLocator": "site-beach-research.md",
   "type": "beach",
   "town": "Spotorno",
-  "character": "wide family-friendly beach",
+  "character": "fine sand 1.7 km",
   "driveTimeMin": 18,
-  "blurb": "Long sand strip between Noli and Bergeggi, tamer surf than Varigotti. The lungomare runs flat for a 2-km walk; D.H. Lawrence wintered here in 1925-26."
+  "mapPin": { "lat": 44.2264, "lon": 8.4165 },
+  "imageUrl": "https://commons.wikimedia.org/wiki/File:17028_Spotorno,_Province_of_Savona,_Italy_-_panoramio_(1).jpg",
+  "imageCredit": "marek7400, CC BY 3.0, Wikimedia Commons",
+  "blurb": "The Il Miglio Verde free stretch with lifeguard coverage makes this the flattest and most plainly comfortable beach in the Finale arc. Multiple lidos run alongside the free zone; pair it with Noli for a half-day double. D.H. Lawrence wintered in the town in 1925-26."
 }

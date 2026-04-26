@@ -64,6 +64,7 @@ export const BeachSchema = z.object({
   town: z.string(),
   character: z.string(),
   driveTimeMin: z.number().optional(),
+  mapPin: z.object({ lat: z.number(), lon: z.number() }).optional(),
   placeId: z.string().optional(),
   imageUrl: z.string().url().optional(),
   imageCredit: z.string().optional(),

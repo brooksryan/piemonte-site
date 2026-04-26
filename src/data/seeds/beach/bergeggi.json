@@ -2,10 +2,11 @@
   "slug": "bergeggi",
   "name": "Bergeggi",
   "region": "finale-arc",
-  "sourceLocator": "folios/options/v4/folio.data.json :: utility-finale.blurbs[3]",
+  "sourceLocator": "site-beach-research.md",
   "type": "beach",
   "town": "Bergeggi",
   "character": "marine reserve + island",
   "driveTimeMin": 22,
-  "blurb": "Protected marine area facing the small Isola di Bergeggi. Snorkeling and free-diving register; dive shops in Spotorno run the boat over for €25-35. Skip the lungomare, drive to the headland viewpoint above SS1."
+  "mapPin": { "lat": 44.2397, "lon": 8.4437 },
+  "blurb": "Protected marine area facing the small Isola di Bergeggi, with a 300-step descent from SS1 that filters the crowd naturally. Snorkeling and free-diving register; dive shops in Spotorno run the boat over for 25-35 EUR. Morning excursion with lunch back in Spotorno is the right sequence."
 }

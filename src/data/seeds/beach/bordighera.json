@@ -1,0 +1,12 @@
+{
+  "slug": "bordighera",
+  "name": "Bordighera",
+  "region": "finale-arc",
+  "sourceLocator": "site-beach-research.md",
+  "type": "beach",
+  "town": "Bordighera",
+  "character": "round pebble, largest free beach in far Ponente",
+  "driveTimeMin": 75,
+  "mapPin": { "lat": 43.7807, "lon": 7.6645 },
+  "blurb": "Rattaconigli is the largest and most genuinely free beach in the far-Ponente band, with round pebble and Lungomare Argentina promenade running alongside it. Via Arziglia offers a second free option nearby. At 75 minutes from Finale this is a full-day commitment, so it works best when combined with the casino or Art Nouveau promenade."
+}

@@ -187,11 +187,47 @@ export default function RegionMap({
     mapRef.current = map;
 
     map.on('load', () => {
+      // ---------------------------------------------------------------------------
+      // Build a unified candidate list merging seed-driven mapPin coords with the
+      // legacy LOCATIONS fallback. Seeds with mapPin take precedence; LOCATIONS
+      // entries are only included when no seed-driven entry already covers that
+      // slug+type pair (de-duplication by slug+type key).
+      // ---------------------------------------------------------------------------
+      interface Candidate {
+        slug: string;
+        type: string;
+        lat: number;
+        lon: number;
+      }
+
+      const candidates: Candidate[] = [];
+      const seedDrivenKeys = new Set<string>();
+
+      // Source (a): every seed in the catalog whose mapPin is truthy
+      for (const seed of seeds) {
+        if ('mapPin' in seed && seed.mapPin) {
+          candidates.push({
+            slug: seed.slug,
+            type: seed.type,
+            lat: seed.mapPin.lat,
+            lon: seed.mapPin.lon,
+          });
+          seedDrivenKeys.add(`${seed.type}:${seed.slug}`);
+        }
+      }
+
+      // Source (b): LOCATIONS entries not already covered by a seed-driven entry
+      for (const [slug, loc] of Object.entries(LOCATIONS)) {
+        if (!seedDrivenKeys.has(`${loc.type}:${slug}`)) {
+          candidates.push({ slug, type: loc.type, lat: loc.lat, lon: loc.lon });
+        }
+      }
+
       // Collect kept entries for potential fitBounds
       const keptCoords: [number, number][] = [];
 
-      for (const [slug, loc] of Object.entries(LOCATIONS)) {
-        const seed = seedBySlugAndType(slug, loc.type);
+      for (const candidate of candidates) {
+        const seed = seedBySlugAndType(candidate.slug, candidate.type);
         if (!seed) continue;
 
         // Apply region filter if provided
@@ -199,8 +235,8 @@ export default function RegionMap({
           continue;
         }
 
-        const color = markerColor(slug, loc.type);
-        keptCoords.push([loc.lon, loc.lat]);
+        const color = markerColor(candidate.slug, candidate.type);
+        keptCoords.push([candidate.lon, candidate.lat]);
 
         const el = document.createElement('div');
         el.style.cssText = `
@@ -214,12 +250,12 @@ export default function RegionMap({
         `;
 
         const marker = new maplibregl.Marker({ element: el })
-          .setLngLat([loc.lon, loc.lat])
+          .setLngLat([candidate.lon, candidate.lat])
           .addTo(map);
 
         el.addEventListener('click', (e) => {
           e.stopPropagation();
-          setSelected({ slug, type: loc.type });
+          setSelected({ slug: candidate.slug, type: candidate.type });
         });
 
         void marker;
