@@ -115,18 +115,114 @@ const langheSlugMap: Record<string, string> = {
   'Grinzane Cavour': 'grinzane-cavour',
 };
 
+// ── Hand-authored geo + image overrides ───────────────────────────────────────
+// These preserve the v1.1 / v1.4 PR-shaped fixes that were applied directly to
+// the seed JSONs. The generator threads them back into the emit blocks so a
+// regen no longer strips them. Lat/lon strings (latStr/lonStr) preserve the
+// exact textual formatting (trailing zeros) used in the committed JSONs; they
+// are converted to numbers for Zod validation and re-emitted via the
+// formatNumber helper used by stringifySeed below.
+type GeoEntry = { latStr: string; lonStr: string; lat: number; lon: number };
+
+const TOWN_GEO: Record<string, GeoEntry> = (() => {
+  const raw: Record<string, { latStr: string; lonStr: string }> = {
+    'barolo':                { latStr: '44.6094', lonStr: '7.9460' },
+    'la-morra':              { latStr: '44.6358', lonStr: '7.9347' },
+    'monforte-dalba':        { latStr: '44.5544', lonStr: '7.9700' },
+    'castiglione-falletto':  { latStr: '44.6175', lonStr: '7.9669' },
+    'serralunga-dalba':      { latStr: '44.6133', lonStr: '7.9961' },
+    'barbaresco':            { latStr: '44.7233', lonStr: '8.0870' },
+    'treiso':                { latStr: '44.7017', lonStr: '8.0644' },
+    'neive':                 { latStr: '44.7333', lonStr: '8.1167' },
+    'diano-dalba':           { latStr: '44.6592', lonStr: '8.0472' },
+    'grinzane-cavour':       { latStr: '44.6486', lonStr: '7.9923' },
+    'albenga':               { latStr: '44.0519', lonStr: '8.2167' },
+    'alassio':               { latStr: '44.0061', lonStr: '8.1714' },
+    'laigueglia':            { latStr: '43.9783', lonStr: '8.1583' },
+    'sestri-levante':        { latStr: '44.2719', lonStr: '9.3958' },
+    'camogli':               { latStr: '44.3500', lonStr: '9.1561' },
+  };
+  const out: Record<string, GeoEntry> = {};
+  for (const [slug, v] of Object.entries(raw)) {
+    out[slug] = { ...v, lat: parseFloat(v.latStr), lon: parseFloat(v.lonStr) };
+  }
+  return out;
+})();
+
+// Beach overrides include hand-authored sourceLocator/character/blurb (PR-shaped
+// fixes for the 4 generator-managed beach seeds) alongside mapPin/imageUrl/
+// imageCredit. When a beach slug is present in BEACH_OVERRIDES, the override
+// fields take precedence over the folio-derived defaults so a regen preserves
+// the v1.1 / v1.4 source-of-truth values.
+type BeachOverride = {
+  latStr: string;
+  lonStr: string;
+  lat: number;
+  lon: number;
+  sourceLocator?: string;
+  character?: string;
+  blurb?: string;
+  imageUrl?: string;
+  imageCredit?: string;
+};
+
+const BEACH_OVERRIDES: Record<string, BeachOverride> = (() => {
+  const raw: Record<string, Omit<BeachOverride, 'lat' | 'lon'>> = {
+    'varigotti-baia-dei-saraceni': {
+      latStr: '44.1851',
+      lonStr: '8.4070',
+      sourceLocator: 'site-beach-research.md',
+      character: 'dark sand cove',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Baia_dei_Saraceni.jpg',
+      imageCredit: 'Eccekevin, CC BY-SA 4.0, Wikimedia Commons',
+      blurb: "Southwest-facing dark-sand cove with pastel houses on the cliff above, the Gallipoli analog Angela's profile points to. About 40% free beach and 60% lido; the free strip fills quickly after June, so late May is the right window. Il Polpo Ubriaco trattoria is 200 m back from the sand.",
+    },
+    'noli': {
+      latStr: '44.2037',
+      lonStr: '8.4163',
+      sourceLocator: 'site-beach-research.md',
+      character: 'fine sand medieval town beach',
+      blurb: "Italy's smallest medieval maritime republic, with Romanesque towers still visible from the sand and San Paragorio church nearby. The free strip is narrow and lido reservation is worth doing. Ponte Antico, five minutes away, serves the Slow Food Presidium gambero rosso di Noli.",
+    },
+    'spotorno': {
+      latStr: '44.2264',
+      lonStr: '8.4165',
+      sourceLocator: 'site-beach-research.md',
+      character: 'fine sand 1.7 km',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/17028_Spotorno%2C_Province_of_Savona%2C_Italy_-_panoramio_%281%29.jpg',
+      imageCredit: 'marek7400, CC BY 3.0, Wikimedia Commons',
+      blurb: 'The Il Miglio Verde free stretch with lifeguard coverage makes this the flattest and most plainly comfortable beach in the Finale arc. Multiple lidos run alongside the free zone; pair it with Noli for a half-day double. D.H. Lawrence wintered in the town in 1925-26.',
+    },
+    'bergeggi': {
+      latStr: '44.2397',
+      lonStr: '8.4437',
+      sourceLocator: 'site-beach-research.md',
+      character: 'marine reserve + island',
+      blurb: 'Protected marine area facing the small Isola di Bergeggi, with a 300-step descent from SS1 that filters the crowd naturally. Snorkeling and free-diving register; dive shops in Spotorno run the boat over for 25-35 EUR. Morning excursion with lunch back in Spotorno is the right sequence.',
+    },
+  };
+  const out: Record<string, BeachOverride> = {};
+  for (const [slug, v] of Object.entries(raw)) {
+    out[slug] = { ...v, lat: parseFloat(v.latStr), lon: parseFloat(v.lonStr) };
+  }
+  return out;
+})();
+
 langheBlurbs.forEach((b, i) => {
   const slug = langheSlugMap[b.name];
   if (!slug) throw new Error(`No slug mapping for Langhe town: ${b.name}`);
+  const geo = TOWN_GEO[slug];
+  if (!geo) throw new Error(`No geo entry for town slug: ${slug}`);
   catalog.push({
     slug,
     name: b.name,
-    type: 'town',
     region: 'langhe',
     sourceLocator: `folios/options/v4/folio.data.json :: utility-langhe.blurbs[${i}]`,
+    type: 'town',
     blurb: b.body,
     driveTimeMin: parseDriveMin(b.drive),
     url: b.link?.url,
+    mapPin: { lat: geo.lat, lon: geo.lon },
   });
 });
 
@@ -141,41 +237,56 @@ const liguriaTownBlurbMap: Array<{ idx: number; slug: string; region: 'finale-ar
 
 liguriaTownBlurbMap.forEach(({ idx, slug, region }) => {
   const b = finaleBlurbs[idx];
+  const geo = TOWN_GEO[slug];
+  if (!geo) throw new Error(`No geo entry for town slug: ${slug}`);
   catalog.push({
     slug,
     name: b.name,
-    type: 'town',
     region,
     sourceLocator: `folios/options/v4/folio.data.json :: utility-finale.blurbs[${idx}]`,
+    type: 'town',
     blurb: b.body,
     driveTimeMin: parseDriveMin(b.drive),
     url: b.link?.url,
+    mapPin: { lat: geo.lat, lon: geo.lon },
   });
 });
 
 // Sestri Levante from regions-coast[0]
 const sestriCoast = regionsCoast[0];
-catalog.push({
-  slug: 'sestri-levante',
-  name: 'Sestri Levante',
-  type: 'town',
-  region: 'sestri-arc',
-  sourceLocator: 'folios/options/v4/folio.data.json :: regions-coast[0]',
-  blurb: sestriCoast.narrative.join('\n\n'),
-  url: 'https://www.comune.sestri-levante.ge.it/',
-});
+{
+  const slug = 'sestri-levante';
+  const geo = TOWN_GEO[slug];
+  if (!geo) throw new Error(`No geo entry for town slug: ${slug}`);
+  catalog.push({
+    slug,
+    name: 'Sestri Levante',
+    region: 'sestri-arc',
+    sourceLocator: 'folios/options/v4/folio.data.json :: regions-coast[0]',
+    type: 'town',
+    blurb: sestriCoast.narrative.join('\n\n'),
+    url: 'https://www.comune.sestri-levante.ge.it/',
+    mapPin: { lat: geo.lat, lon: geo.lon },
+  });
+}
 
 // Camogli from regions-coast[0].anchors[3]
 const camogliAnchor = sestriCoast.anchors[3];
-catalog.push({
-  slug: 'camogli',
-  name: 'Camogli',
-  type: 'town',
-  region: 'sestri-arc',
-  sourceLocator: 'folios/options/v4/folio.data.json :: regions-coast[0].anchors[3]',
-  blurb: camogliAnchor.note,
-  url: camogliAnchor.url,
-});
+{
+  const slug = 'camogli';
+  const geo = TOWN_GEO[slug];
+  if (!geo) throw new Error(`No geo entry for town slug: ${slug}`);
+  catalog.push({
+    slug,
+    name: 'Camogli',
+    region: 'sestri-arc',
+    sourceLocator: 'folios/options/v4/folio.data.json :: regions-coast[0].anchors[3]',
+    type: 'town',
+    blurb: camogliAnchor.note,
+    url: camogliAnchor.url,
+    mapPin: { lat: geo.lat, lon: geo.lon },
+  });
+}
 
 // ── Beaches (4) from utility-finale.blurbs[0,1,2,3] ──────────────────────────
 const beachDef = [
@@ -187,16 +298,21 @@ const beachDef = [
 
 beachDef.forEach(({ idx, slug, town }) => {
   const b = finaleBlurbs[idx];
+  const ov = BEACH_OVERRIDES[slug];
+  if (!ov) throw new Error(`No beach override entry for slug: ${slug}`);
   catalog.push({
     slug,
     name: b.name,
-    type: 'beach',
     region: 'finale-arc',
-    sourceLocator: `folios/options/v4/folio.data.json :: utility-finale.blurbs[${idx}]`,
+    sourceLocator: ov.sourceLocator ?? `folios/options/v4/folio.data.json :: utility-finale.blurbs[${idx}]`,
+    type: 'beach',
     town,
-    character: b.register,
+    character: ov.character ?? b.register,
     driveTimeMin: parseDriveMin(b.drive),
-    blurb: b.body,
+    mapPin: { lat: ov.lat, lon: ov.lon },
+    ...(ov.imageUrl ? { imageUrl: ov.imageUrl } : {}),
+    ...(ov.imageCredit ? { imageCredit: ov.imageCredit } : {}),
+    blurb: ov.blurb ?? b.body,
   });
 });
 
@@ -739,26 +855,111 @@ catalog.push({
   })),
 });
 
+// ─── Custom serializer ────────────────────────────────────────────────────────
+// JSON.stringify reorders object keys per Zod's schema and drops trailing zeros
+// on numeric literals (e.g. 7.9460 → 7.946). Both behaviors fight the
+// hand-authored seed JSONs that are now source-of-truth. We write the original
+// seed object (insertion order preserved) and use STRING_GEO_HINT to inject the
+// exact textual lat/lon for slugs in TOWN_GEO/BEACH_OVERRIDES.
+
+const STRING_GEO_HINT: Record<string, { latStr: string; lonStr: string }> = {
+  ...Object.fromEntries(Object.entries(TOWN_GEO).map(([k, v]) => [k, { latStr: v.latStr, lonStr: v.lonStr }])),
+  ...Object.fromEntries(Object.entries(BEACH_OVERRIDES).map(([k, v]) => [k, { latStr: v.latStr, lonStr: v.lonStr }])),
+};
+
+function stringifySeed(seed: Seed): string {
+  const slug = seed.slug;
+  const inlineMapPin = seed.type === 'beach';
+  const hint = STRING_GEO_HINT[slug];
+
+  // Walk the object emitting JSON in a stable order: a fixed header
+  // (slug, name, region, sourceLocator, type) matching the on-disk convention,
+  // followed by the remaining keys in their original insertion order.
+  // Custom rules: (a) for keys named "mapPin" on a beach, render as a single
+  // line; (b) when a hint exists for this slug, write the exact lat/lon
+  // strings (preserves trailing zeros that JS numeric literals drop).
+  const indent = '  ';
+  const lines: string[] = ['{'];
+  const headerOrder = ['slug', 'name', 'region', 'sourceLocator', 'type'] as const;
+  const raw = seed as Record<string, unknown>;
+  const orderedKeys: string[] = [];
+  for (const k of headerOrder) {
+    if (k in raw) orderedKeys.push(k);
+  }
+  for (const k of Object.keys(raw)) {
+    if (!orderedKeys.includes(k)) orderedKeys.push(k);
+  }
+  const entries: Array<[string, unknown]> = orderedKeys.map(k => [k, raw[k]]);
+  entries.forEach(([key, value], i) => {
+    const comma = i < entries.length - 1 ? ',' : '';
+    if (key === 'mapPin' && value && typeof value === 'object') {
+      const mp = value as { lat: number; lon: number };
+      const latText = hint ? hint.latStr : String(mp.lat);
+      const lonText = hint ? hint.lonStr : String(mp.lon);
+      if (inlineMapPin) {
+        lines.push(`${indent}"mapPin": { "lat": ${latText}, "lon": ${lonText} }${comma}`);
+      } else {
+        lines.push(`${indent}"mapPin": {`);
+        lines.push(`${indent}${indent}"lat": ${latText},`);
+        lines.push(`${indent}${indent}"lon": ${lonText}`);
+        lines.push(`${indent}}${comma}`);
+      }
+      return;
+    }
+    // Default: render via JSON.stringify on the value, indenting nested
+    // multi-line output to match the seed's outer indent level.
+    const rendered = JSON.stringify(value, null, 2);
+    if (rendered === undefined) return; // skip undefined optionals
+    const indented = rendered.split('\n').map((ln, idx) => idx === 0 ? ln : indent + ln).join('\n');
+    lines.push(`${indent}${JSON.stringify(key)}: ${indented}${comma}`);
+  });
+  lines.push('}');
+  return lines.join('\n') + '\n';
+}
+
 // ─── Validate and write seeds ─────────────────────────────────────────────────
 const typeCounts: Record<string, number> = {};
 
 for (const seed of catalog) {
-  // Validate
-  const validated = SeedSchema.parse(seed);
+  // Validate (parse for correctness; we still write the original seed object
+  // so insertion order is preserved in the on-disk JSON).
+  SeedSchema.parse(seed);
 
   // Ensure directory exists
-  const typeDir = path.join(SEEDS_DIR, validated.type);
+  const typeDir = path.join(SEEDS_DIR, seed.type);
   fs.mkdirSync(typeDir, { recursive: true });
 
   // Write file
-  const outPath = path.join(typeDir, `${validated.slug}.json`);
-  fs.writeFileSync(outPath, JSON.stringify(validated, null, 2) + '\n', 'utf-8');
+  const outPath = path.join(typeDir, `${seed.slug}.json`);
+  fs.writeFileSync(outPath, stringifySeed(seed), 'utf-8');
 
-  typeCounts[validated.type] = (typeCounts[validated.type] ?? 0) + 1;
+  typeCounts[seed.type] = (typeCounts[seed.type] ?? 0) + 1;
 }
 
 // ─── Build and write search index ─────────────────────────────────────────────
-const searchIndex: SearchRecord[] = catalog.map(seed => {
+// Walk the seeds directory (alphabetical by file path) so hand-authored seeds
+// not in the catalog (e.g. the v1.5 beach roster) are still indexed and the
+// output matches regen-search-index.ts.
+function walkJsonFiles(dir: string): string[] {
+  const out: string[] = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      out.push(...walkJsonFiles(full));
+    } else if (entry.isFile() && entry.name.endsWith('.json')) {
+      out.push(full);
+    }
+  }
+  return out;
+}
+
+const seedFilesForIndex = walkJsonFiles(SEEDS_DIR).sort();
+const seedsForIndex: Seed[] = seedFilesForIndex.map(file => {
+  const raw = JSON.parse(fs.readFileSync(file, 'utf-8'));
+  return SeedSchema.parse(raw);
+});
+
+const searchIndex: SearchRecord[] = seedsForIndex.map(seed => {
   const tags: string[] = [seed.type, seed.region];
 
   if ('town' in seed && seed.town) tags.push(seed.town);
