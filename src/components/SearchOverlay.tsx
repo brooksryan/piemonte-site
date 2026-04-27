@@ -47,12 +47,16 @@ export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
 
   if (!open) return null;
 
-  const q = query.trim().toLowerCase();
+  const tokens = query
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(t => t.length > 0);
 
-  const filtered: SearchRecord[] = q
+  const filtered: SearchRecord[] = tokens.length > 0
     ? searchIndex.filter(r => {
         const haystack = [r.name, r.town ?? '', ...(r.tags ?? [])].join(' ').toLowerCase();
-        return haystack.includes(q);
+        return tokens.every(t => haystack.includes(t));
       })
     : searchIndex;
 
