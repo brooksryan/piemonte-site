@@ -1,235 +1,28 @@
 [
   {
-    "slug": "route-v3",
-    "type": "map",
-    "name": "Route Map v3",
-    "region": "other",
-    "tags": [
-      "map",
-      "other",
-      "route"
-    ]
-  },
-  {
-    "slug": "route-final",
-    "type": "map",
-    "name": "Route Map Final",
-    "region": "other",
-    "tags": [
-      "map",
-      "other",
-      "route"
-    ]
-  },
-  {
-    "slug": "utility-langhe-towns",
-    "type": "map",
-    "name": "Langhe Towns Map",
-    "region": "langhe",
-    "tags": [
-      "map",
-      "langhe",
-      "utility-langhe"
-    ]
-  },
-  {
-    "slug": "utility-finale-beaches",
-    "type": "map",
-    "name": "Finale Beaches Map",
+    "slug": "alassio",
+    "type": "beach",
+    "name": "Alassio",
+    "town": "Alassio",
     "region": "finale-arc",
     "tags": [
-      "map",
+      "beach",
       "finale-arc",
-      "utility-finale"
-    ]
-  },
-  {
-    "slug": "barolo",
-    "type": "town",
-    "name": "Barolo",
-    "region": "langhe",
-    "tags": [
-      "town",
-      "langhe"
-    ]
-  },
-  {
-    "slug": "la-morra",
-    "type": "town",
-    "name": "La Morra",
-    "region": "langhe",
-    "tags": [
-      "town",
-      "langhe"
-    ]
-  },
-  {
-    "slug": "monforte-dalba",
-    "type": "town",
-    "name": "Monforte d'Alba",
-    "region": "langhe",
-    "tags": [
-      "town",
-      "langhe"
-    ]
-  },
-  {
-    "slug": "castiglione-falletto",
-    "type": "town",
-    "name": "Castiglione Falletto",
-    "region": "langhe",
-    "tags": [
-      "town",
-      "langhe"
-    ]
-  },
-  {
-    "slug": "serralunga-dalba",
-    "type": "town",
-    "name": "Serralunga d'Alba",
-    "region": "langhe",
-    "tags": [
-      "town",
-      "langhe"
-    ]
-  },
-  {
-    "slug": "barbaresco",
-    "type": "town",
-    "name": "Barbaresco",
-    "region": "langhe",
-    "tags": [
-      "town",
-      "langhe"
-    ]
-  },
-  {
-    "slug": "treiso",
-    "type": "town",
-    "name": "Treiso",
-    "region": "langhe",
-    "tags": [
-      "town",
-      "langhe"
-    ]
-  },
-  {
-    "slug": "neive",
-    "type": "town",
-    "name": "Neive",
-    "region": "langhe",
-    "tags": [
-      "town",
-      "langhe"
-    ]
-  },
-  {
-    "slug": "diano-dalba",
-    "type": "town",
-    "name": "Diano d'Alba",
-    "region": "langhe",
-    "tags": [
-      "town",
-      "langhe"
-    ]
-  },
-  {
-    "slug": "grinzane-cavour",
-    "type": "town",
-    "name": "Grinzane Cavour",
-    "region": "langhe",
-    "tags": [
-      "town",
-      "langhe"
+      "Alassio",
+      "Belle Epoque resort beach"
     ]
   },
   {
     "slug": "albenga",
-    "type": "town",
+    "type": "beach",
     "name": "Albenga",
-    "region": "finale-arc",
-    "tags": [
-      "town",
-      "finale-arc"
-    ]
-  },
-  {
-    "slug": "alassio",
-    "type": "town",
-    "name": "Alassio",
-    "region": "finale-arc",
-    "tags": [
-      "town",
-      "finale-arc"
-    ]
-  },
-  {
-    "slug": "laigueglia",
-    "type": "town",
-    "name": "Laigueglia",
-    "region": "finale-arc",
-    "tags": [
-      "town",
-      "finale-arc"
-    ]
-  },
-  {
-    "slug": "sestri-levante",
-    "type": "town",
-    "name": "Sestri Levante",
-    "region": "sestri-arc",
-    "tags": [
-      "town",
-      "sestri-arc"
-    ]
-  },
-  {
-    "slug": "camogli",
-    "type": "town",
-    "name": "Camogli",
-    "region": "sestri-arc",
-    "tags": [
-      "town",
-      "sestri-arc"
-    ]
-  },
-  {
-    "slug": "varigotti-baia-dei-saraceni",
-    "type": "beach",
-    "name": "Varigotti — Baia dei Saraceni",
-    "town": "Varigotti",
+    "town": "Albenga",
     "region": "finale-arc",
     "tags": [
       "beach",
       "finale-arc",
-      "Varigotti",
-      "the Saracen Cove postcard"
-    ]
-  },
-  {
-    "slug": "noli",
-    "type": "beach",
-    "name": "Noli",
-    "town": "Noli",
-    "region": "finale-arc",
-    "tags": [
-      "beach",
-      "finale-arc",
-      "Noli",
-      "medieval seafaring republic"
-    ]
-  },
-  {
-    "slug": "spotorno",
-    "type": "beach",
-    "name": "Spotorno",
-    "town": "Spotorno",
-    "region": "finale-arc",
-    "tags": [
-      "beach",
-      "finale-arc",
-      "Spotorno",
-      "wide family-friendly beach"
+      "Albenga",
+      "pebble and mixed, culture-paired"
     ]
   },
   {
@@ -246,38 +39,469 @@
     ]
   },
   {
-    "slug": "palazzo-finati",
-    "type": "lodging",
-    "name": "Palazzo Finati",
-    "region": "langhe",
+    "slug": "bordighera",
+    "type": "beach",
+    "name": "Bordighera",
+    "town": "Bordighera",
+    "region": "finale-arc",
     "tags": [
-      "lodging",
-      "langhe",
-      "alba-langhe",
-      "direct"
+      "beach",
+      "finale-arc",
+      "Bordighera",
+      "round pebble, largest free beach in far Ponente"
     ]
   },
   {
-    "slug": "hotel-calissano",
-    "type": "lodging",
-    "name": "Hotel Calissano",
-    "region": "langhe",
+    "slug": "camogli",
+    "type": "beach",
+    "name": "Camogli",
+    "town": "Camogli",
+    "region": "sestri-arc",
     "tags": [
-      "lodging",
-      "langhe",
-      "alba-langhe",
-      "direct"
+      "beach",
+      "sestri-arc",
+      "Camogli",
+      "pebble and black-sand, ferry departure point"
     ]
   },
   {
-    "slug": "le-case-della-saracca",
-    "type": "lodging",
-    "name": "Le Case della Saracca",
+    "slug": "capo-noli",
+    "type": "beach",
+    "name": "Capo Noli (Malpasso)",
+    "town": "Noli",
+    "region": "finale-arc",
+    "tags": [
+      "beach",
+      "finale-arc",
+      "Noli",
+      "rocky cove, EU excellent water quality"
+    ]
+  },
+  {
+    "slug": "cervo",
+    "type": "beach",
+    "name": "Cervo",
+    "town": "Cervo",
+    "region": "finale-arc",
+    "tags": [
+      "beach",
+      "finale-arc",
+      "Cervo",
+      "pebble below medieval hilltop village"
+    ]
+  },
+  {
+    "slug": "diano-marina",
+    "type": "beach",
+    "name": "Diano Marina",
+    "town": "Diano Marina",
+    "region": "finale-arc",
+    "tags": [
+      "beach",
+      "finale-arc",
+      "Diano Marina",
+      "fine sand 3 km with lifeguard"
+    ]
+  },
+  {
+    "slug": "imperia-porto-maurizio",
+    "type": "beach",
+    "name": "Imperia — Porto Maurizio",
+    "town": "Imperia",
+    "region": "finale-arc",
+    "tags": [
+      "beach",
+      "finale-arc",
+      "Imperia",
+      "sand lido, Parasio medieval quarter above"
+    ]
+  },
+  {
+    "slug": "laigueglia",
+    "type": "beach",
+    "name": "Laigueglia",
+    "town": "Laigueglia",
+    "region": "finale-arc",
+    "tags": [
+      "beach",
+      "finale-arc",
+      "Laigueglia",
+      "golden sand, Saracen tower above"
+    ]
+  },
+  {
+    "slug": "noli",
+    "type": "beach",
+    "name": "Noli",
+    "town": "Noli",
+    "region": "finale-arc",
+    "tags": [
+      "beach",
+      "finale-arc",
+      "Noli",
+      "fine sand medieval town beach"
+    ]
+  },
+  {
+    "slug": "paraggi",
+    "type": "beach",
+    "name": "Paraggi — Baia di Paraggi",
+    "town": "Santa Margherita Ligure",
+    "region": "sestri-arc",
+    "tags": [
+      "beach",
+      "sestri-arc",
+      "Santa Margherita Ligure",
+      "only sandy beach near Portofino"
+    ]
+  },
+  {
+    "slug": "punta-crena",
+    "type": "beach",
+    "name": "Punta Crena",
+    "town": "Varigotti",
+    "region": "finale-arc",
+    "tags": [
+      "beach",
+      "finale-arc",
+      "Varigotti",
+      "rocky cove with kayak access"
+    ]
+  },
+  {
+    "slug": "san-fruttuoso",
+    "type": "beach",
+    "name": "San Fruttuoso",
+    "town": "Camogli",
+    "region": "sestri-arc",
+    "tags": [
+      "beach",
+      "sestri-arc",
+      "Camogli",
+      "boat-only abbey cove"
+    ]
+  },
+  {
+    "slug": "san-lorenzo-al-mare",
+    "type": "beach",
+    "name": "San Lorenzo al Mare",
+    "town": "San Lorenzo al Mare",
+    "region": "finale-arc",
+    "tags": [
+      "beach",
+      "finale-arc",
+      "San Lorenzo al Mare",
+      "sand with pista ciclabile to Sanremo"
+    ]
+  },
+  {
+    "slug": "sanremo-tre-ponti",
+    "type": "beach",
+    "name": "Sanremo — Spiaggia Tre Ponti",
+    "town": "Sanremo",
+    "region": "finale-arc",
+    "tags": [
+      "beach",
+      "finale-arc",
+      "Sanremo",
+      "mixed sand and pebble, largest free Sanremo beach"
+    ]
+  },
+  {
+    "slug": "santo-stefano-al-mare",
+    "type": "beach",
+    "name": "Santo Stefano al Mare",
+    "town": "Santo Stefano al Mare",
+    "region": "finale-arc",
+    "tags": [
+      "beach",
+      "finale-arc",
+      "Santo Stefano al Mare",
+      "Blue Flag pebble, municipal free beach"
+    ]
+  },
+  {
+    "slug": "spotorno",
+    "type": "beach",
+    "name": "Spotorno",
+    "town": "Spotorno",
+    "region": "finale-arc",
+    "tags": [
+      "beach",
+      "finale-arc",
+      "Spotorno",
+      "fine sand 1.7 km"
+    ]
+  },
+  {
+    "slug": "varigotti-baia-dei-saraceni",
+    "type": "beach",
+    "name": "Varigotti — Baia dei Saraceni",
+    "town": "Varigotti",
+    "region": "finale-arc",
+    "tags": [
+      "beach",
+      "finale-arc",
+      "Varigotti",
+      "dark sand cove"
+    ]
+  },
+  {
+    "slug": "abbazia-di-san-fruttuoso",
+    "type": "cultural-site",
+    "name": "Abbazia di San Fruttuoso",
+    "town": "Camogli",
+    "region": "sestri-arc",
+    "tags": [
+      "cultural-site",
+      "sestri-arc",
+      "Camogli",
+      "abbey"
+    ]
+  },
+  {
+    "slug": "basilica-di-superga",
+    "type": "cultural-site",
+    "name": "Basilica di Superga",
+    "town": "Turin (Colle di Superga)",
+    "region": "city",
+    "tags": [
+      "cultural-site",
+      "city",
+      "Turin (Colle di Superga)",
+      "basilica"
+    ]
+  },
+  {
+    "slug": "cappella-del-barolo",
+    "type": "cultural-site",
+    "name": "La Morra Belvedere / Cappella del Barolo",
+    "town": "La Morra",
     "region": "langhe",
     "tags": [
-      "lodging",
+      "cultural-site",
       "langhe",
-      "alba-langhe",
+      "La Morra",
+      "chapel"
+    ]
+  },
+  {
+    "slug": "castello-di-grinzane-cavour",
+    "type": "cultural-site",
+    "name": "Castello di Grinzane Cavour",
+    "town": "Grinzane Cavour",
+    "region": "langhe",
+    "tags": [
+      "cultural-site",
+      "langhe",
+      "Grinzane Cavour",
+      "castle"
+    ]
+  },
+  {
+    "slug": "castello-di-racconigi",
+    "type": "cultural-site",
+    "name": "Castello Reale di Racconigi",
+    "town": "Racconigi",
+    "region": "other",
+    "tags": [
+      "cultural-site",
+      "other",
+      "Racconigi",
+      "royal residence"
+    ]
+  },
+  {
+    "slug": "castello-di-rivoli",
+    "type": "cultural-site",
+    "name": "Castello di Rivoli (Museo d'Arte Contemporanea)",
+    "town": "Rivoli",
+    "region": "city",
+    "tags": [
+      "cultural-site",
+      "city",
+      "Rivoli",
+      "museum"
+    ]
+  },
+  {
+    "slug": "castello-di-serralunga",
+    "type": "cultural-site",
+    "name": "Castello di Serralunga d'Alba",
+    "town": "Serralunga d'Alba",
+    "region": "langhe",
+    "tags": [
+      "cultural-site",
+      "langhe",
+      "Serralunga d'Alba",
+      "castle"
+    ]
+  },
+  {
+    "slug": "chiesetta-di-tremlett",
+    "type": "cultural-site",
+    "name": "Chiesetta di Tremlett",
+    "town": "Coazzolo",
+    "region": "langhe",
+    "tags": [
+      "cultural-site",
+      "langhe",
+      "Coazzolo",
+      "chapel"
+    ]
+  },
+  {
+    "slug": "finalborgo",
+    "type": "cultural-site",
+    "name": "Finalborgo medieval village",
+    "town": "Finalborgo",
+    "region": "finale-arc",
+    "tags": [
+      "cultural-site",
+      "finale-arc",
+      "Finalborgo",
+      "medieval-village"
+    ]
+  },
+  {
+    "slug": "forte-di-fenestrelle",
+    "type": "cultural-site",
+    "name": "Forte di Fenestrelle",
+    "town": "Fenestrelle",
+    "region": "other",
+    "tags": [
+      "cultural-site",
+      "other",
+      "Fenestrelle",
+      "fortification"
+    ]
+  },
+  {
+    "slug": "grotte-di-toirano",
+    "type": "cultural-site",
+    "name": "Grotte di Toirano",
+    "town": "Toirano",
+    "region": "finale-arc",
+    "tags": [
+      "cultural-site",
+      "finale-arc",
+      "Toirano",
+      "cave"
+    ]
+  },
+  {
+    "slug": "palazzina-di-caccia-stupinigi",
+    "type": "cultural-site",
+    "name": "Palazzina di Caccia di Stupinigi",
+    "town": "Nichelino (frazione Stupinigi)",
+    "region": "city",
+    "tags": [
+      "cultural-site",
+      "city",
+      "Nichelino (frazione Stupinigi)",
+      "royal residence"
+    ]
+  },
+  {
+    "slug": "palazzo-madama",
+    "type": "cultural-site",
+    "name": "Palazzo Madama (Museo Civico d'Arte Antica)",
+    "town": "Turin",
+    "region": "city",
+    "tags": [
+      "cultural-site",
+      "city",
+      "Turin",
+      "museum"
+    ]
+  },
+  {
+    "slug": "pinacoteca-agnelli",
+    "type": "cultural-site",
+    "name": "Pinacoteca Giovanni e Marella Agnelli",
+    "town": "Turin (Lingotto)",
+    "region": "city",
+    "tags": [
+      "cultural-site",
+      "city",
+      "Turin (Lingotto)",
+      "pinacoteca"
+    ]
+  },
+  {
+    "slug": "reggia-di-venaria-reale",
+    "type": "cultural-site",
+    "name": "Reggia di Venaria Reale",
+    "town": "Venaria Reale",
+    "region": "city",
+    "tags": [
+      "cultural-site",
+      "city",
+      "Venaria Reale",
+      "royal residence"
+    ]
+  },
+  {
+    "slug": "sacra-di-san-michele",
+    "type": "cultural-site",
+    "name": "Sacra di San Michele",
+    "town": "Sant'Ambrogio di Torino",
+    "region": "other",
+    "tags": [
+      "cultural-site",
+      "other",
+      "Sant'Ambrogio di Torino",
+      "abbey"
+    ]
+  },
+  {
+    "slug": "sacro-monte-di-varallo",
+    "type": "cultural-site",
+    "name": "Sacro Monte di Varallo",
+    "town": "Varallo",
+    "region": "other",
+    "tags": [
+      "cultural-site",
+      "other",
+      "Varallo",
+      "sacred mountain"
+    ]
+  },
+  {
+    "slug": "sentiero-del-pellegrino",
+    "type": "cultural-site",
+    "name": "Sentiero del Pellegrino",
+    "town": "Varigotti",
+    "region": "finale-arc",
+    "tags": [
+      "cultural-site",
+      "finale-arc",
+      "Varigotti",
+      "trail"
+    ]
+  },
+  {
+    "slug": "wimu-castello-falletti",
+    "type": "cultural-site",
+    "name": "WiMu / Castello Falletti",
+    "town": "Barolo",
+    "region": "langhe",
+    "tags": [
+      "cultural-site",
+      "langhe",
+      "Barolo",
+      "museum"
+    ]
+  },
+  {
+    "slug": "antica-locanda-solferino",
+    "type": "lodging",
+    "name": "Antica Locanda Solferino",
+    "region": "city",
+    "tags": [
+      "lodging",
+      "city",
+      "milan",
       "direct"
     ]
   },
@@ -294,33 +518,45 @@
     ]
   },
   {
+    "slug": "hotel-berna",
+    "type": "lodging",
+    "name": "Hotel Berna",
+    "region": "city",
+    "tags": [
+      "lodging",
+      "city",
+      "milan",
+      "direct"
+    ]
+  },
+  {
+    "slug": "hotel-calissano",
+    "type": "lodging",
+    "name": "Hotel Calissano",
+    "region": "langhe",
+    "tags": [
+      "lodging",
+      "langhe",
+      "alba-langhe",
+      "direct"
+    ]
+  },
+  {
+    "slug": "hotel-florenz",
+    "type": "lodging",
+    "name": "Hotel Florenz",
+    "region": "finale-arc",
+    "tags": [
+      "lodging",
+      "finale-arc",
+      "finale",
+      "direct"
+    ]
+  },
+  {
     "slug": "hotel-helvetia",
     "type": "lodging",
     "name": "Hotel Helvetia",
-    "region": "sestri-arc",
-    "tags": [
-      "lodging",
-      "sestri-arc",
-      "sestri",
-      "direct"
-    ]
-  },
-  {
-    "slug": "hotel-vis-a-vis",
-    "type": "lodging",
-    "name": "Hotel Vis a Vis",
-    "region": "sestri-arc",
-    "tags": [
-      "lodging",
-      "sestri-arc",
-      "sestri",
-      "direct"
-    ]
-  },
-  {
-    "slug": "hotel-miramare-and-spa",
-    "type": "lodging",
-    "name": "Hotel Miramare and Spa",
     "region": "sestri-arc",
     "tags": [
       "lodging",
@@ -342,6 +578,18 @@
     ]
   },
   {
+    "slug": "hotel-miramare-and-spa",
+    "type": "lodging",
+    "name": "Hotel Miramare and Spa",
+    "region": "sestri-arc",
+    "tags": [
+      "lodging",
+      "sestri-arc",
+      "sestri",
+      "direct"
+    ]
+  },
+  {
     "slug": "hotel-punta-est",
     "type": "lodging",
     "name": "Hotel Punta Est",
@@ -354,26 +602,38 @@
     ]
   },
   {
-    "slug": "hotel-florenz",
+    "slug": "hotel-vis-a-vis",
     "type": "lodging",
-    "name": "Hotel Florenz",
-    "region": "finale-arc",
+    "name": "Hotel Vis a Vis",
+    "region": "sestri-arc",
     "tags": [
       "lodging",
-      "finale-arc",
-      "finale",
+      "sestri-arc",
+      "sestri",
       "direct"
     ]
   },
   {
-    "slug": "antica-locanda-solferino",
+    "slug": "le-case-della-saracca",
     "type": "lodging",
-    "name": "Antica Locanda Solferino",
-    "region": "city",
+    "name": "Le Case della Saracca",
+    "region": "langhe",
     "tags": [
       "lodging",
-      "city",
-      "milan",
+      "langhe",
+      "alba-langhe",
+      "direct"
+    ]
+  },
+  {
+    "slug": "palazzo-finati",
+    "type": "lodging",
+    "name": "Palazzo Finati",
+    "region": "langhe",
+    "tags": [
+      "lodging",
+      "langhe",
+      "alba-langhe",
       "direct"
     ]
   },
@@ -390,142 +650,110 @@
     ]
   },
   {
-    "slug": "hotel-berna",
-    "type": "lodging",
-    "name": "Hotel Berna",
+    "slug": "route-final",
+    "type": "map",
+    "name": "Route Map Final",
+    "region": "other",
+    "tags": [
+      "map",
+      "other",
+      "route"
+    ]
+  },
+  {
+    "slug": "route-v3",
+    "type": "map",
+    "name": "Route Map v3",
+    "region": "other",
+    "tags": [
+      "map",
+      "other",
+      "route"
+    ]
+  },
+  {
+    "slug": "utility-finale-beaches",
+    "type": "map",
+    "name": "Finale Beaches Map",
+    "region": "finale-arc",
+    "tags": [
+      "map",
+      "finale-arc",
+      "utility-finale"
+    ]
+  },
+  {
+    "slug": "utility-langhe-towns",
+    "type": "map",
+    "name": "Langhe Towns Map",
+    "region": "langhe",
+    "tags": [
+      "map",
+      "langhe",
+      "utility-langhe"
+    ]
+  },
+  {
+    "slug": "region-finale-ligure",
+    "type": "region-narrative",
+    "name": "Finale Ligure",
+    "region": "finale-arc",
+    "tags": [
+      "region-narrative",
+      "finale-arc"
+    ]
+  },
+  {
+    "slug": "region-langhe",
+    "type": "region-narrative",
+    "name": "Langhe",
+    "region": "langhe",
+    "tags": [
+      "region-narrative",
+      "langhe"
+    ]
+  },
+  {
+    "slug": "region-milan",
+    "type": "region-narrative",
+    "name": "Milan",
     "region": "city",
     "tags": [
-      "lodging",
-      "city",
-      "milan",
-      "direct"
+      "region-narrative",
+      "city"
     ]
   },
   {
-    "slug": "gd-vajra",
-    "type": "winery",
-    "name": "G.D. Vajra",
-    "town": "Vergne (Barolo)",
-    "region": "langhe",
+    "slug": "region-sestri-levante",
+    "type": "region-narrative",
+    "name": "Sestri Levante",
+    "region": "sestri-arc",
     "tags": [
-      "winery",
-      "langhe",
-      "Vergne (Barolo)"
+      "region-narrative",
+      "sestri-arc"
     ]
   },
   {
-    "slug": "cantina-mascarello-bartolo",
-    "type": "winery",
-    "name": "Cantina Mascarello Bartolo",
-    "town": "Barolo",
-    "region": "langhe",
+    "slug": "region-turin",
+    "type": "region-narrative",
+    "name": "Turin",
+    "region": "city",
     "tags": [
-      "winery",
-      "langhe",
-      "Barolo"
+      "region-narrative",
+      "city"
     ]
   },
   {
-    "slug": "punta-crena",
-    "type": "winery",
-    "name": "Punta Crena",
-    "town": "Varigotti",
-    "region": "finale-arc",
-    "tags": [
-      "winery",
-      "finale-arc",
-      "Varigotti"
-    ]
-  },
-  {
-    "slug": "losteria-del-vignaiolo",
+    "slug": "agriturismo-olivenere-lavagna",
     "type": "restaurant",
-    "name": "L'Osteria del Vignaiolo",
-    "town": "La Morra",
-    "region": "langhe",
+    "name": "Agriturismo Olivenere, Lavagna",
+    "town": "Lavagna",
+    "region": "sestri-arc",
     "tags": [
       "restaurant",
-      "langhe",
-      "La Morra",
-      "agriturismo"
-    ]
-  },
-  {
-    "slug": "trattoria-della-posta",
-    "type": "restaurant",
-    "name": "Trattoria della Posta",
-    "town": "Monforte d'Alba",
-    "region": "langhe",
-    "tags": [
-      "restaurant",
-      "langhe",
-      "Monforte d'Alba",
-      "bollito misto"
-    ]
-  },
-  {
-    "slug": "osteria-dellarco",
-    "type": "restaurant",
-    "name": "Osteria dell'Arco",
-    "town": "Alba",
-    "region": "langhe",
-    "tags": [
-      "restaurant",
-      "langhe",
-      "Alba",
-      "trattoria"
-    ]
-  },
-  {
-    "slug": "macelleria-guido",
-    "type": "restaurant",
-    "name": "Macelleria Guido",
-    "town": "Alba",
-    "region": "langhe",
-    "tags": [
-      "restaurant",
-      "langhe",
-      "Alba",
-      "carne cruda"
-    ]
-  },
-  {
-    "slug": "panetteria-giacosa",
-    "type": "restaurant",
-    "name": "Panetteria Giacosa",
-    "town": "Alba",
-    "region": "langhe",
-    "tags": [
-      "restaurant",
-      "langhe",
-      "Alba",
-      "bakery"
-    ]
-  },
-  {
-    "slug": "bottega-manera",
-    "type": "restaurant",
-    "name": "Bottega Manera",
-    "town": "Alba",
-    "region": "langhe",
-    "tags": [
-      "restaurant",
-      "langhe",
-      "Alba",
-      "cheese + salume"
-    ]
-  },
-  {
-    "slug": "il-polpo-ubriaco",
-    "type": "restaurant",
-    "name": "Il Polpo Ubriaco",
-    "town": "Varigotti",
-    "region": "finale-arc",
-    "tags": [
-      "restaurant",
-      "finale-arc",
-      "Varigotti",
-      "seafood"
+      "sestri-arc",
+      "Lavagna",
+      "Day-7 long Sunday lunch"
     ]
   },
   {
@@ -542,42 +770,16 @@
     ]
   },
   {
-    "slug": "ristorante-del-borgo",
+    "slug": "bottega-manera",
     "type": "restaurant",
-    "name": "Ristorante del Borgo",
-    "town": "Finalborgo",
-    "region": "finale-arc",
+    "name": "Bottega Manera",
+    "town": "Alba",
+    "region": "langhe",
     "tags": [
       "restaurant",
-      "finale-arc",
-      "Finalborgo",
-      "Sunday pranzo"
-    ]
-  },
-  {
-    "slug": "ponte-antico",
-    "type": "restaurant",
-    "name": "Ponte Antico",
-    "town": "Noli",
-    "region": "finale-arc",
-    "tags": [
-      "restaurant",
-      "finale-arc",
-      "Noli",
-      "gambero rosso"
-    ]
-  },
-  {
-    "slug": "vescovado-noli",
-    "type": "restaurant",
-    "name": "Vescovado Noli",
-    "town": "Noli",
-    "region": "finale-arc",
-    "tags": [
-      "restaurant",
-      "finale-arc",
-      "Noli",
-      "Michelin 1-star"
+      "langhe",
+      "Alba",
+      "cheese + salume"
     ]
   },
   {
@@ -607,29 +809,16 @@
     ]
   },
   {
-    "slug": "osteria-papa-nicola",
+    "slug": "il-polpo-ubriaco",
     "type": "restaurant",
-    "name": "Osteria Papà Nicola",
-    "town": "Milan",
-    "region": "city",
+    "name": "Il Polpo Ubriaco",
+    "town": "Varigotti",
+    "region": "finale-arc",
     "tags": [
       "restaurant",
-      "city",
-      "Milan",
-      "trattoria"
-    ]
-  },
-  {
-    "slug": "trattoria-trippa",
-    "type": "restaurant",
-    "name": "Trattoria Trippa",
-    "town": "Milan",
-    "region": "city",
-    "tags": [
-      "restaurant",
-      "city",
-      "Milan",
-      "anchor — book May 20"
+      "finale-arc",
+      "Varigotti",
+      "seafood"
     ]
   },
   {
@@ -646,16 +835,29 @@
     ]
   },
   {
-    "slug": "polpo-mario",
+    "slug": "losteria-del-vignaiolo",
     "type": "restaurant",
-    "name": "Polpo Mario",
-    "town": "Sestri Levante",
-    "region": "sestri-arc",
+    "name": "L'Osteria del Vignaiolo",
+    "town": "La Morra",
+    "region": "langhe",
     "tags": [
       "restaurant",
-      "sestri-arc",
-      "Sestri Levante",
-      "Day-4 dinner — book ahead"
+      "langhe",
+      "La Morra",
+      "agriturismo"
+    ]
+  },
+  {
+    "slug": "macelleria-guido",
+    "type": "restaurant",
+    "name": "Macelleria Guido",
+    "town": "Alba",
+    "region": "langhe",
+    "tags": [
+      "restaurant",
+      "langhe",
+      "Alba",
+      "carne cruda"
     ]
   },
   {
@@ -672,170 +874,426 @@
     ]
   },
   {
-    "slug": "agriturismo-olivenere-lavagna",
+    "slug": "osteria-dellarco",
     "type": "restaurant",
-    "name": "Agriturismo Olivenere, Lavagna",
-    "town": "Lavagna",
+    "name": "Osteria dell'Arco",
+    "town": "Alba",
+    "region": "langhe",
+    "tags": [
+      "restaurant",
+      "langhe",
+      "Alba",
+      "trattoria"
+    ]
+  },
+  {
+    "slug": "osteria-papa-nicola",
+    "type": "restaurant",
+    "name": "Osteria Papà Nicola",
+    "town": "Milan",
+    "region": "city",
+    "tags": [
+      "restaurant",
+      "city",
+      "Milan",
+      "trattoria"
+    ]
+  },
+  {
+    "slug": "panetteria-giacosa",
+    "type": "restaurant",
+    "name": "Panetteria Giacosa",
+    "town": "Alba",
+    "region": "langhe",
+    "tags": [
+      "restaurant",
+      "langhe",
+      "Alba",
+      "bakery"
+    ]
+  },
+  {
+    "slug": "polpo-mario",
+    "type": "restaurant",
+    "name": "Polpo Mario",
+    "town": "Sestri Levante",
     "region": "sestri-arc",
     "tags": [
       "restaurant",
       "sestri-arc",
-      "Lavagna",
-      "Day-7 long Sunday lunch"
+      "Sestri Levante",
+      "Day-4 dinner — book ahead"
     ]
   },
   {
-    "slug": "wimu-castello-falletti",
-    "type": "cultural-site",
-    "name": "WiMu / Castello Falletti",
-    "town": "Barolo",
-    "region": "langhe",
-    "tags": [
-      "cultural-site",
-      "langhe",
-      "Barolo",
-      "museum"
-    ]
-  },
-  {
-    "slug": "chiesetta-di-tremlett",
-    "type": "cultural-site",
-    "name": "Chiesetta di Tremlett",
-    "town": "Coazzolo",
-    "region": "langhe",
-    "tags": [
-      "cultural-site",
-      "langhe",
-      "Coazzolo",
-      "chapel"
-    ]
-  },
-  {
-    "slug": "castello-di-grinzane-cavour",
-    "type": "cultural-site",
-    "name": "Castello di Grinzane Cavour",
-    "town": "Grinzane Cavour",
-    "region": "langhe",
-    "tags": [
-      "cultural-site",
-      "langhe",
-      "Grinzane Cavour",
-      "castle"
-    ]
-  },
-  {
-    "slug": "cappella-del-barolo",
-    "type": "cultural-site",
-    "name": "La Morra Belvedere / Cappella del Barolo",
-    "town": "La Morra",
-    "region": "langhe",
-    "tags": [
-      "cultural-site",
-      "langhe",
-      "La Morra",
-      "chapel"
-    ]
-  },
-  {
-    "slug": "grotte-di-toirano",
-    "type": "cultural-site",
-    "name": "Grotte di Toirano",
-    "town": "Toirano",
+    "slug": "ponte-antico",
+    "type": "restaurant",
+    "name": "Ponte Antico",
+    "town": "Noli",
     "region": "finale-arc",
     "tags": [
-      "cultural-site",
+      "restaurant",
       "finale-arc",
-      "Toirano",
-      "cave"
+      "Noli",
+      "gambero rosso"
     ]
   },
   {
-    "slug": "sentiero-del-pellegrino",
-    "type": "cultural-site",
-    "name": "Sentiero del Pellegrino",
-    "town": "Varigotti",
-    "region": "finale-arc",
-    "tags": [
-      "cultural-site",
-      "finale-arc",
-      "Varigotti",
-      "trail"
-    ]
-  },
-  {
-    "slug": "finalborgo",
-    "type": "cultural-site",
-    "name": "Finalborgo medieval village",
+    "slug": "ristorante-del-borgo",
+    "type": "restaurant",
+    "name": "Ristorante del Borgo",
     "town": "Finalborgo",
     "region": "finale-arc",
     "tags": [
-      "cultural-site",
+      "restaurant",
       "finale-arc",
       "Finalborgo",
-      "medieval-village"
+      "Sunday pranzo"
     ]
   },
   {
-    "slug": "abbazia-di-san-fruttuoso",
-    "type": "cultural-site",
-    "name": "Abbazia di San Fruttuoso",
-    "town": "Camogli",
-    "region": "sestri-arc",
-    "tags": [
-      "cultural-site",
-      "sestri-arc",
-      "Camogli",
-      "abbey"
-    ]
-  },
-  {
-    "slug": "region-milan",
-    "type": "region-narrative",
-    "name": "Milan",
-    "region": "city",
-    "tags": [
-      "region-narrative",
-      "city"
-    ]
-  },
-  {
-    "slug": "region-turin",
-    "type": "region-narrative",
-    "name": "Turin",
-    "region": "city",
-    "tags": [
-      "region-narrative",
-      "city"
-    ]
-  },
-  {
-    "slug": "region-langhe",
-    "type": "region-narrative",
-    "name": "Langhe",
+    "slug": "trattoria-della-posta",
+    "type": "restaurant",
+    "name": "Trattoria della Posta",
+    "town": "Monforte d'Alba",
     "region": "langhe",
     "tags": [
-      "region-narrative",
+      "restaurant",
+      "langhe",
+      "Monforte d'Alba",
+      "bollito misto"
+    ]
+  },
+  {
+    "slug": "trattoria-trippa",
+    "type": "restaurant",
+    "name": "Trattoria Trippa",
+    "town": "Milan",
+    "region": "city",
+    "tags": [
+      "restaurant",
+      "city",
+      "Milan",
+      "anchor — book May 20"
+    ]
+  },
+  {
+    "slug": "vescovado-noli",
+    "type": "restaurant",
+    "name": "Vescovado Noli",
+    "town": "Noli",
+    "region": "finale-arc",
+    "tags": [
+      "restaurant",
+      "finale-arc",
+      "Noli",
+      "Michelin 1-star"
+    ]
+  },
+  {
+    "slug": "alassio",
+    "type": "town",
+    "name": "Alassio",
+    "region": "finale-arc",
+    "tags": [
+      "town",
+      "finale-arc"
+    ]
+  },
+  {
+    "slug": "albenga",
+    "type": "town",
+    "name": "Albenga",
+    "region": "finale-arc",
+    "tags": [
+      "town",
+      "finale-arc"
+    ]
+  },
+  {
+    "slug": "barbaresco",
+    "type": "town",
+    "name": "Barbaresco",
+    "region": "langhe",
+    "tags": [
+      "town",
       "langhe"
     ]
   },
   {
-    "slug": "region-sestri-levante",
-    "type": "region-narrative",
-    "name": "Sestri Levante",
+    "slug": "barolo",
+    "type": "town",
+    "name": "Barolo",
+    "region": "langhe",
+    "tags": [
+      "town",
+      "langhe"
+    ]
+  },
+  {
+    "slug": "camogli",
+    "type": "town",
+    "name": "Camogli",
     "region": "sestri-arc",
     "tags": [
-      "region-narrative",
+      "town",
       "sestri-arc"
     ]
   },
   {
-    "slug": "region-finale-ligure",
-    "type": "region-narrative",
-    "name": "Finale Ligure",
+    "slug": "castiglione-falletto",
+    "type": "town",
+    "name": "Castiglione Falletto",
+    "region": "langhe",
+    "tags": [
+      "town",
+      "langhe"
+    ]
+  },
+  {
+    "slug": "diano-dalba",
+    "type": "town",
+    "name": "Diano d'Alba",
+    "region": "langhe",
+    "tags": [
+      "town",
+      "langhe"
+    ]
+  },
+  {
+    "slug": "grinzane-cavour",
+    "type": "town",
+    "name": "Grinzane Cavour",
+    "region": "langhe",
+    "tags": [
+      "town",
+      "langhe"
+    ]
+  },
+  {
+    "slug": "la-morra",
+    "type": "town",
+    "name": "La Morra",
+    "region": "langhe",
+    "tags": [
+      "town",
+      "langhe"
+    ]
+  },
+  {
+    "slug": "laigueglia",
+    "type": "town",
+    "name": "Laigueglia",
     "region": "finale-arc",
     "tags": [
-      "region-narrative",
+      "town",
       "finale-arc"
+    ]
+  },
+  {
+    "slug": "monforte-dalba",
+    "type": "town",
+    "name": "Monforte d'Alba",
+    "region": "langhe",
+    "tags": [
+      "town",
+      "langhe"
+    ]
+  },
+  {
+    "slug": "neive",
+    "type": "town",
+    "name": "Neive",
+    "region": "langhe",
+    "tags": [
+      "town",
+      "langhe"
+    ]
+  },
+  {
+    "slug": "serralunga-dalba",
+    "type": "town",
+    "name": "Serralunga d'Alba",
+    "region": "langhe",
+    "tags": [
+      "town",
+      "langhe"
+    ]
+  },
+  {
+    "slug": "sestri-levante",
+    "type": "town",
+    "name": "Sestri Levante",
+    "region": "sestri-arc",
+    "tags": [
+      "town",
+      "sestri-arc"
+    ]
+  },
+  {
+    "slug": "treiso",
+    "type": "town",
+    "name": "Treiso",
+    "region": "langhe",
+    "tags": [
+      "town",
+      "langhe"
+    ]
+  },
+  {
+    "slug": "antoniolo",
+    "type": "winery",
+    "name": "Antoniolo (Societa Agricola)",
+    "town": "Gattinara",
+    "region": "other",
+    "tags": [
+      "winery",
+      "other",
+      "Gattinara"
+    ]
+  },
+  {
+    "slug": "cantina-mascarello-bartolo",
+    "type": "winery",
+    "name": "Cantina Mascarello Bartolo",
+    "town": "Barolo",
+    "region": "langhe",
+    "tags": [
+      "winery",
+      "langhe",
+      "Barolo"
+    ]
+  },
+  {
+    "slug": "contratto",
+    "type": "winery",
+    "name": "Contratto (Cantine Contratto)",
+    "town": "Canelli",
+    "region": "langhe",
+    "tags": [
+      "winery",
+      "langhe",
+      "Canelli"
+    ]
+  },
+  {
+    "slug": "coppo",
+    "type": "winery",
+    "name": "Cantine Coppo",
+    "town": "Canelli",
+    "region": "langhe",
+    "tags": [
+      "winery",
+      "langhe",
+      "Canelli"
+    ]
+  },
+  {
+    "slug": "gd-vajra",
+    "type": "winery",
+    "name": "G.D. Vajra",
+    "town": "Vergne (Barolo)",
+    "region": "langhe",
+    "tags": [
+      "winery",
+      "langhe",
+      "Vergne (Barolo)"
+    ]
+  },
+  {
+    "slug": "giuseppe-rinaldi",
+    "type": "winery",
+    "name": "Cantina Giuseppe Rinaldi",
+    "town": "Barolo",
+    "region": "langhe",
+    "tags": [
+      "winery",
+      "langhe",
+      "Barolo"
+    ]
+  },
+  {
+    "slug": "le-piane",
+    "type": "winery",
+    "name": "Le Piane (Christoph Kunzli)",
+    "town": "Boca",
+    "region": "other",
+    "tags": [
+      "winery",
+      "other",
+      "Boca"
+    ]
+  },
+  {
+    "slug": "malvira",
+    "type": "winery",
+    "name": "Malvira (Azienda Agricola)",
+    "town": "Canale",
+    "region": "langhe",
+    "tags": [
+      "winery",
+      "langhe",
+      "Canale"
+    ]
+  },
+  {
+    "slug": "matteo-correggia",
+    "type": "winery",
+    "name": "Matteo Correggia (Azienda Agricola)",
+    "town": "Canale",
+    "region": "langhe",
+    "tags": [
+      "winery",
+      "langhe",
+      "Canale"
+    ]
+  },
+  {
+    "slug": "orsolani",
+    "type": "winery",
+    "name": "Orsolani (Azienda Agricola)",
+    "town": "San Giorgio Canavese",
+    "region": "other",
+    "tags": [
+      "winery",
+      "other",
+      "San Giorgio Canavese"
+    ]
+  },
+  {
+    "slug": "produttori-del-barbaresco",
+    "type": "winery",
+    "name": "Produttori del Barbaresco",
+    "town": "Barbaresco",
+    "region": "langhe",
+    "tags": [
+      "winery",
+      "langhe",
+      "Barbaresco"
+    ]
+  },
+  {
+    "slug": "punta-crena",
+    "type": "winery",
+    "name": "Punta Crena",
+    "town": "Varigotti",
+    "region": "finale-arc",
+    "tags": [
+      "winery",
+      "finale-arc",
+      "Varigotti"
+    ]
+  },
+  {
+    "slug": "travaglini",
+    "type": "winery",
+    "name": "Travaglini Giancarlo (Azienda Vitivinicola)",
+    "town": "Gattinara",
+    "region": "other",
+    "tags": [
+      "winery",
+      "other",
+      "Gattinara"
     ]
   }
 ]

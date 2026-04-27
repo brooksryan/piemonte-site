@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "start": "pnpm --filter server start",
     "seeds": "tsx scripts/generate-seeds.ts",
+    "regen-search-index": "tsx scripts/regen-search-index.ts",
     "resolve-images": "tsx scripts/resolve-image-urls.ts",
     "test:e2e:local": "playwright test --project local",
     "test:e2e:remote": "playwright test --project remote"
