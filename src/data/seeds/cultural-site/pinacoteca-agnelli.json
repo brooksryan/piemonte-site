@@ -1,0 +1,15 @@
+{
+  "slug": "pinacoteca-agnelli",
+  "name": "Pinacoteca Giovanni e Marella Agnelli",
+  "region": "city",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "cultural-site",
+  "town": "Turin (Lingotto)",
+  "category": "pinacoteca",
+  "url": "https://www.pinacoteca-agnelli.it/en/",
+  "blurb": "The Pinacoteca Agnelli sits on the roof of the Lingotto, Fiat's 1923 assembly plant, where cars were built on five floors and driven onto the rooftop test track before sale. Giovanni and Marella Agnelli's private collection, 25 works of very high density (Matisse, Picasso blue period, Canova plasters, Renoir, Balla, Severini), occupies a glassed pavilion above the former factory floor, and the Pista 500 test track is still there above it. The combination is historically specific to Turin in a way that no other Italian museum manages: the industrial system that made the Agnelli fortune and the art that fortune bought, stacked vertically in the same building.",
+  "mapPin": {
+    "lat": 45.0334,
+    "lon": 7.6521
+  }
+}

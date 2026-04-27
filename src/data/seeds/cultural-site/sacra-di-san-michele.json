@@ -1,0 +1,15 @@
+{
+  "slug": "sacra-di-san-michele",
+  "name": "Sacra di San Michele",
+  "region": "other",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "cultural-site",
+  "town": "Sant'Ambrogio di Torino",
+  "category": "abbey",
+  "url": "https://sacradisanmichele.com/en/",
+  "blurb": "The Sacra di San Michele sits on the summit of Monte Pirchiriano above the Val di Susa, built between 983 and 987 AD on a ridge so narrow that the early medieval masons had to construct the lower sections as artificial platforms before the abbey proper could begin. The Portal of the Zodiac at the top of the carved rock staircase, called the Staircase of the Dead because it was used to display the bodies of monks, is one of the finest pieces of Romanesque sculptural relief in northern Italy, and it is the element Eco studied for his novel. The approach hike from the parking area takes about 30 minutes each way and is worth doing rather than using the car road.",
+  "mapPin": {
+    "lat": 45.0922,
+    "lon": 7.3394
+  }
+}

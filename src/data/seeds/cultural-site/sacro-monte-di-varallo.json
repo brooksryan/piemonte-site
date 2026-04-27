@@ -1,0 +1,15 @@
+{
+  "slug": "sacro-monte-di-varallo",
+  "name": "Sacro Monte di Varallo",
+  "region": "other",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "cultural-site",
+  "town": "Varallo",
+  "category": "sacred mountain",
+  "url": "https://www.sacrimonti.org/en/sacro-monte-di-varallo",
+  "blurb": "The Sacro Monte di Varallo was founded in 1491 by a Franciscan friar who had walked the Via Dolorosa in Jerusalem and wanted to recreate the experience for pilgrims who could not make the journey. The result, built over three centuries on a hilltop above the Valsesia, is 45 chapels populated by more than 800 life-size painted statues in scenes of remarkable psychological and anatomical specificity; sculptors included Tabacchetti, a Fleming, and Tanzio da Varallo, one of the most underrated Italian painters of the early 17th century. The drive from Alba at 130 minutes puts it at the outer edge of the planning radius, but it is categorically unlike anything else in this catalog.",
+  "mapPin": {
+    "lat": 45.8194,
+    "lon": 8.2552
+  }
+}

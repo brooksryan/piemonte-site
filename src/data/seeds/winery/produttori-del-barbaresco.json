@@ -1,0 +1,15 @@
+{
+  "slug": "produttori-del-barbaresco",
+  "name": "Produttori del Barbaresco",
+  "region": "langhe",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "winery",
+  "town": "Barbaresco",
+  "visitPolicy": "walk-in tasting; cellar tour by appointment",
+  "url": "https://www.produttoridelbarbaresco.com/en/",
+  "blurb": "The Produttori is a cooperative of 56 grower members who bottle all their fruit under a single label with no vanity pricing, which means a single-vineyard Riserva here costs a fraction of what a comparable Gaja cru runs. The free walk-in tasting room in the village makes this one of the most accessible serious-wine experiences in the entire Langhe, and the mix of village-level Barbaresco alongside the nine single-vineyard Riservas lets you do a genuine comparative exercise without scheduling weeks in advance.",
+  "mapPin": {
+    "lat": 44.7274,
+    "lon": 8.0808
+  }
+}

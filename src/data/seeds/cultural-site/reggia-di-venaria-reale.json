@@ -1,0 +1,15 @@
+{
+  "slug": "reggia-di-venaria-reale",
+  "name": "Reggia di Venaria Reale",
+  "region": "city",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "cultural-site",
+  "town": "Venaria Reale",
+  "category": "royal residence",
+  "url": "https://lavenaria.it/en/",
+  "blurb": "The Reggia di Venaria Reale entered UNESCO's list of Residences of the Royal House of Savoy in 1997 and underwent a 25-year restoration, the largest in Italian history, that returned it to operational use in 2007. What most visitors do not realize is that the complex includes not just the palace but a full Baroque town laid out on an orthogonal grid behind it, built to house the court and the hunt staff. The Diana hunting room, with its ceiling depicting the goddess among the Savoy's actual kill records, is the kind of specific historical oddity that earns an hour of attention on its own.",
+  "mapPin": {
+    "lat": 45.1389,
+    "lon": 7.6073
+  }
+}

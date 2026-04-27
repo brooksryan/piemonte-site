@@ -1,0 +1,15 @@
+{
+  "slug": "palazzina-di-caccia-stupinigi",
+  "name": "Palazzina di Caccia di Stupinigi",
+  "region": "city",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "cultural-site",
+  "town": "Nichelino (frazione Stupinigi)",
+  "category": "royal residence",
+  "url": "https://www.ordinemauriziano.it/en/palazzina-di-caccia-di-stupinigi/",
+  "blurb": "Filippo Juvarra built Stupinigi as a working hunting lodge rather than a statement palace, and the radiating floor plan, with four wings extending from a central ballroom-rotunda, reflects the operational logic of a serious hunting operation rather than the ceremonial axis of Versailles. Because the Savoy actually used it, the rooms accumulated furniture and decorative arts across four centuries rather than being frozen in any single moment; the result is one of the most densely layered interiors in Piedmont. The 65-minute audio guide the foundation provides covers 26 specific points of interest, which is efficient enough to work into a Turin day-trip without eating the entire afternoon.",
+  "mapPin": {
+    "lat": 44.9938,
+    "lon": 7.5887
+  }
+}

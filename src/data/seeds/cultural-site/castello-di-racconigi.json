@@ -1,0 +1,15 @@
+{
+  "slug": "castello-di-racconigi",
+  "name": "Castello Reale di Racconigi",
+  "region": "other",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "cultural-site",
+  "town": "Racconigi",
+  "category": "royal residence",
+  "url": "https://museipiemonte.cultura.gov.it/index.php/musei-e-luoghi-della-cultura/castello-di-racconigi/",
+  "blurb": "Castello di Racconigi is the summer palace of the Savoy-Carignano cadet line, renovated in the 19th century to house the branch of the family that would eventually unify Italy. The park, loosely modeled on Le Notre's principles but executed over several centuries and by multiple hands, contains a Russian dacha built for Tsar Nicholas I's 1845 visit, an Egyptian-style Doric tempietto, and a Liberty-era glass house, each addition reflecting a diplomatic or romantic episode in Savoy history. Because it is 38 minutes from Alba and far less crowded than Venaria or Stupinigi, it offers the royal-residence experience at a pace that allows actual looking rather than crowd navigation.",
+  "mapPin": {
+    "lat": 44.7694,
+    "lon": 7.6760
+  }
+}

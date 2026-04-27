@@ -1,0 +1,15 @@
+{
+  "slug": "basilica-di-superga",
+  "name": "Basilica di Superga",
+  "region": "city",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "cultural-site",
+  "town": "Turin (Colle di Superga)",
+  "category": "basilica",
+  "url": "https://en.basilicadisuperga.com/",
+  "blurb": "Juvarra designed the Basilica di Superga as both a votive church and a dynastic necropolis, and the royal tombs in the crypt, 62 Savoy burials with coffins stacked in niches and marble portrait busts above them, are the architectural equivalent of a compressed royal family tree. The basilica sits on the Colle di Superga at 672 meters above Turin, and the view across the Po plain toward the Alps is the clearest available from anywhere near the city. The wreck site of the Grande Torino's aircraft on the rear wall, marked with a simple plaque, adds a layer of modern Italian history that makes the hilltop one of the denser single-acre sites in the region.",
+  "mapPin": {
+    "lat": 45.0786,
+    "lon": 7.7757
+  }
+}

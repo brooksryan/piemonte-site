@@ -1,0 +1,15 @@
+{
+  "slug": "le-piane",
+  "name": "Le Piane (Christoph Kunzli)",
+  "region": "other",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "winery",
+  "town": "Boca",
+  "visitPolicy": "by appointment via email or phone",
+  "url": "https://www.bocapiane.it/",
+  "blurb": "Christoph Kunzli is a Swiss wine merchant from Interlaken who tasted Antonio Cerri's 50-year-old Boca at a wine fair in the 1990s and subsequently bought Cerri's farm when the old man died in 1997; he was hooked by a wine he had never heard of from an appellation that had almost ceased to exist. Boca sits on volcanic basalt above Lake Maggiore, producing a style of Nebbiolo with more floral delicacy and mineral snap than its Langhe equivalents. Because production is small and the terroir is genuinely obscure, a visit here is the kind of find that rewards doing the research.",
+  "mapPin": {
+    "lat": 45.6825,
+    "lon": 8.3996
+  }
+}

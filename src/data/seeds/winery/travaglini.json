@@ -1,0 +1,15 @@
+{
+  "slug": "travaglini",
+  "name": "Travaglini Giancarlo (Azienda Vitivinicola)",
+  "region": "other",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "winery",
+  "town": "Gattinara",
+  "visitPolicy": "by appointment via email; closed Sundays",
+  "url": "https://www.travaglinigattinara.com/en-gb/",
+  "blurb": "Travaglini is the producer who kept Gattinara, a Nebbiolo DOCG from volcanic soils in the Vercelli hills, commercially alive during the decades when the appellation nearly vanished, and the asymmetric bottle the winery designed in the 1950s is now its internationally recognized symbol. The cellar tour includes a tasting with local meats and cheese, which puts it squarely in the food-forward pairing register that earns a slot on this trip. Alto Piemonte Nebbiolo has a mineral and perfumed quality that is structurally different from Barolo, and this visit makes that comparison possible in real time.",
+  "mapPin": {
+    "lat": 45.6154,
+    "lon": 8.3672
+  }
+}

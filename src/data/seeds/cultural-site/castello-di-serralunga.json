@@ -1,0 +1,15 @@
+{
+  "slug": "castello-di-serralunga",
+  "name": "Castello di Serralunga d'Alba",
+  "region": "langhe",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "cultural-site",
+  "town": "Serralunga d'Alba",
+  "category": "castle",
+  "url": "https://www.castellodiserralunga.it/en/",
+  "blurb": "Castello di Serralunga is one of the best-preserved 14th-century military castles in northern Italy, partly because the Falletti family who built it kept it as a pure power statement rather than converting it to comfortable residence; the interior is vaulted stone chambers and defensive passages rather than salon furniture. Because it sits directly in the Barolo wine zone with vineyard views from every window, it functions simultaneously as an introduction to the medieval politics that shaped the Langhe and as the most dramatic viewpoint of the appellation. The guided tours are conducted by the Barolo and Castles Foundation and run all day on weekends without advance booking.",
+  "mapPin": {
+    "lat": 44.6108,
+    "lon": 8.0002
+  }
+}

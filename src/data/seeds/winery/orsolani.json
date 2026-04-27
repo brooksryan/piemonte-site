@@ -1,0 +1,15 @@
+{
+  "slug": "orsolani",
+  "name": "Orsolani (Azienda Agricola)",
+  "region": "other",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "winery",
+  "town": "San Giorgio Canavese",
+  "visitPolicy": "by appointment via email or WineTourism.com",
+  "url": "https://www.orsolani.it",
+  "blurb": "Erbaluce di Caluso is a grape that almost nobody outside northern Piemonte can name, which is precisely the reason to seek it out. Orsolani, based in the Canavese between Turin and the Valle d'Aosta foothills, makes three radically different wines from the same fruit: a dry still white with bracing acidity, a traditional-method sparkling, and a Passito dessert wine that ranks with the best in Italy. The fact that Caluso DOCG exists at all is a minor miracle of geographic classification; the wine world concentrated on Barolo and left this corner of the region essentially to itself.",
+  "mapPin": {
+    "lat": 45.3382,
+    "lon": 7.7975
+  }
+}

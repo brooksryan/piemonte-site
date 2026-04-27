@@ -1,0 +1,15 @@
+{
+  "slug": "forte-di-fenestrelle",
+  "name": "Forte di Fenestrelle",
+  "region": "other",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "cultural-site",
+  "town": "Fenestrelle",
+  "category": "fortification",
+  "url": "https://www.fortedifenestrelle.it/",
+  "blurb": "The Forte di Fenestrelle was built by the Savoy over the course of a century to deny the Val Chisone to French armies, and the covered staircase, 3,984 steps connecting Forte San Carlo at the valley floor to Forte delle Valli at the ridgeline, is the engineering detail that visitors remember longest. The three-hour guided tour is the minimum to understand what you are actually looking at; the one-hour version covers only the lowest fort. The volunteer restoration organization Associazione Progetto San Carlo has been working the site since 1990 with no public subsidy, which partly explains why so little of it is finished and why a visit here feels like being let into something still mid-discovery.",
+  "mapPin": {
+    "lat": 45.0245,
+    "lon": 7.0563
+  }
+}

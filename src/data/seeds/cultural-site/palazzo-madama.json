@@ -1,0 +1,15 @@
+{
+  "slug": "palazzo-madama",
+  "name": "Palazzo Madama (Museo Civico d'Arte Antica)",
+  "region": "city",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "cultural-site",
+  "town": "Turin",
+  "category": "museum",
+  "url": "https://www.palazzomadamatorino.it/en/",
+  "blurb": "Palazzo Madama is the rare site that rewards going around the outside before entering: the Roman towers at the back, the medieval castle walls midway, and Juvarra's Baroque facade at the front are not disguised; they sit in open conversation with each other. The Civic Museum of Ancient Art inside carries over 60,000 works spanning Byzantine through early modern, but the archaeological basement, where the Roman gate's footprint is still legible, is the piece most visitors miss. For a city walking day, this is the structural anchor of Piazza Castello and pairs naturally with the Mole and the Egyptian Museum on the same route.",
+  "mapPin": {
+    "lat": 45.0715,
+    "lon": 7.6855
+  }
+}

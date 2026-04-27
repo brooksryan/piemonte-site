@@ -1,0 +1,15 @@
+{
+  "slug": "malvira",
+  "name": "Malvira (Azienda Agricola)",
+  "region": "langhe",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "winery",
+  "town": "Canale",
+  "visitPolicy": "advance reservation required; three daily tasting sessions",
+  "url": "https://www.malvira.com/en/",
+  "blurb": "Malvira sits on the sandy, right-bank Roero hills directly across the Tanaro from Barolo country, working a terroir that produces aromatic whites and fragrant reds most visitors never seek out. The underground barrel cellar beneath the estate is a proper architectural space, and the Villa Tiboldi agriturismo attached to the property adds the option of a full lunch with wine pairing if you want to make a half-day of it. This is the rare Roero producer with enough structure and hospitality investment to justify a primary stop rather than an afterthought.",
+  "mapPin": {
+    "lat": 44.7926,
+    "lon": 7.9849
+  }
+}

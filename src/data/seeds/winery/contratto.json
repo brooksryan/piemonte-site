@@ -1,0 +1,15 @@
+{
+  "slug": "contratto",
+  "name": "Contratto (Cantine Contratto)",
+  "region": "langhe",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "winery",
+  "town": "Canelli",
+  "visitPolicy": "advance booking online; structured tour with tasting",
+  "url": "https://www.contratto.it/en/",
+  "blurb": "Founded in 1867, Contratto is one of the oldest Italian sparkling wine houses, and its underground cellars, dug by hand into the tufa hillside beneath Canelli over a ten-year period starting in 1899, were recognized as a UNESCO World Heritage Site in 2014 as part of the Paesaggi Vitivinicoli del Piemonte designation. The cellars are cavernous, more than 30 meters deep, and the comparison to a wine cathedral is not press-copy exaggeration. Alta Langa Metodo Classico is the undersung answer to Franciacorta, and Contratto makes a strong case for why.",
+  "mapPin": {
+    "lat": 44.7171,
+    "lon": 8.2879
+  }
+}

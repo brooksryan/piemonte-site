@@ -1,0 +1,15 @@
+{
+  "slug": "coppo",
+  "name": "Cantine Coppo",
+  "region": "langhe",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "winery",
+  "town": "Canelli",
+  "visitPolicy": "by appointment; structured tour with tasting",
+  "url": "https://www.coppo.com/en/",
+  "blurb": "Coppo's underground cellars in Canelli are the same UNESCO-listed tunnel network that made this corner of Piedmont famous: 18th-century tuff passages dug by hand, running deep enough to maintain constant cellar temperature without mechanical intervention. The family has operated here since 1892 and the range spans from Barbera d'Asti to Metodo Classico sparkling to Moscato, which makes the tasting more representative of Asti-area wine culture than a single-appellation estate would be. Because Contratto is in the same town, these two visits pair sensibly on the same half-day drive from Alba.",
+  "mapPin": {
+    "lat": 44.7171,
+    "lon": 8.2879
+  }
+}

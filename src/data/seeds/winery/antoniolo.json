@@ -1,0 +1,14 @@
+{
+  "slug": "antoniolo",
+  "name": "Antoniolo (Societa Agricola)",
+  "region": "other",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "winery",
+  "town": "Gattinara",
+  "visitPolicy": "by appointment via email or phone",
+  "blurb": "Where Travaglini is the estate that kept Gattinara's commercial infrastructure intact, Antoniolo is the one that kept the idea of single-vineyard expression alive: Osso San Grato, San Francesco, and Castelle are three geologically distinct plots producing wines that taste audibly different from each other. Alberto and Lorella Antoniolo are the third generation running 14 hectares with fermentations in concrete and long aging in large wood, producing roughly 55,000 bottles a year. The visit pairs logically with Travaglini on the same day, since both are in Gattinara, making the drive from Alba worth the distance.",
+  "mapPin": {
+    "lat": 45.6154,
+    "lon": 8.3672
+  }
+}

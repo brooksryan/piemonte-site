@@ -1,0 +1,15 @@
+{
+  "slug": "giuseppe-rinaldi",
+  "name": "Cantina Giuseppe Rinaldi",
+  "region": "langhe",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "winery",
+  "town": "Barolo",
+  "visitPolicy": "by appointment via email",
+  "url": "https://www.rinaldigiuseppe.com",
+  "blurb": "After Beppe Rinaldi died in 2018, daughters Marta and Carlotta took over a winery that remains one of the ideological anchors of traditional Barolo, with long macerations, no new oak, and no concessions to fashion. The visit is genuinely personal rather than staged; you are in the cellar with the people who make the wine, and the conversation reflects it. Because their bottles do not show up at retail without a wait list, tasting them at the source is the practical route anyway.",
+  "mapPin": {
+    "lat": 44.6104,
+    "lon": 7.9426
+  }
+}

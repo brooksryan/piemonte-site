@@ -1,0 +1,15 @@
+{
+  "slug": "castello-di-rivoli",
+  "name": "Castello di Rivoli (Museo d'Arte Contemporanea)",
+  "region": "city",
+  "sourceLocator": "site-piemonte-research.md",
+  "type": "cultural-site",
+  "town": "Rivoli",
+  "category": "museum",
+  "url": "https://www.castellodirivoli.org/en/",
+  "blurb": "Castello di Rivoli is the reason Arte Povera has an institutional home in the city where it originated: the collection anchors Boetti, Merz, Pistoletto, Kounellis, and Penone in one building. What makes the installation logic unusual is that the curators work with the unfinished palace walls rather than against them; raw brick and interrupted plasterwork serve as the literal background for works that were themselves interested in incompleteness and material honesty. Admission is EUR 6.50, which makes this the most affordable serious contemporary art experience in northern Italy.",
+  "mapPin": {
+    "lat": 45.0697,
+    "lon": 7.5105
+  }
+}
