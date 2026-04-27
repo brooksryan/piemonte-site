@@ -6,5 +6,9 @@
   "type": "town",
   "blurb": "11th-century castle holding Cavour's apartments and the Enoteca Regionale Piemontese. Closed Tuesdays year-round per the official tickets page; v3 anchors it on Day 4 Thursday morning before the Liguria transit.",
   "driveTimeMin": 16,
-  "url": "https://www.castellogrinzane.com/en/"
+  "url": "https://www.castellogrinzane.com/en/",
+  "mapPin": {
+    "lat": 44.6486,
+    "lon": 7.9923
+  }
 }

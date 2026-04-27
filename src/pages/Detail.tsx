@@ -9,6 +9,7 @@ import {
   addCalendarItem,
 } from '../lib/api';
 import { useActiveUser } from '../lib/user';
+import { googleMapsHref } from '../lib/google-maps';
 import RelatedStrip from '../components/RelatedStrip';
 
 const PLAN_DATES = [
@@ -275,19 +276,6 @@ export default function DetailPage() {
     });
   }
 
-  // Map link: lodging uses placeId; town/restaurant/winery/beach/cultural-site may have placeId
-  const placeId: string | undefined = (() => {
-    switch (seed.type) {
-      case 'lodging': return seed.placeId;
-      case 'town': return seed.placeId;
-      case 'restaurant': return seed.placeId;
-      case 'winery': return seed.placeId;
-      case 'beach': return seed.placeId;
-      case 'cultural-site': return seed.placeId;
-      default: return undefined;
-    }
-  })();
-
   return (
     <div className="px-4 py-4 max-w-screen-md mx-auto">
       {/* Header row */}
@@ -340,18 +328,16 @@ export default function DetailPage() {
       <RelatedStrip seed={seed} />
 
       {/* Google Maps link */}
-      {placeId && (
-        <div className="mb-4">
-          <a
-            href={`https://www.google.com/maps/search/?api=1&query_place_id=${placeId}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-accent underline"
-          >
-            Open in Google Maps
-          </a>
-        </div>
-      )}
+      <div className="mb-4">
+        <a
+          href={googleMapsHref(seed)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-accent underline"
+        >
+          Open in Google Maps
+        </a>
+      </div>
 
       {/* Source */}
       <div className="border-t border-border pt-4 text-sm text-muted">

@@ -6,5 +6,9 @@
   "type": "town",
   "blurb": "Castello Falletti and the WiMu wine museum, walkable cobble streets between four enotecas. Lunch at La Cantinetta. Buy the Cannubi at the cellar, not the gift shop.",
   "driveTimeMin": 19,
-  "url": "https://www.comune.barolo.cn.it/"
+  "url": "https://www.comune.barolo.cn.it/",
+  "mapPin": {
+    "lat": 44.6094,
+    "lon": 7.9460
+  }
 }

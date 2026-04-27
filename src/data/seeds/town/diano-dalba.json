@@ -6,5 +6,9 @@
   "type": "town",
   "blurb": "The Dolcetto-first hilltop on the south rim of Alba. Sörì-system vineyard signage, panoramic terrace with the Maritime Alps on a clear day, weekday osteria lunches at La Briccola for under €40 per cover.",
   "driveTimeMin": 17,
-  "url": "https://www.comune.dianodalba.cn.it/"
+  "url": "https://www.comune.dianodalba.cn.it/",
+  "mapPin": {
+    "lat": 44.6592,
+    "lon": 8.0472
+  }
 }

@@ -6,5 +6,9 @@
   "type": "town",
   "blurb": "Pre-Roman city with three medieval towers still standing in the centro storico, the 5th-century baptistery, and Liguria's only intact Roman amphitheatre. The artichoke-and-purple-asparagus plain begins here.",
   "driveTimeMin": 33,
-  "url": "https://www.comune.albenga.sv.it/"
+  "url": "https://www.comune.albenga.sv.it/",
+  "mapPin": {
+    "lat": 44.0519,
+    "lon": 8.2167
+  }
 }

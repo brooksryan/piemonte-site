@@ -5,5 +5,9 @@
   "sourceLocator": "folios/options/v4/folio.data.json :: regions-coast[0].anchors[3]",
   "type": "town",
   "blurb": "Pastel-fishing-village register; the anti-Portofino harbor walk",
-  "url": "https://www.santamariaassuntacamogli.org/"
+  "url": "https://www.santamariaassuntacamogli.org/",
+  "mapPin": {
+    "lat": 44.3500,
+    "lon": 9.1561
+  }
 }

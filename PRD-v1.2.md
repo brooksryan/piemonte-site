@@ -1,6 +1,6 @@
-# PRD v1.2 - Bug-driven user stories (with v1.3 Story 7 appended)
+# PRD v1.2 - Bug-driven user stories (with v1.3 Story 7 and v1.4 Stories 8-9 appended)
 
-This document is additive to `site/PRD.md`. It captures the six user stories that fall out of the five live bugs Brooks reported after the v1.1 review, plus one additional story that splits the cross-linking work cleanly enough for piemonte-qa to write separate Playwright specs against the algorithm and against the interaction surface. Story 7 was appended later as the v1.3 work item for legend-as-filter on the map; I kept it in this file rather than spinning a separate PRD-v1.3 because the story numbering, the QA process, and the out-of-scope frame all carry over without translation.
+This document is additive to `site/PRD.md`. It captures the six user stories that fall out of the five live bugs Brooks reported after the v1.1 review, plus one additional story that splits the cross-linking work cleanly enough for piemonte-qa to write separate Playwright specs against the algorithm and against the interaction surface. Story 7 was appended later as the v1.3 work item for legend-as-filter on the map. Stories 8 and 9 are the v1.4 work items covering image rendering and Google Maps deep-link correctness. I kept them in this file rather than spinning separate PRD-v1.3 and PRD-v1.4 docs because the story numbering, the QA process, and the out-of-scope frame all carry over without translation.
 
 Every story below carries testable acceptance criteria written as Given / When / Then assertions or numbered assertion lists. piemonte-qa is the gating reviewer: no task closes until qa runs the matching spec against both `http://localhost:5173` (or the local server port piemonte-dev settles on) and the deployed DO App Platform URL.
 
@@ -182,14 +182,80 @@ Out of scope for Story 7:
 - Saving named filter presets. There is one filter state and it lives in one localStorage key.
 - Animated transitions for marker mount and unmount. v1.3 mounts and unmounts immediately.
 
+## Story 8 - Images render for every entity that carries an imageUrl
+
+As Brooks scanning the Coastal page or any beach Detail page, I see the real photo when an entity has an `imageUrl` set on its seed. The image renders inline, not as a placeholder block, and not as a broken-image icon.
+
+Background: seven beach seeds currently carry `imageUrl` values (`alassio`, `camogli`, `cervo`, `laigueglia`, `san-fruttuoso`, `spotorno`, `varigotti-baia-dei-saraceni`). Every one of those URLs points at a Wikimedia Commons file-description page of the form `https://commons.wikimedia.org/wiki/File:<filename>`. The browser fetches the description HTML, the response carries a `text/html` content type, and the `<img>` tag fails silently because the resource is not an image. Brooks's diagnosis is correct: the seeds need to point at the underlying `upload.wikimedia.org` direct file URL (for example `https://upload.wikimedia.org/wikipedia/commons/.../Baia_dei_Saraceni.jpg`) rather than the description page. piemonte-dev decides whether the fix lives in the seeds, in a build-time URL transform, or in a runtime fetch shim.
+
+The story does not specify which of those three approaches piemonte-dev picks. It specifies the user-observable success state and pins the seven beach seeds as the QA reference set so the spec asserts against real data rather than an abstract count.
+
+Acceptance criteria:
+
+1. Given I open `/coastal`, when the page renders and the seven beach EntityCards paint, then each of the seven beach cards shows an `<img>` element inside its hero slot whose `naturalWidth` is greater than zero.
+2. Given I open `/coastal`, when I count DOM elements matching the typographic placeholder fallback (the region-tinted block from Story 3 used when a seed has no `imageUrl`), then the count among the seven beach cards is zero.
+3. Given I open the Detail page for `beach/varigotti-baia-dei-saraceni`, `beach/spotorno`, `beach/alassio`, `beach/laigueglia`, `beach/cervo`, `beach/camogli`, or `beach/san-fruttuoso`, when the page renders, then the hero image renders with a successful network response (status code in 200-299) and `naturalWidth` greater than zero.
+4. Given the browser devtools network tab is open, when any of the seven beach images load, then the response Content-Type begins with `image/`. The response is not `text/html`.
+5. Given I tap any of the seven beach cards, when I navigate to the Detail page, then the hero image on the Detail page is the same image rendered on the card. The two surfaces share the same imageUrl.
+6. Given a future seed adds an `imageUrl` of any host (Wikimedia or otherwise) and the URL points at a direct image resource, when the seed lands and the page renders, then assertion 1 holds for that new seed without further code changes.
+7. Given a seed has `imageUrl` set to null or omitted, when the card renders, then the hero slot shows the typographic placeholder per Story 3, and assertion 2 does not include that card in its zero-count.
+8. Given an `imageCredit` field is present on a seed, when the image renders, then the credit text renders at `text-xs text-muted` immediately under the hero, before the body padding, per Story 3 assertion 4.
+
+Out of scope for Story 8:
+
+- Adding images to entities that do not currently have `imageUrl` set. The story fixes the rendering of the seven existing beach images.
+- Image optimization, lazy-load thresholds beyond the existing `loading="lazy"` attribute, or responsive `srcset`. v1.4 ships whatever resolution the upstream Wikimedia Commons file serves.
+- Hosting copies of the images locally. The fix may rewrite URLs to `upload.wikimedia.org` but does not require pulling assets into the repo.
+
+## Story 9 - Google Maps deep-links resolve to the right place
+
+As Brooks tapping the "Open in Google Maps" affordance on a Detail page, I land on the correct Google Maps result for that specific entity, not on a search that returns adjacent places or the wrong town.
+
+Background: Detail pages currently render a Google Maps deep-link that resolves to the wrong place often enough for Brooks to flag it. The site has three pieces of data of varying quality per entity: a `placeId` (most precise, present on the 13 lodging entries plus selected restaurants and cultural sites), a `mapPin` lat/lon (present on a wider set of entities including towns and beaches), and a `name` plus `town` field (present on every catalog entity). The deep-link should pick the most precise form available and fall back through the chain.
+
+Deep-link construction algorithm (deterministic, applied at render time per entity):
+
+- Step 1, place_id form. If the seed has a non-empty `placeId`, the anchor href is `https://www.google.com/maps/place/?q=place_id:<placeId>`. The `<placeId>` segment is the literal value with no URL-encoding (place_ids are URL-safe by Google's spec).
+- Step 2, lat/lon fallback. Otherwise, if the seed has a `mapPin` with finite numeric `lat` and `lon`, the anchor href is `https://www.google.com/maps/?q=<lat>,<lon>` where the two numbers are formatted with a six-decimal precision string and joined by a literal comma.
+- Step 3, search fallback. Otherwise, the anchor href is `https://www.google.com/maps/search/?api=1&query=<query>` where `<query>` is `encodeURIComponent(name + ' ' + town)` when the seed has a non-empty `town` field, or `encodeURIComponent(name)` when no `town` is available.
+
+The algorithm runs the same way on Detail pages and anywhere else the site renders a "Open in Google Maps" affordance.
+
+Acceptance criteria:
+
+1. Given I open the Detail page for `lodging/hotel-helvetia` (which carries the placeId `ChIJ_3NmgA6X1BIRENl-zBP6mjA` per the audit), when the page renders, then the "Open in Google Maps" anchor's `href` equals `https://www.google.com/maps/place/?q=place_id:ChIJ_3NmgA6X1BIRENl-zBP6mjA`.
+2. Given I open the Detail page for `town/barolo` (which has `mapPin` lat 44.6094 lon 7.9460 in the catalog and no placeId), when the page renders, then the anchor `href` equals `https://www.google.com/maps/?q=44.609400,7.946000`.
+3. Given I open the Detail page for `beach/cervo` (which has `mapPin` and no placeId), when the page renders, then the anchor `href` matches the regex `^https://www\.google\.com/maps/\?q=-?\d+\.\d{6},-?\d+\.\d{6}$` and the lat/lon segment matches the seed's `mapPin` to six decimals.
+4. Given I open the Detail page for `restaurant/polpo-mario` (which the audit flags as carrying neither placeId nor mapPin) or any other entity with no placeId and no mapPin, when the page renders, then the anchor `href` begins with `https://www.google.com/maps/search/?api=1&query=` and the query segment URL-decodes back to the seed's `name + ' ' + town` (or `name` alone when `town` is empty).
+5. Given the seed has a placeId set to an empty string or whitespace, when the algorithm runs, then it falls through to step 2 rather than emitting a malformed `place_id:` URL.
+6. Given the seed has a `mapPin` whose lat or lon is null, undefined, or non-finite, when the algorithm runs, then it falls through to step 3 rather than emitting `https://www.google.com/maps/?q=NaN,NaN` or similar.
+7. Given the anchor renders, when I read the DOM, then the anchor carries `target="_blank"` and `rel="noopener noreferrer"` so taps open in a new tab without exposing the referrer.
+8. Given the same entity renders on multiple surfaces (Detail page hero, Plan-day card, Related strip card), when I read the anchor on each surface, then every surface emits the same `href` for the same entity.
+
+Out of scope for Story 9:
+
+- Switching to Apple Maps on iOS. v1.4 emits the Google Maps URL for every device.
+- Embedded Google Maps iframes. The story covers anchor links only.
+- Validating that the place_id still resolves to a live Google Maps result. The catalog place_ids came from the audit and are accepted as authoritative for v1.4.
+- Adding placeId or mapPin to entities that lack both. Step 3 of the algorithm is the documented fallback for that case.
+
 ## Process change - QA gating
 
 This change applies to every task in the v1.2 board (#23 through #28) and every task that follows.
 
 - piemonte-dev and piemonte-devops do not mark a task `completed` themselves. They mark it as ready for QA by setting `metadata.qa_status = 'ready'` via TaskUpdate and notifying piemonte-qa with the task ID and the URLs to test (localhost and the deployed URL).
 - piemonte-qa runs the Playwright spec for that story against both URLs. If both pass, qa flips the task to `completed` and notifies the team lead. If either fails, qa flips the task back to `in_progress`, sets `metadata.qa_status = 'failed'`, and posts the failing assertion list back to the implementing teammate.
-- piemonte-qa writes the spec by translating the numbered acceptance criteria above into Playwright assertions. Spec filenames mirror the story numbers: `story-1-maps-load.spec.ts`, `story-2-user-switcher.spec.ts`, and so on, through `story-7-map-filters.spec.ts`, all under `site/tests/`.
+- piemonte-qa writes the spec by translating the numbered acceptance criteria above into Playwright assertions. Spec filenames mirror the story numbers: `story-1-maps-load.spec.ts`, `story-2-user-switcher.spec.ts`, and so on, through `story-9-google-maps-links.spec.ts`, all under `site/tests/`.
 - The spec runs against `http://localhost:<port>` first, then against the deployed URL. A run that passes locally but fails on deploy keeps the task in `in_progress`.
+
+### Process change v1.4 - Forge replaced by Claude Opus 4.7 max-thinking
+
+The Forge OpenAI quota is exhausted. From this turn forward, piemonte-dev and piemonte-devops replace Forge subagents with Claude Opus 4.7 max-thinking subagents. The intent and the discipline of the Forge protocol carry over without change; only the underlying model differs.
+
+- Spawn pattern: `Agent(subagent_type="general-purpose", model="opus")` with a self-contained brief that carries the target file path, the exact change, the surrounding interfaces and types, and an acceptance test the same way the Forge brief did.
+- Acceptance test, output contract, and diff review continue to apply. piemonte-dev still reads every diff before committing and still rejects work that pulls in unreviewed dependencies, deviates from the PRD, or fails the acceptance test.
+- Logging continues. Every spawn writes a row to `/Users/brooks/dev-work/Personal/piemeonte-vacation-may-june-2026/forge-runs.md` with the same columns. The `model` column reads `requested: opus-4-7-max-thinking, actual: claude-opus-4-7` so the audit log captures the swap explicitly.
+- The piemonte-pm role does not change. I continue to write prose on Opus 4.6 medium and do not spawn coding subagents.
 
 ## Out of scope for v1.2
 

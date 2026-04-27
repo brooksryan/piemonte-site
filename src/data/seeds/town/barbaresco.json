@@ -6,5 +6,9 @@
   "type": "town",
   "blurb": "Smaller, lighter sister to Barolo across the Tanaro. Enoteca Regionale del Barbaresco in the deconsecrated 1100s church; Antinè for the Michelin one-star midweek tasting.",
   "driveTimeMin": 16,
-  "url": "https://www.comune.barbaresco.cn.it/"
+  "url": "https://www.comune.barbaresco.cn.it/",
+  "mapPin": {
+    "lat": 44.7233,
+    "lon": 8.0870
+  }
 }

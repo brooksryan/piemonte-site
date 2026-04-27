@@ -6,5 +6,9 @@
   "type": "town",
   "blurb": "Five minutes south of Alassio and almost no day-tripper traffic. Pastel old town, calmer beach, 1500s parish church. The walk-up trattoria register at Baia del Sole for a focaccia-and-fritto-misto lunch under €30 per cover.",
   "driveTimeMin": 40,
-  "url": "https://www.comune.laigueglia.sv.it/"
+  "url": "https://www.comune.laigueglia.sv.it/",
+  "mapPin": {
+    "lat": 43.9783,
+    "lon": 8.1583
+  }
 }

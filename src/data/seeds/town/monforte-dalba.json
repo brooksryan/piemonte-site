@@ -6,5 +6,9 @@
   "type": "town",
   "blurb": "Hilltop village south of Barolo, the post-cellar dinner pick — bollito misto cart, seven cuts and seven sauces at Della Posta in the Sant'Anna hamlet. Two hours, slow.",
   "driveTimeMin": 26,
-  "url": "https://www.comune.monforte.cn.it/"
+  "url": "https://www.comune.monforte.cn.it/",
+  "mapPin": {
+    "lat": 44.5544,
+    "lon": 7.9700
+  }
 }

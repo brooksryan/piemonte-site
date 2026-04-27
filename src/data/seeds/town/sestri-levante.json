@@ -5,5 +5,9 @@
   "sourceLocator": "folios/options/v4/folio.data.json :: regions-coast[0]",
   "type": "town",
   "blurb": "Sestri Levante's geography does the structural work — a narrow isthmus with two bays, the Baia del Silenzio facing east into the Andersen-fable register and the Baia delle Favole facing west toward the wider sand strip. Five nights at Hotel Helvetia put both bays inside a five-minute walk; the old town's pesto trattorie and pasticcerie sit on the same isthmus, which means the daily-life loop runs entirely on foot. The transit in from Alba routes through Recco for the IGP-protected focaccia at Manuelina, a 15-min detour off the A12 that costs nothing in beach time.\n\nThe active half-day is Punta Manara — three miles round trip, ~700 ft elevation, the Saracen watchtower at the top. The trip's strongest single Liguria-cultural pick lands on Monday Jun 1: the Camogli ferry to the Abbazia di San Fruttuoso, a 30-minute boat into a cove only reachable by sea or footpath. Lunch at the abbey, the Cristo degli Abissi viewing if the freedive map is at the dock, frittura marina from a paper cone on the Camogli quay on the way back. The lazy Sunday lunch runs inland to Lavagna at Agriturismo Olivenere — coniglio alla ligure, torta pasqualina, the estate's olive oil.",
-  "url": "https://www.comune.sestri-levante.ge.it/"
+  "url": "https://www.comune.sestri-levante.ge.it/",
+  "mapPin": {
+    "lat": 44.2719,
+    "lon": 9.3958
+  }
 }

@@ -6,5 +6,9 @@
   "type": "town",
   "blurb": "Belvedere terrace at Piazza Castello frames the wide read across the Barolo MGAs. LeWitt's multicolor chapel exterior 5 min downhill; Vignaiolo for the long lunch.",
   "driveTimeMin": 22,
-  "url": "https://www.comune.lamorra.cn.it/"
+  "url": "https://www.comune.lamorra.cn.it/",
+  "mapPin": {
+    "lat": 44.6358,
+    "lon": 7.9347
+  }
 }

@@ -6,5 +6,9 @@
   "type": "town",
   "blurb": "Stone hilltop fortress at the geographic center of the eleven Barolo communes; the vineyard view from the castle ramparts is the cleanest geography lesson in the Langhe.",
   "driveTimeMin": 19,
-  "url": "https://www.castellocastiglionefalletto.it/"
+  "url": "https://www.castellocastiglionefalletto.it/",
+  "mapPin": {
+    "lat": 44.6175,
+    "lon": 7.9669
+  }
 }
